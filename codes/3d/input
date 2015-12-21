@@ -1,0 +1,23 @@
+&params Q3d	= 0.71126!0.355630      !Toomre 3D parameter = omega^2/4.pi.G.rho_mid. reference Q if gvisc is on 
+        smallq  = 1.5d0         !shear parameter 
+	bgmma   = 1.0d0         !polytropic index for basic state 
+        gmma    = 1.4d0         !gas adiabatic index
+        bmin    = 0.1           !minimum cooling to consider
+        bmax    = 1d2           !maximum cooling to consider 
+        nb      = 64            !resolution in cooling time
+	kmin    = 2.4           !minimum wavenumber
+        kmax    = 2.7           !maximum wavenumber
+        nk      = 64            !resolution in wavenumber 
+        mu      = 0d0           !index for density dependence in viscosity
+        lambda  = 0d0           !index for density dependence in viscosity 
+        gvisc   =.false.        !re-set Q3d according to alpha? (gravito-viscosity) 
+        fixalpha= 0d0          !set positive to fix alpha (vertically uniform)
+        bulkv   = 0.0           !bulk viscosity as multiple of shear visc 
+        tirr    = 0.0 /         !irradiation levels (between 0 and 1)  
+&grid   nz      = 65            !vertical grid cells (must be odd) 
+        zmax    = 0.95          !such that density at vertical boundaries is (1-zmax)*rho_mid. so zmax = 1 means take zero-density surf as boundary  
+        nzout   = 1024          !fine-grid output for basic state
+        vbc     = 'wall'/       !upper disk boundary. wall: vz=0, free: DeltaP = 0 
+&job    maximize=.true.        !if true, search for max growth rate over the range of k and only output that growth rate. otherwise all k's are outputed  
+        no_decay=.true.         !filter out decaying modes
+        no_oscil=.true./       !filter out overstable modes (restrict size of imaginary part [tol=1d-9 hardwired internally])

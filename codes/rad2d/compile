@@ -1,0 +1,1 @@
+ifort -O3 -o viscsg.exe viscsg.f90 hybrd1.f -mkl

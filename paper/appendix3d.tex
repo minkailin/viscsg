@@ -1,0 +1,54 @@
+\section{2D dispersion relation}\label{2ddisp}
+The functions in Eq. \ref{thindisk} are 
+\begin{align}
+  A(S,K) =& \left(\frac{4}{3}\alpha+\alpha_b\right) K^2 + S +
+  \mathcal{E}\mathcal{F}\label{bigA}
+  - \frac{2|K|}{QS}, \\
+  B(S,K) =& 2\left(\alpha q \mathcal{F} - 1\right),\\
+  C(S,K) =& (2 - q) + \frac{\alpha q K^2(1+\mu)}{S} 
+  + \alpha q \lambda \mathcal{E}\mathcal{F},\\
+  D(S,K) = & \alpha K^2 + S + 2\alpha^2q^2\lambda\mathcal{F},
+\end{align}
+with
+\begin{align}
+  \mathcal{E} = \frac{\alpha q^2(1+\mu)}{S} +
+    \frac{\gamma}{\gamma-1} + \frac{\theta}{\beta S(\gamma-1)},\quad
+  \mathcal{F} = \frac{K^2(\gamma-1)\beta}{1 + \beta S - \alpha\beta
+    q^2\lambda(\gamma-1)}\label{bigF}. 
+\end{align}
+
+\section{2D viscous GI} \label{gammie_check}
+We recover \cite{gammie96}'s dispersion relation 
+for viscous gravitational instability as follows. First we set
+$\mu=-1, \lambda=0$ to obtain the same viscosity models. Next we
+simplify Eq. \ref{bigA}---\ref{bigF} by assuming $|\beta S |\gg 1$  
+%This will turn out to be equivalent to $\beta\gg 1$, i.e. the
+%adiabatic limit. 
+and $S\lesssim O(K^2)$ as $|K|\to 0$. Applying these considerations to
+Eq. \ref{thindisk} gives 
+\begin{align}
+  S = \frac{\alpha K^2\left[\frac{2|K|}{Q} - \gamma K^2 +
+      2q(2-q)(\gamma-1)\right]}{2(2-q) + \gamma K^2 - \frac{2K}{Q}}, 
+\end{align}
+which does not explicitly depend on cooling. 
+Setting $\gamma=1$ then gives \citeauthor{gammie96}'s Eq. 18. The above
+is expression thus generalizes \citeauthor{gammie96}'s result to
+non-isothermal disks. 
+
+%cooling is not the physical cause of instability 
+
+\section{3D corrections in 2D theory}\label{3dcorr}
+The simplest way to mimic the effect of finite disk thickness
+on gravitational instabilities is to weaken self-gravity by reducing 
+the gravitational constant  
+\begin{align}
+  G \to G\left(1+|k|H_\mathrm{sg}\right)^{-1}, 
+\end{align}
+or equivalently $Q\to Q\left(1+|k|H_\mathrm{sg}\right)$. This
+prescription, derived by \cite{shu84}, is widely applied
+\citep[e.g.][]{youdin11,takahashi14}. Here $H_\mathrm{sg}$ is a
+measure of the disk thickness. We intuitively expect
+$H_\mathrm{sg}\sim H$, but its precise value is not known a priori.   
+We regard $H_\mathrm{sg}$ as a free parameter of the problem.    
+
+

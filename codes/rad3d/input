@@ -1,0 +1,26 @@
+&basic2d fixQ    = 1.5           !2D Toomre Q where the disk is gravit-turbulent 
+         mdot    = 1d-6          !accretion rate in msol/yr 
+         opscale = 1d0           !opacity scale 
+         opacity_law = 2d0       !power law temperature dependence in opacity, currently accepted b=2, b=0 
+         alpha_m = 1d-3          !non-GI turbulence level 
+         tirr    = 0.0           !irradiation temperature in K  (should probably set to zero - 3D problem doesn't have external heating)
+         rmin    = 10            !minimum radius in au
+         rmax    = 100           !maximum radius in au
+         nr      = 32     /      !radial resolution  
+&params smallq  = 1.5d0         !shear parameter (should always be 1.5) 
+        gmma    = 1.6d0         !gas adiabatic index
+	kmin    = 0.1           !minimum wavenumber
+        kmax    = 0.7           !maximum wavenumber
+        nk      = 501           !resolution in wavenumber 
+        mu      =-1d0           !index for density dependence in viscosity
+        lambda  = 0d0           !index for density dependence in viscosity 
+        bulkv   = 0.0/          !bulk viscosity as multiple of shear visc 
+&grid   nz      = 65            !vertical grid cells (must be odd) 
+        zmax    = 0.9          !such that density at vertical boundaries is (1-zmax)*rho_mid. so zmax = 1 means take zero-density surf as boundary  
+        nzout   = 1024          !fine-grid output for basic state
+        vbc     = 'wall'        !upper disk boundary. wall: vz=0, free: DeltaP = 0 
+        tbc     = 'zero'/       !temperature bc (zero: delta T = 0, flat: d delta T/dz =0)
+&job    maximize=.true.         !if true, search for max growth rate over the range of k and only output that growth rate. otherwise all k's are outputed  
+        no_decay=.true.         !filter out decaying modes
+        no_oscil=.false.        !filter out overstable modes (restrict size of imaginary part [tol=1d-9 hardwired internally])
+        betacool= .false./      !if true, then set up vertically isothermal disk and use alpha, bcool and theta from 2D model 

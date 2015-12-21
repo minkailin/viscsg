@@ -1,0 +1,240 @@
+\section{Application to protoplanetary disks}\label{2dppd}
+We consider the stability of realistic, self-gravitating
+protoplanetary disks. Specifically, we will apply our linear framework
+to the gravito-turbulent disk model recently developed by 
+\cite{rafikov15}. This 2D, Keplerian disk orbits a Solar mass star and 
+is defined by the following parameters, 
+
+\begin{itemize}
+  \item $\dot{M}$, the global radial accretion rate;
+  \item $Q_0$, the value of the 2D Toomre parameter where the disk is
+    gravito-turbulent;
+  \item $T_\mathrm{irr}$, the irradiation or floor temperature;
+  \item $\alpha_m$, the dimensionless viscosity associated with other
+    sources of turbulence.
+\end{itemize} 
+These are used in the statements of thermal equilibrium, mass and
+angular momentum conservation, together with an opacity law, 
+to construct a global disk model with surface density $\Sigma(R)$ and
+temperature $T(R)$ where $R$ is the global cylindrical radius from the
+star. This gives the $Q(R)$ value required for input
+into our linear framework. We derive other dimensionless
+parameters below. 
+
+Note that we are considering the local stability at each radius. We
+are thus neglecting the slow, background viscous radial flow in the
+linear problem. 
+
+%proper treatment of cooling  in 3d
+%vertically isothermal basic state for simplicity (also appropriate for
+%irradiated disks) --- this formally requires zero viscosity  
+%or have viscosity but assume it does not affect basic state (dominated
+%by irradiation) but affect perturbations 
+
+\subsection{Effective $\alpha$}
+In a steady, viscously accreting Keplerian disk we have,
+approximately, $\nu\Sigma = \dot{M}/3\pi$. Hence
+\begin{align}
+  \alpha = \frac{\dot{M}}{3\pi}\frac{\Omega(R)}{c_{s}^2(T)\Sigma(R)},  
+\end{align} 
+which sets the viscosity coefficient to be used at each radius. 
+
+\subsection{PPD cooling}
+Energy loss in \citeauthor{rafikov15}'s model is given
+by 
+\begin{align}\label{real_cool}
+  \Lambda = \frac{2\sigma}{f(\tau)}\left(T^4 - T_\mathrm{irr}^4\right)
+\end{align}
+per unit area, 
+\begin{align}
+  f(\tau) = \tau + \frac{1}{\tau},
+\end{align}
+and
+\begin{align}
+  \tau = \kappa_d(T)\Sigma
+\end{align}
+is the optical depth and recall Eq. \ref{opacity_law} 
+is our opacity model. 
+%and $\kappa_d$ is the opacity. 
+%We parameterize
+%\begin{align}
+%  \kappa_d = \kappa_{d0} \Sigma^a T^b,
+%\end{align}
+%where $\kappa_{d0}, a, b$ are constants. 
+
+Since we are interested in the linear response of the system, the
+corresponding parameters $\beta$ and $\theta$ are found by
+comparing the linearized form of the cooling function
+(Eq. \ref{real_cool}) to that of the model function
+(Eq. \ref{beta_cool}).  
+
+%{\bf as opposed to comparing their unperturbed forms, as done in literature}
+
+Linearizing Eq. \ref{real_cool} gives   
+\begin{align}\label{linear_real_cool}
+  (\gamma-1)\frac{\delta\Lambda}{\Sigma} = \frac{2\sigma(\gamma-1)
+    T^4C_1}{f(\tau)c_{s}^2\Sigma}\left(\frac{\delta P}{\Sigma} -
+  \frac{C_2}{C_1}c_{s}^2\frac{\delta\Sigma}{\Sigma}\right), 
+\end{align}
+where
+\begin{align}
+C_1(\tau, T) &= 4 - b\times g(\tau, T),\\ 
+C_2(\tau, T) &= 4 + (1-b)\times g(\tau, T),\\ 
+  g(\tau, T) &= \left( \frac{\tau^2-1}{\tau^2+1}\right)\left(1 -
+  \frac{T_\mathrm{irr}^4}{T^4}\right). 
+\end{align}
+Comparing Eq. \ref{linear_real_cool} with Eq. \ref{beta_cool}, we identify
+\begin{align}
+  &\beta = \frac{f(\tau)c_s^2\Sigma\Omega}{2\sigma(\gamma-1)C_1T^4},\\
+  &\theta = \frac{C_2}{C_1}, 
+\end{align}
+to be used in the 2D linear framework. 
+
+This `realistic' beta cooling prescription can behave differently to 
+our previous, simple beta cooling (Eq. \ref{beta_cool}) for the same
+physical system. In particular, for a non-irradiated disk
+($T_\mathrm{irr}=0$), simple beta 
+cooling has  $\theta=0$, but realistic beta cooling has $\theta\neq
+0$. However, fully-irradiated disks with $T=T_\mathrm{irr}$ can be
+modeled by simple beta cooling since in both cases $\theta=1$.  
+
+
+%{\bf caution in applying numerical results obtained from beta cooling to
+%systems modeled with real cooling. above example shows that to model
+%real, non-irradiated disk with beta cooling actually requires irradiation in
+%the latter.}
+
+%Notice that $\theta\to 1$ as 
+%$T\toT_\mathrm{irr}$ the disk becomes passive. 
+
+\subsection{Inviscid stability condition} 
+%We specialize to $a=0, b=2$ for the opacity law. 
+We note that for the adopted opacity law, Eq. \ref{opacity_law}, 
+\begin{align*}
+  \theta = \frac{4-g}{4-2g},
+\end{align*}
+implying $5/6<\theta<3/2$. 
+%For a non-irradiated disk, $T_\mathrm{irr}=0$, $\theta\to5/6$ as
+%$\tau\to0$ and $\theta\to3/2$ as $\tau\to\infty$.  
+From our discussion in \S\ref{2d_inviscid}, we conclude that this
+system cannot be unstable without
+viscous effects acting on the perturbations if 
+\begin{align}
+  \gamma > \frac{3}{2} \quad \text{and} \quad Q > \sqrt{\frac{6}{5}} \label{ppd_invisc_cond}
+\end{align} 
+are both satisfied.  
+
+\subsection{Example 2D calculation}\label{pp2d_example}
+We consider a disk with $\dot{M} = 10^{-6}M_\sun\,\yr^{-1}$, $Q_0=1.5$, 
+$\tirr=10\mathrm{K}$, and $\alpha_m=10^{-3}$. For the adopted opacity
+law we follow \citeauthor{rafikov15} and take $\kappa_{d0} =
+5\times10^{-4}\mathrm{cm}^2\,\mathrm{g}^{-1}\,\mathrm{K}^{-2}$. Here we use
+$\gamma=1.6$ so the inviscid stability condition
+(Eq. \ref{ppd_invisc_cond}) is satisfied. 
+%{\bf actually this opacity law only valid $>30$au for this disk}
+
+Fig. \ref{rafikov_model} shows the equilirbium disk profile in terms
+of $Q$, $\alpha$, $\beta$, and $\theta$. These are set as input to the
+2D dispersion relation to yield a growth timescale, in units of the
+local orbital period, shown in Fig. \ref{rafikov_growth}. We also plot
+an analytic estimate based on Eq. \ref{gammie_smallk} (instead of
+Eq. \ref{gammie_maxrate_simple} since here $\theta\sim 1$) which gives 
+\begin{align}
+  S = \frac{27\alpha}{16\theta^3Q^4}, 
+\end{align}
+and the optimum wavenumber is
+\begin{align}
+  |K| = \frac{3}{2\theta Q}.
+\end{align}
+%For the
+%stability calculation we use $\mu=-1, \lambda=0$ for the viscosity
+%prescription.  
+
+The disk becomes dynamically unstable with growth timescales $\lesssim
+10$ orbits for $R\gtrsim60$AU. Coincidentally, beyond this radius
+$\alpha\gtrsim 0.1$ and $\beta\lesssim 3$, which is often quoted as 
+criteria for disk fragmentation \citep[e.g.][]{rafikov15}. 
+%{\bf despite apply beta cooling results to realistic cooling disks}
+Our result suggest an alternative interpretation of disk fragmentation
+is where the gravito-turbulent state becomes dynamically unstable due to
+both viscosity and self-gravity. 
+
+Fig. \ref{rafikov_model} shows that the most unstable wavelength is a
+few times the disk thickness. The increase in $|K|$ from $\sim
+10\mathrm{AU}$ to $\sim 20\mathrm{AU}$ is due to the decrease in $Q$;
+while that from $\sim 60\mathrm{AU}$ to $\sim 100\mathrm{AU}$ occurs
+as the disk transitions from optically thick to optically thin
+regimes. The mismatch at large distances is not surprising since the
+above expressions assume $|K|\ll 1$. Nevertheless the analytic
+estimates reproduce the correct behavior. 
+
+%{\bf note: disk might be stablized by extremely large alpha at large
+%  distances but `turbulent' framework no longer valid }
+
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+    0.0cm]{figures/ppd_2d_basic}
+  \caption{Equilibrium profile obtained from the disk model developed
+    by \cite{rafikov15}, with parameters $\dot{M} =
+    10^{-6}M_\sun\yr^{-1}$, $Q_0=1.5$, $\tirr=10\mathrm{K}$, and
+    $\alpha_m=10^{-3}$.   
+    \label{rafikov_model}}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0cm
+    0.0cm]{figures/ppd_2d_growth}\\
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+    0.8cm]{figures/ppd_2d_maxk}
+  \caption{Growth timescales (top) of the most unstable
+    wavenumber (bottom) for viscous,
+    self-gravitational modes in the 2D PPD model shown in
+    Fig. \ref{rafikov_model}. 
+    The black curve is obtained numerically
+    from the 2D dispersion Eq. \ref{thindisk}, while green curves 
+    are analytic results based on Eq. \ref{gammie_smallk}. 
+    \label{rafikov_growth}}
+\end{figure}
+
+
+\subsection{3D PPD}
+%{\bf radiative diffusion only for optically thick disk. how to connect
+%to optically thin regions?}
+We briefly consider 3D PPDs subject to explicit radiative diffusion 
+(\S\ref{rad_cool}). At each radius $R$ we obtain the vertical
+structure from Eq. \ref{vert_eq1}---\ref{thermal_eq}, with 
+Eq. \ref{rad_cool1}---\ref{rad_cool2} for the radiative flux, given
+the $\alpha(R)$ and $Q(R)$ profiles obtained from the 2D model
+above. We then solve the 3D eigenvalue problem as in
+\S\ref{3ddisk}, with the additional boundary condition for the temperature 
+perturbation $\delta T^\prime(0) = \delta T(\zmax) = 0$.    
+
+We use the same disk model as in \S\ref{pp2d_example} but without
+irradiation ($T_\mathrm{irr}=0$), and consider a smaller domain
+with $R\in[10,100]AU$. 
+
+
+
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0cm
+    0.0cm]{figures/ppd_3d_rates}\\
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
+    0.8cm]{figures/ppd_3d_maxk}
+  \caption{Growth timescales (top) of the most unstable
+    wavenumber (bottom) for viscous,
+    self-gravitational modes.  
+    \label{rafikov_growth3d}}
+\end{figure}
+
+
+
+%3d rad diffusion is mathematically different problem (more
+%derivatives) so worth considering briefly
+%optically thin cooling in 3D is the same problem as before
+
+
+%use 2D model as midplane values to get 3D structure assuming radiative
+%diffusion and constant alpha w.r.t. height. allow cooling time to vary
+%with height. can't assume polytropic vertical structure. need to
+%reformulate linear framework (some transformations needed). 
+%skip 2D eigen prob if 3D works out 

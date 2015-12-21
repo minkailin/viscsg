@@ -1,0 +1,1 @@
+ifort -O3 -o viscsg3d.exe viscsg3d.f90 hybrd1.f vode.f -mkl
