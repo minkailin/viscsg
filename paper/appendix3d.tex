@@ -18,22 +18,41 @@ with
 \end{align}
 
 \section{2D viscous GI} \label{gammie_check}
-We recover \cite{gammie96}'s dispersion relation 
-for viscous gravitational instability as follows. First we set
-$\mu=-1, \lambda=0$ to obtain the same viscosity models. Next we
-simplify Eq. \ref{bigA}---\ref{bigF} by assuming $|\beta S |\gg 1$  
+We obtain the dispersion relation for viscous GI described by
+previous authors \citep{lynden-bell74,willerding92,gammie96} as 
+follows. We set $\mu=-1, \lambda=0$ to obtain the same viscosity
+models. Next we consider $|\beta S|\to \infty$, i.e. no cooling. Then
+the condition $AD = BC$ imply
+\begin{align}
+  S^3 + \left(\frac{7}{3}\alpha + \alpha_b\right)K^2S + \left[2(2-q) -
+    \frac{2|K|}{Q} + \gamma K^2 + \alpha K^4 \left(\frac{4}{3}\alpha +
+    \alpha_b\right)\right] + \alpha K^2 \left[\gamma K^2 -
+    \frac{2|K|}{Q} - 2q(2-q)(\gamma-1)\right]=0,
+\end{align}
+which agrees with \citet[Eq. 11]{willerding92} in the isothermal
+limit ($\gamma=1$). The non-isothermal term $\propto (\gamma-1)$
+originates from viscous dissipation which was excluded in the
+aforementioned works. Its effect is to increase 
+(decrease) the maximum wavenumber (wavelength) allowed for viscous
+GI. 
+
+An 
+
+%We recover \cite{gammie96}'s dispersion relation 
+%for viscous gravitational instability as follows.  Next we
+%simplify Eq. \ref{bigA}---\ref{bigF} by assuming $|\beta S |\gg 1$  
 %This will turn out to be equivalent to $\beta\gg 1$, i.e. the
 %adiabatic limit. 
-and $S\lesssim O(K^2)$ as $|K|\to 0$. Applying these considerations to
-Eq. \ref{thindisk} gives 
-\begin{align}
-  S = \frac{\alpha K^2\left[\frac{2|K|}{Q} - \gamma K^2 +
-      2q(2-q)(\gamma-1)\right]}{2(2-q) + \gamma K^2 - \frac{2K}{Q}}, 
-\end{align}
-which does not explicitly depend on cooling. 
-Setting $\gamma=1$ then gives \citeauthor{gammie96}'s Eq. 18. The above
-is expression thus generalizes \citeauthor{gammie96}'s result to
-non-isothermal disks. 
+%and $S\lesssim O(K^2)$ as $|K|\to 0$. Applying these considerations to
+%Eq. \ref{thindisk} gives 
+%\begin{align}
+%  S = \frac{\alpha K^2\left[\frac{2|K|}{Q} - \gamma K^2 +
+%      2q(2-q)(\gamma-1)\right]}{2(2-q) + \gamma K^2 - \frac{2K}{Q}}, 
+%\end{align}
+%which does not explicitly depend on cooling. 
+%Setting $\gamma=1$ then gives \citeauthor{gammie96}'s Eq. 18. The above
+%is expression thus generalizes \citeauthor{gammie96}'s result to
+%non-isothermal disks. 
 
 %cooling is not the physical cause of instability 
 
