@@ -201,19 +201,30 @@ estimates reproduce the correct behavior.
 %{\bf radiative diffusion only for optically thick disk. how to connect
 %to optically thin regions?}
 We briefly consider 3D PPDs subject to explicit radiative diffusion 
-(\S\ref{rad_cool}). At each radius $R$ we obtain the vertical
+(\S\ref{rad_cool}). Given the $\alpha(R)$ and $Q(R)$ profiles obtained
+from the 2D model above, at each radius $R$ we obtain the vertical
 structure from Eq. \ref{vert_eq1}---\ref{thermal_eq}, with 
-Eq. \ref{rad_cool1}---\ref{rad_cool2} for the radiative flux, given
-the $\alpha(R)$ and $Q(R)$ profiles obtained from the 2D model
-above. We then solve the 3D eigenvalue problem as in
-\S\ref{3ddisk}, with the additional boundary condition for the temperature 
-perturbation $\delta T^\prime(0) = \delta T(\zmax) = 0$.    
+Eq. \ref{rad_cool1}---\ref{rad_cool2} for the radiative flux.
+We then solve the 3D eigenvalue problem as in \S\ref{3ddisk}, with the
+additional boundary condition $\delta T^\prime(0) = \delta T(\zmax) = 0$.    
+We use the same disk model as in \S\ref{pp2d_example} but without 
+irradiation ($T_\mathrm{irr}=0$), and a slightly smaller vertical
+domain with $\rho(\zmax)=0.1\rho_0$.  %to avoid very low density 
 
-We use the same disk model as in \S\ref{pp2d_example} but without
-irradiation ($T_\mathrm{irr}=0$), and consider a smaller domain
-with $R\in[10,100]AU$. 
+Fig. \ref{rafikov_growth3d} show the growth rates and most unstable
+wavenumber for $R\in[10,100]$AU. We also plot the corresponding 2D
+results with softened self-gravity. There is a close match for
+$R\lesssim60$AU where the disk is optically thick ($\tau\gtrsim
+1$) and both models apply. However, beyond $60$AU where the disk is
+optically thin, radiative diffusion (the 3D curve) does not apply and
+under-estimates the growth rates. Nevertheless, the comparison shows
+that the transition radius $R\sim60$AU can be calculated within the 2D
+framework. This is not surprising since the instability is 
+fundamentally driven by viscous and self-gravity forces in the
+momentum equations, not the energy equation. 
 
-
+%the instability is due to viscosity/gravity in momenta equation so
+%details of energy eq doesn't matter 
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0cm
@@ -221,17 +232,20 @@ with $R\in[10,100]AU$.
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
     0.8cm]{figures/ppd_3d_maxk}
   \caption{Growth timescales (top) of the most unstable
-    wavenumber (bottom) for viscous,
-    self-gravitational modes.  
+    wavenumber (bottom) for viscous, 
+    self-gravitating unstable modes. The black curves are obtained
+    from the 3D eigenvalue problem with radiative diffusion, while the
+    green curves are 
     \label{rafikov_growth3d}}
 \end{figure}
+
+
 
 
 
 %3d rad diffusion is mathematically different problem (more
 %derivatives) so worth considering briefly
 %optically thin cooling in 3D is the same problem as before
-
 
 %use 2D model as midplane values to get 3D structure assuming radiative
 %diffusion and constant alpha w.r.t. height. allow cooling time to vary
