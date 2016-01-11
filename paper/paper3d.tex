@@ -3,8 +3,8 @@
 %\documentclass{article}
 %\usepackage{draftwatermark}
 %\usepackage{paralist}
-\shorttitle{Non-ideal GI}
-\shortauthors{M-K.\ Lin, K. Kratter}
+\shorttitle{Non-ideal Gravitational instability}
+\shortauthors{M-K.\ Lin \& K. Kratter}
 
 \usepackage{amsmath}
 \usepackage{paralist}
@@ -86,18 +86,20 @@ University of
 \email{minkailin@email.arizona.edu}
 
 \begin{abstract}
-Low mass, self-gravitating accretion disks are able to sustain a  
+Low mass, self-gravitating accretion disks can remain in a  
 quasi-steady, `gravito-turbulent' state provided that thermal 
 time-scales are sufficiently long, or equivalently for sufficiently
 weak turbulent stresses. Otherwise, numerical simulations show that
-disk fragmentation ensues.   
-We explore the physical interpretation of this result as the
-compromise of gravitational stability by non-ideal effects: 
+disk fragmentation ensues. 
+We quantify the interpretation of this result as the
+compromise of gravitational stability by non-ideal physics: 
 \begin{inparaenum}[1)] 
 \item cooling, which reduces pressure support; and
 \item viscosity, which reduces rotational support. 
 \end{inparaenum}
-We derive a flexible dispersion relation for linear waves in a 
+To this end, we analyse the gravitational stability of accretion disks
+including these effects explicitly.   
+We derive a versatile dispersion relation for linear waves in a 
 self-gravitating, viscous, non-adiabatic disk with internal and
 external heating, and explicit cooling. We 
 consider parameterized cooling functions in two and three dimensions,
@@ -107,19 +109,16 @@ global models of protoplanetary disks (PPDs) subject to gravito-turbulence, mode
 viscosity, and cooling via dust opacity. We find the sole effect of cooling is insufficient to
 destabilize a realistic PPD. However, inclusion of viscosity renders
 the disk beyond $\sim 60$AU dynamically unstable on radial 
-lengthscales a few times the local disk thickness. 
-Thus, a steady gravito-turbulent state cannot persist for more and a
-few orbits in the outer disk, coincident with the expected region for
-fragmentation based on emperical conditions inferred from numerical
-simulations. 
-%This is understood within our framework as the disk's
-%inability to sustain too large of a stress as it undermines
-%rotational support against self-gravity. 
-%This motivates an interpretation of disk 
-%fragmentation as a secondary gravitational instability enabled by 
-%the underlying gravito-turbulent viscosity when it exceeds a critical value.         
+lengthscales a few times the local disk thickness. This is coincident 
+with the numerically-established empirical condition for disk fragmentation based on a
+maximum sustainable stress. We 
+thus suggest that disk fragmentation can be physically attributed,
+at least partially, to the removal of rotational stabilization against
+self-gravity by turbulence.   
 \end{abstract}
-%opacity 
+%alternative abstract 
+
+
 
 \section{Introduction}\label{intro}
 Understanding the gravitational stability (GI) of rotating disks   
@@ -318,10 +317,22 @@ viscosity.
 %aim to analyse GI in realistic disks with minimal input from numerical
 %simulation 
 
-This paper is organized as follows. 
-
-
-
+The basic equations are listed in \S\ref{basic}, along with
+descriptions of the disk 
+equilibra and the two cooling models 
+considered --- parametrized `beta' cooling and radiative diffusion. 
+The linear stability problem is defined in
+\S\ref{linear}. We present results with beta cooling in
+\S\ref{result_2d} and \S\ref{3ddisk} for 2D and 3D disks, respectively. In
+\S\ref{2dppd} we apply linear theory to PPDs with realistic cooling
+models, including radiative diffusion in 3D. We find regions in a
+PPD that cannot sustain steady gravito-turbulence to coincide with
+that expected for disk fragmentation, based on previous empirical
+criteria. We summarize our results in \S\ref{summary}, including a
+discussion of how our model may aid the physical understanding of  
+fragmentation in realistic PPDs. 
+% as the inability to sustain gravito-turbulence
+%because the associated stress removes rotational support
 
 \input{model3d}
 \input{linear3d}
@@ -329,6 +340,10 @@ This paper is organized as follows.
 \input{results3d}
 \input{application} 
 \input{summary}
+
+
+%\acknowlegement
+%S. Stahler 
 
 \appendix
 \input{appendix3d}

@@ -1,4 +1,4 @@
-\section{Basic equations}
+\section{Basic equations}\label{basic}
 We consider a three-dimensional (3D), self-gravitating,
 viscous disk with heating and cooling. We use the shearing box framework to
 study a small patch of the disk \citep{goldreich65}. The local frame
@@ -20,7 +20,7 @@ The fluid equations are
 where $\rho$ is the density field and $\bm{v} = (v_x, v_y, v_z)$ is
 the velocity field.% $q$ is the shear parameter and $\Omega_z$ is the
 %local vertical oscillation frequency. 
-We assume an ideal has so that the pressure $P$ and thermal energy
+We assume an ideal gas so that the pressure $P$ and thermal energy
 density $E$ are related by  
 \begin{align}
   P = (\gamma-1)E = \mathcal{R}\rho T, 
@@ -42,8 +42,9 @@ frequency $\Omega_z=\Omega$.
 
 In the energy equation (Eq. \ref{energy_eq}) the source terms 
 $\mathcal{H}_\mathrm{visc}$, $\mathcal{H}_\mathrm{ext}$ and $\Lambda$
-represent viscous heating, time-independent external heating and
-thermal losses, respectively, described below. We normally set
+represent viscous heating, any time-independent heat
+source/sinks, and time-dependent thermal losses, respectively. These
+are described below. We normally set
 $\mathcal{H}_\mathrm{ext}=0$ unless otherwise stated. 
 
 \subsection{Viscosity and heating}\label{visc_model}
@@ -72,28 +73,40 @@ where subscript `eq' denotes the equilibrium state and
 $c_{s0}^2\equiv P_\mathrm{eq}(0)/\rho_\mathrm{eq}(0)$. 
 The dimensionless coefficient
 $\alpha=\alpha(\rho_\mathrm{eq},P_\mathrm{eq})$ characterizes the
-magnitude of the shear viscosity and is time-independent.  
-The indices $\mu,\,\lambda$ are chosen to model how 
-the viscosity behaves in the perturbed state. Given the uncertain
-properties of gravito-turbulence, we will treat $\mu,\lambda$ as free
-parameters. We adopt the same prescription for the bulk viscosity but
+magnitude of the shear viscosity \emph{in steady state} 
+and is time-independent. The indices $\mu,\,\lambda$ are free
+parameters chosen to model how the viscosity behaves in the perturbed
+state.  
+%Given the uncertain
+%properties of gravito-turbulence, we will treat $\mu,\lambda$ as free
+%parameters. 
+We adopt the same prescription for the bulk viscosity but
 with $\alpha\to\alpha_b$.   
 
-Our numerical calculations mostly use $\mu=-1,\lambda=0$ so
-that $\rho\nu$ remains constant, as considered
-in previous gravitational instabilities with 
-viscosity \citep{hunter83,gammie96}. 
-This model conveniently eliminates  
-viscous over-stability \citep{schmit95,latter06}, which is unrelated
-to self-gravity, that would otherwise contaminate our results. 
+Our numerical calculations use $\mu=-1,\lambda=0$ so 
+that $\rho\nu$ remains constant, as adopted in previous, pioneering
+studies of viscous GI 
+\citep{lynden-bell74,hunter83,willerding92,gammie96}.  
+This choice also conveniently eliminates viscous over-stability
+\citep{schmit95,latter06}, which is unrelated to self-gravity, that
+would otherwise contaminate our results.   
 
-While the choice $\mu=-1,\lambda=0$ may seem artifical, we emphasize
-this is done in order to bring out the relevant physical process ---
-viscosity-assisted gravitational instability. Interestingly, 
-\cite{laughlin96b} had already suggested a $1/\rho$ dependence for the 
-shear viscosity when modeling the evoluting of self-gravitating disks
-as a viscous process.  
-{\bf note paardekooper 2012: alpha goes down as Sigma goes up}
+%the alpha(rho_eq, P_eq) function can be derived with some rigor 
+%but this assumes steady state. don't know how to model
+%time-dependence. 
+
+While steady-state viscosity values can be determined analytically
+\citep[e.g.][]{rafikov15}, its time-dependent behavior is not
+well-explored. \cite{laughlin96b} suggested a $\nu \propto 1/\Sigma$
+dependence when modeling the evoluting of self-gravitating disks 
+as a viscous process. \cite{paardekooper12} measured
+an increase in the effective viscosity when their gravito-turbulent
+disk models underwent fragmentation (i.e. as $\Sigma$ increases).  
+These motivate the choice $\mu=-1,\lambda=0$, but we emphasize this is
+done to bring out the physical process of interest --- viscosity-assisted
+gravitational instability.
+
+%{\bf note paardekooper 2012: alpha goes down as Sigma goes up}
 
 \subsection{Steady states and cooling models}
 
@@ -227,19 +240,19 @@ $\rho(z)$.
 %($\mathcal{H}_\mathrm{ext}\neq 0$), then we may choose $\alpha, \beta$
 %and $\theta$ separately.   
 
-\subsection{Parameters}
-{\bf temporary, maybe move to intro}
-For the 3D problem it is convenient to parameterize the strength of
-self-gravity via 
-\begin{align}
-  Q_\mathrm{3D} \equiv \frac{\Omega^2}{4\pi G \rho_0}. 
-\end{align}
-It is also useful to define the
-two-dimensional (2D) Toomre parameter 
-\begin{align}
-  Q = \frac{c_{s0}\Omega}{\pi G \Sigma}, 
-\end{align}
-where $\Sigma = \int_{-\infty}^\infty\rho dz$ is the surface density. 
+%\subsection{Parameters}
+%{\bf temporary, maybe move to intro}
+%For the 3D problem it is convenient to parameterize the strength of
+%self-gravity via 
+%\begin{align}
+%  Q_\mathrm{3D} \equiv \frac{\Omega^2}{4\pi G \rho_0}. 
+%\end{align}
+%It is also useful to define the
+%two-dimensional (2D) Toomre parameter 
+%\begin{align}
+%  Q = \frac{c_{s0}\Omega}{\pi G \Sigma}, 
+%\end{align}
+%where $\Sigma = \int_{-\infty}^\infty\rho dz$ is the surface density. 
 
 
 %We are interested in comparing systems with different $\beta$. 

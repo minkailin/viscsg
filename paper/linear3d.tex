@@ -1,6 +1,6 @@
 %On the other hand, if a time-independent heat source is invoked, then
 %we may choose $\alpha, \beta$ and $\theta$ separately.  
-\section{Linear problem}
+\section{Linear problem}\label{linear}
 We consider infinitestimal axisymmetric Eulerian perturbations in the
 form \begin{align}
   \delta \rho= \widetilde{\delta \rho}(z)\exp{\left(\ii kx +
@@ -82,10 +82,13 @@ with
   \frac{\delta\mathcal{H}_\mathrm{visc}}{\rho}=& \nu (q\Omega)^2
   \delta\ln{\rho\nu} - 2\ii\nu k q \Omega \delta v_y,\\
   \delta\ln{\rho\nu} =& (1+\mu)\frac{\delta\rho}{\rho} +
-  \frac{\lambda}{c_s^2}\frac{\delta P}{\rho}, 
-\end{align}\label{linear_beta_cool}
-where $^\prime$ denotes $d/dz$. The linearized cooling functions
-$\delta\Lambda$ are given below. 
+  \frac{\lambda}{c_s^2}\frac{\delta P}{\rho}, \label{linear_beta_cool}
+\end{align}
+where $^\prime$ denotes $d/dz$, and the 3D self-gravity parameter is
+\begin{align}
+  Q_\mathrm{3D} \equiv \frac{\Omega^2}{4\pi G \rho_0}. 
+\end{align}
+The linearized cooling functions $\delta\Lambda$ are given below. 
 Eq. \ref{lin_mass}---\ref{lin_gravity}, supplemented with appropriate
 boundary conditions, constitutes an eigenvalue problem for the growth
 rate $s$. 
