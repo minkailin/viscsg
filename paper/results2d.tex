@@ -31,9 +31,8 @@ $\alpha = \alpha_b = 0$. This implies an external,
 time-independent heat source must be invoked to balance the imposed
 cooling rate in equilibrium ($\mathcal{H}_\mathrm{ext}\neq 0$). Alternatively, we are assuming 
 viscosity is only important for setting up thermal equilibrium, and
-can be neglected for the pertubations. This is useful as the resulting
-instabilties are only due to self-gravity.  In any case, we are
-considering the \emph{sole} effect of cooling on stability. 
+can be neglected for the pertubations. This eliminates viscous GI and 
+allows us to quantify the \emph{sole} effect of cooling.   
 
 Eq. \ref{thindisk} simplifies to  
 \begin{align}\label{inviscid}
@@ -56,8 +55,8 @@ Routh-Hurwitz criterion, we find that stability is ensured if
   Q > \frac{1}{\sqrt{2\theta(2-q)}} 
 \end{align}
 are both satisfied. Thus, the question of stability does not depend on
-the cooling rate $\beta$. The system becomes more unstable with
-decreasing $\theta$.   
+the cooling rate $\beta$ (provided it is non-zero and finite). The
+system becomes more unstable with decreasing $\theta$.   
 
 Consider the most unstable wavenumber $|K_*|$ at which $\p S/\p |K| =
 0$ and $S = 
@@ -92,16 +91,17 @@ results may be obtained in special cases, discussed next.
 %\end{figure}
 
 \subsubsection{$\theta = 0$ and $Q=Q_\mathrm{crit}$}  
-Beta cooling with $\theta=0$ is typically employed in numerical
+Beta cooling with $\theta=0$ is the standard choice for numerical
 simulations of self-gravitating disks \citep{gammie01}. There, 
 a steady state corresponds to the imposed cooling entirely balanced by heat generated through 
-gravito-turbulence. In the present framework, this gravito-turbulence
+gravito-turbulence. In the present framework, this gravito-turbulence 
 is assumed to provide a constant 
 background heating ($\mathcal{H}_\mathrm{ext}$) and does
 not enter the linearized equations. Cooling, however, is still imposed in the perturbed state. 
-From the discussion above, this system is unconditionally unstable for
+For $\theta=0$ the system is unconditionally unstable for
 finite $Q$. The most unstable wavelength decreases with decreasing
-$\beta$. The $\beta\to0$ limit corresponds to a pressureless disk.  
+$\beta$. The $\beta\to0$ limit corresponds to a pressureless disk (not
+merely isothermal).   
 
 % it is always
 %possible to find a sufficiently small scale such that pressure effects
@@ -112,7 +112,7 @@ Specifically, let us consider a disk with
   \qtwo = \frac{1}{\sqrt{2\gamma(2-q)}}\equiv Q_{\mathrm{crit}},
 \end{align} 
 so that it is marginally stable in the absence of cooling.  
-How does introducing finite cooling destabilize the system? 
+How does finite cooling destabilize the disk?  
 Inserting Eq. \ref{qcrit_def} into Eq. \ref{inviscid_max} and setting
 $\theta=0$, we find 
 %In this case the coefficient of 
@@ -122,8 +122,7 @@ $\theta=0$, we find
 \end{align}
 The maximum growth rate, $S_*\propto \beta^{-1/3}$, smoothly
 increases with decreasing $\beta$. Instability does not require the
-cooling time to be below some 
-critical value. 
+cooling time to be below some critical value. 
 
 Nevertheless, we can define a characteristic cooling
 time $\beta_*$ as that which removes pressure support against
@@ -153,7 +152,6 @@ occurs on a dynamical timescale. We compare these in Table
 %  helps collapse. 
 %}
 
-
 \begin{deluxetable}{rrrr}
   \tablecolumns{4}
   \tablecaption{Characteristic cooling times as a function of
@@ -173,9 +171,6 @@ $5/3$  &  6.37 & 6---7 & \cite{rice05}\\
 $2$    &  3.75 & 3 & \cite{gammie01}
 \enddata
 \end{deluxetable}
-
-
-
 
 \subsubsection{Passive disk with $\theta = 1$}
 Beta cooling with $\theta=1$ corresponds to 
@@ -221,10 +216,9 @@ rates vary weakly with $\beta$.
 We now consider a viscous disk with 
 $\mu=-1,\,\lambda=0$ as discussed in \S\ref{visc_model}. We first
 check in Appendix \ref{gammie_check} that our dispersion relation
-reduces to that of \cite{gammie96} in the appropriate limit (namely
-$\beta\to\infty$).  
+reduces previous results in the adiabatic/isothermal limit.  
 
-To see the effect of cooling, we simplify the dispersion relation,
+To see the effect of finite cooling, we simplify the dispersion relation,
 Eq. \ref{thindisk}, by assuming $|\beta S|\ll 1$. Then  
 for $|K| \to 0$ we find
 \begin{align}\label{gammie_smallk}

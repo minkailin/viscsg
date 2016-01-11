@@ -72,11 +72,10 @@ where subscript `eq' denotes the equilibrium state and
 %$c_{s0}$ is a modified sound-speed defined below. 
 $c_{s0}^2\equiv P_\mathrm{eq}(0)/\rho_\mathrm{eq}(0)$. 
 The dimensionless coefficient
-$\alpha=\alpha(\rho_\mathrm{eq},P_\mathrm{eq})$ characterizes the
-magnitude of the shear viscosity \emph{in steady state} 
-and is time-independent. The indices $\mu,\,\lambda$ are free
-parameters chosen to model how the viscosity behaves in the perturbed
-state.  
+$\alpha=~\alpha(\rho_\mathrm{eq},P_\mathrm{eq})$ characterizes the
+magnitude of the shear viscosity \emph{in steady state}. The indices
+$\mu,\,\lambda$ are free parameters chosen to model how the viscosity
+behaves in the perturbed state.  
 %Given the uncertain
 %properties of gravito-turbulence, we will treat $\mu,\lambda$ as free
 %parameters. 
@@ -84,34 +83,31 @@ We adopt the same prescription for the bulk viscosity but
 with $\alpha\to\alpha_b$.   
 
 Our numerical calculations use $\mu=-1,\lambda=0$ so 
-that $\rho\nu$ remains constant, as adopted in previous, pioneering
+that $\rho\nu$ is time-indpendent, as adopted in previous 
 studies of viscous GI 
 \citep{lynden-bell74,hunter83,willerding92,gammie96}.  
 This choice also conveniently eliminates viscous over-stability
 \citep{schmit95,latter06}, which is unrelated to self-gravity, that
-would otherwise contaminate our results.   
-
-%the alpha(rho_eq, P_eq) function can be derived with some rigor 
-%but this assumes steady state. don't know how to model
-%time-dependence. 
+would otherwise contaminate our results. %obscure   
 
 While steady-state viscosity values can be determined analytically
 \citep[e.g.][]{rafikov15}, its time-dependent behavior is not
-well-explored. \cite{laughlin96b} suggested a $\nu \propto 1/\Sigma$
+well-explored. We emphasize the choice $\mu=-1,\lambda=0$ is made to
+bring out the physically relevant process --- viscosity-assisted
+gravitational instability. %expect to be generally present, but will
+                           %be obscured by viscous over-stability with
+                           %other indices
+Interestingly, though, \cite{laughlin96b} have suggested a $\nu \propto 1/\Sigma$
 dependence when modeling the evoluting of self-gravitating disks 
-as a viscous process. \cite{paardekooper12} measured
+as a viscous process. Furthermore, \cite{paardekooper12} measured
 an increase in the effective viscosity when their gravito-turbulent
 disk models underwent fragmentation (i.e. as $\Sigma$ increases).  
-These motivate the choice $\mu=-1,\lambda=0$, but we emphasize this is
-done to bring out the physical process of interest --- viscosity-assisted
-gravitational instability.
 
 %{\bf note paardekooper 2012: alpha goes down as Sigma goes up}
 
 \subsection{Steady states and cooling models}
-
-We consider equilibrium solutions (omitting the `eq' subscripts
-hereafter for clarity)
+We consider equilibrium solutions (here omitting the `eq' subscripts
+for clarity) 
 \begin{align}
   \bm{v} &= -q\Omega x \hat{\bm{y}}, \\
   \rho   &= \rho(z),\\
@@ -142,8 +138,8 @@ together with thermodynamic equilibrium,
 (q\Omega)^2\rho\nu + \mathcal{H}_\mathrm{ext} = \Lambda,
 \end{align}
 where the first term represents viscous heating. For the viscous
-problem we may set $\mathcal{H}_\mathrm{ext}=0$. However, if we wish
-to neglect viscosity but include cooling, we must invoke
+problem, $\nu\neq0$, we may set $\mathcal{H}_\mathrm{ext}=0$. However,
+if we wish to neglect viscosity but include cooling, we must invoke
 $\mathcal{H}_\mathrm{ext}\neq0$ to define an equilibrium state.  
 To proceed further, we separately describe the two cooling models
 considered in this work. 
@@ -168,18 +164,14 @@ is the cooling timescale with $\beta$ a constant input parameter, and
 \end{align}
 is a reference temperature field parameterized as a constant fraction
 $\theta$ of the equilibrium temperature $T_\mathrm{eq}$. We will refer
-to $\theta$ as the `irradiation level'. 
+to $\theta$ as the `irradiation level'.  
+%This cooling function restores 
+%the disk temperature to $\tirr$ over a time-scale $\tcool$. 
 
-This type of cooling is widely applied in 2D and 3D
+   Beta cooling is widely applied in 2D and 3D
 numerical simulations of self-gravitating disks \citep{gammie01,
   rice05,baehr15}. It permits numerical experiments to be carried out in a
 controlled manner as a function of the cooling time $\beta$. 
-
-We remark that for the linear problem, 
-any explicit cooling function $\Lambda=\Lambda(\rho,T)$ can be
-mapped to that obtained from the standard function in Eq.
-\ref{beta_cool}. We do this in \S\ref{2dppd} where we adopt a more
-realistic beta cooling prescription for 2D PPDs.   
 
 For models with beta cooling we assume an equilibrium polytropic relation
 \begin{align} 
@@ -191,8 +183,8 @@ c_{s0}^2\rho_0\left(\frac{\rho}{\rho_0}\right)^\Gamma,
 where $\Gamma$ is the constant polytropic index and $\rho_0 =
 \rho(0)$. The vertical
 structure is first obtained from Eq. \ref{vert_eq1}---\ref{vert_eq2}
-(usually numerically), then inserted into
-Eq. \ref{thermal_eq} to infer the required viscosity profile 
+then inserted into Eq. \ref{thermal_eq} to infer the required
+viscosity profile,  
 
 \begin{align}\label{alpha_beta_relation}
 \alpha(z) = \frac{1}{(\gamma-1)\beta
@@ -200,6 +192,12 @@ Eq. \ref{thermal_eq} to infer the required viscosity profile
 %  \alpha(z) = \frac{1}{\Gamma(\gamma-1)\beta
 %    q^2}\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left(1 - \theta\right). 
 \end{align}
+
+We remark that for the linear problem  
+any explicit cooling function $\Lambda=\Lambda(\rho,T)$ can be
+mapped to that obtained from the standard function in Eq.
+\ref{beta_cool}. We do this in \S\ref{2dppd} where we adopt a more
+realistic beta cooling prescription for 2D PPDs.  
 
 \subsubsection{Radiative cooling}\label{rad_cool}
 Here we assume energy transfer by radiative diffusion. Then
@@ -216,57 +214,18 @@ and take the constant index $b=2$ as appropriate for {\bf blah},
 but retain the general notation $b$ to keep track of the opacity.   
 %We use radiative cooling when considering 3D PPDs in \S.  
 
-While radiative cooling is arguably more realistic than 
-parametrized beta cooling, it complicates our 
-problem because it generally implies a vertically non-isothermal
-equilibrium disk, and increases the order of the linearized equations. 
-
 In this case we specify a constant viscosity coefficient $\alpha$ and
 solve Eq. \ref{vert_eq1}---\ref{thermal_eq}, together with
 Eq. \ref{rad_cool1}---\ref{rad_cool2}, as a fourth order system of
 ordinary differential equations to obtain $P(z)$, $T(z)$, and hence
 $\rho(z)$. 
 
-%\subsection{Steady states}
-%\subsubsection{Equilibria with beta cooling}   
-%\subsubsection{Equilibria with radiative cooling}
-%If $\mathcal{H}_\mathrm{ext}=0$ then viscosity and cooling
-%cannot be prescribed independently and we have 
-%\begin{align}\label{alpha_beta_relation}
-%  \alpha(z) = \frac{1}{\Gamma(\gamma-1)\beta
-%    q^2}\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left(1 - \theta\right). 
-%\end{align}
-%On the other hand, if a time-independent heat source/sink is invoked
-%($\mathcal{H}_\mathrm{ext}\neq 0$), then we may choose $\alpha, \beta$
-%and $\theta$ separately.   
-
-%\subsection{Parameters}
-%{\bf temporary, maybe move to intro}
-%For the 3D problem it is convenient to parameterize the strength of
-%self-gravity via 
-%\begin{align}
-%  Q_\mathrm{3D} \equiv \frac{\Omega^2}{4\pi G \rho_0}. 
-%\end{align}
-%It is also useful to define the
-%two-dimensional (2D) Toomre parameter 
-%\begin{align}
-%  Q = \frac{c_{s0}\Omega}{\pi G \Sigma}, 
-%\end{align}
-%where $\Sigma = \int_{-\infty}^\infty\rho dz$ is the surface density. 
-
-
-%We are interested in comparing systems with different $\beta$. 
-%However, this gives unphysically large values of $\alpha$ for small
-%values of $\beta$. In order to compare systems with different $\beta$,
-%we adopt the following procedure. We choose parameters  
-%$\theta_\mathrm{min}$ and $\alpha_\mathrm{max}$, and evaluate
-%Eq. \ref{alpha_beta_relation} at the midplane to define a cooling time
-%$\beta_\mathrm{min}$. Then for $\beta\geq\beta_\mathrm{min}$ we use 
-%Eq. \ref{alpha_beta_relation} to set $\alpha$ at fixed
-%$\theta=\theta_\mathrm{min}$; while for $\beta < \beta_\mathrm{min}$
-%we use Eq. \ref{alpha_beta_relation} to set $\theta$ at fixed
-%$\alpha(0)=\alpha_\mathrm{max}$.  That is, we raise the reference
-%temperature (i.e. irradiation levels) when the imposed cooling is too
-%rapid to be sustaind by viscous heating. 
+While radiative cooling is arguably more realistic than
+parametrized beta cooling, it generally implies a vertically
+non-isothermal equilibrium disk, and increases the order of the
+linearized equations. It also only applies to optically-thick 
+disks. It is possible to modify the flux function to account for
+optically-thin disks, but this complication is beyond the scope of
+this work. 
 
 
