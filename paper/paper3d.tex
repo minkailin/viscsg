@@ -99,7 +99,7 @@ compromise of gravitational stability by non-ideal physics:
 \end{inparaenum}
 To this end, we analyse the gravitational stability of accretion disks
 including these effects explicitly.   
-We derive a versatile dispersion relation for linear waves in a 
+We derive a general dispersion relation for linear waves in a 
 self-gravitating, viscous, non-adiabatic disk with internal and
 external heating, and explicit cooling. We 
 consider parameterized cooling functions in two and three dimensions,
@@ -110,9 +110,9 @@ viscosity, and cooling via dust opacity. We find the sole effect of cooling is i
 destabilize a realistic PPD. However, inclusion of viscosity renders
 the disk beyond $\sim 60$AU dynamically unstable on radial 
 lengthscales a few times the local disk thickness. This is coincident 
-with the numerically-established empirical condition for disk fragmentation based on a
+with the empirical condition for disk fragmentation based on a
 maximum sustainable stress. We 
-thus suggest that disk fragmentation can be physically attributed,
+thus suggest that disk fragmentation can be physically attributed, 
 at least partially, to the removal of rotational stabilization against
 self-gravity by turbulence.   
 \end{abstract}
@@ -120,9 +120,9 @@ self-gravity by turbulence.
 
 
 
-\section{Introduction}\label{intro}
-Understanding the gravitational stability (GI) of rotating disks   
-is fundamental to many astrophysical problems. In the context of 
+\section{Introduction}\label{intro} 
+The gravitational instability (GI) of rotating disks   
+plays a fundamental role in many astrophysical problems. In the context of 
 protoplanetary disks (PPDs), GI has two applications. It can 
 provide gravitational torques to transport angular momentum outwards
 and thus enable mass accretion inwards \citep{armitage10,turner14}.   
@@ -205,14 +205,17 @@ qualitative nature of GI, in that its mere presence can
 formally lead to instability.  
 
 \subsection{Viscosity removes rotational support}
-It is well known that viscous, self-gravitating disks can develop 
-GI even when $Q>1$. This is because viscosity compromises rotational
-support against self-gravity for long-wavelength disturbances
-\citep{lynden-bell74,willerding92,gammie96}. A similar effect 
+Viscous disks can develop GI even when $Q>1$. This is because
+viscosity compromises rotational support against self-gravity for
+long-wavelength disturbances
+\citep{lynden-bell74,willerding92,gammie96}. A similar effect  
 occurs in dusty fluids where the required frictional forces are 
-provided by dust-gas drag forces \citep{youdin11,takahashi14}.
+provided by dust-gas drag \citep{ward00, takahashi14}. In fact, this
+is a mechanism for planetesimational formation %frag of dust
+\citep{youdin11}. Then it is not unreasonable to expect an analogous
+fragmentation of gaseous disks due to viscosity.   
 
-Now, gaseous accretion disks are often modeled with a Navier-Stokes viscosity
+For gaseous accretion disks, a Navier-Stokes viscosity is often used to 
 to mimic hydrodynamic or magneto-hydrodynamic turbulence
 \citep{shakura73}. This involves writing the
 kinematic viscosity $\nu$ as  
@@ -224,13 +227,14 @@ coefficient. This
 parameterization can be modified to include more complex dependencies on the
 fluid variables, but Eq. \ref{alpha_param} is the general form. 
 
-How well turbulence can be modeled as an effective, Navier-Stokes
-viscosity is a separate issue \citep{balbus99}. However, it is 
+How well turbulence can be modeled as an effective viscosity is a
+separate issue \citep{balbus99}. However, it is  
 reasonable to assume that turbulence frustates rotational 
 support. (This is, after all, the physical cause for turbulent mass
-accretion.)  
+accretion.) In this work, we use viscosity to represent this physical
+effect.  
 
-Again, viscosity is absent in the Toomre $Q$ parameter. The above
+Viscosity is absent in the standard Toomre parameter. The above
 studies account for viscosity but consider isothermal disks. On the
 other hand, proper inclusion of viscosity should also account for
 viscous heating which, as discussed above, also affect stability. 
@@ -323,7 +327,9 @@ equilibra and the two cooling models
 considered --- parametrized `beta' cooling and radiative diffusion. 
 The linear stability problem is defined in
 \S\ref{linear}. We present results with beta cooling in
-\S\ref{result_2d} and \S\ref{3ddisk} for 2D and 3D disks, respectively. In
+\S\ref{result_2d} and \S\ref{3ddisk} for 2D and 3D disks,
+respectively. %key result: generalized dispersion relation 
+In
 \S\ref{2dppd} we apply linear theory to PPDs with realistic cooling
 models, including radiative diffusion in 3D. We find regions in a
 PPD that cannot sustain steady gravito-turbulence to coincide with

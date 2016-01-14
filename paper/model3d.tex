@@ -162,16 +162,11 @@ is the cooling timescale with $\beta$ a constant input parameter, and
 \begin{align}
   \tirr = \theta T_\mathrm{eq}
 \end{align}
-is a reference temperature field parameterized as a constant fraction
+is a reference temperature field, here parameterized as a constant fraction
 $\theta$ of the equilibrium temperature $T_\mathrm{eq}$. We will refer
 to $\theta$ as the `irradiation level'.  
 %This cooling function restores 
 %the disk temperature to $\tirr$ over a time-scale $\tcool$. 
-
-   Beta cooling is widely applied in 2D and 3D
-numerical simulations of self-gravitating disks \citep{gammie01,
-  rice05,baehr15}. It permits numerical experiments to be carried out in a
-controlled manner as a function of the cooling time $\beta$. 
 
 For models with beta cooling we assume an equilibrium polytropic relation
 \begin{align} 
@@ -193,6 +188,11 @@ viscosity profile,
 %    q^2}\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left(1 - \theta\right). 
 \end{align}
 
+
+ Beta cooling is widely applied in 2D and 3D
+numerical simulations of self-gravitating disks \citep{gammie01,
+  rice05,baehr15}. It permits numerical experiments to be carried out in a
+controlled manner as a function of the cooling time $\beta$. 
 We remark that for the linear problem  
 any explicit cooling function $\Lambda=\Lambda(\rho,T)$ can be
 mapped to that obtained from the standard function in Eq.
@@ -210,22 +210,23 @@ $\kappa_d$ is the (dust) opacity. We adopt
 \begin{align}\label{opacity_law}
   \kappa_d = \kappa_{d0}T^b,
 \end{align}
-and take the constant index $b=2$ as appropriate for {\bf blah},
-but retain the general notation $b$ to keep track of the opacity.   
+and take the constant index $b=2$ as appropriate for the cold outer regions
+of a realistic PPD \citep{bell94}, but retain the general notation $b$
+to keep track of the opacity.    
 %We use radiative cooling when considering 3D PPDs in \S.  
 
-In this case we specify a constant viscosity coefficient $\alpha$ and
+In this case, we specify a constant viscosity coefficient $\alpha$ and
 solve Eq. \ref{vert_eq1}---\ref{thermal_eq}, together with
 Eq. \ref{rad_cool1}---\ref{rad_cool2}, as a fourth order system of
-ordinary differential equations to obtain $P(z)$, $T(z)$, and hence
-$\rho(z)$. 
+ordinary differential equations to obtain equilibrium profiles $P(z)$, $T(z)$, and hence
+$\rho(z)$.  
 
 While radiative cooling is arguably more realistic than
 parametrized beta cooling, it generally implies a vertically
 non-isothermal equilibrium disk, and increases the order of the
-linearized equations. It also only applies to optically-thick 
-disks. It is possible to modify the flux function to account for
-optically-thin disks, but this complication is beyond the scope of
+linearized equations. It formally applies to optically-thick 
+disks, but it is possible to modify the flux function to account
+for optically-thin disks. However, this complication is beyond the scope of
 this work. 
 
 
