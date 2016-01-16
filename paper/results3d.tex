@@ -1,19 +1,23 @@
 \section{Three-dimensional disks with beta cooling}\label{3ddisk}
-We now extend the previous results to 3D disks with vertical
-structure. This is expected to weaken gravitational instabilities by
-`diluting' self-gravity along the vertical direction. It is possible to incorportate
-this effect in the previous 2D framework, but this introduces
-additional parameters. We discuss this in Appendix \ref{3dcorr}. 
-It is more direct to solve the 3D eigenvalue problem to avoid such 
-uncertainties.  
+We briefly confirm the above results in 3D disks with vertical
+structure. This is expected to weaken gravitational instabilities
+because the disk mass is spread across the vertical dimension. It is
+possible to incorportate this effect in the previous 2D framework, but this
+introduces additional parameters. We discuss this in Appendix
+\ref{3dcorr}. It is more direct to solve the 3D eigenvalue problem to
+avoid such uncertainties. 
+%We will find that while softening the
+%self-gravity in 2D can produce qualitatively similar results to 3D, a
+%quantitative match is  
 
-{\bf note: fast beta-cooling in 3D destablizes vertical modes (enables
-convection)}
+%{\bf note: fast beta-cooling in 3D destablizes vertical modes (enables
+%convection)}
 
 %take k>0 wlog
 %consider Gamma=1
 %height s.t. rho(zmax) = 0.05 rho(0) avoid very low densities 
 \subsection{Numerical procedure}
+{\bf move to appendix?}
 We use a pseudo-spectral method to solve the set of ordinary
 differential equations, Eq. \ref{lin_mass}---\ref{lin_gravity}, on 
 the domain $ z\in[0,\zmax]$ with a parity condition at the midplane.
@@ -53,20 +57,25 @@ eigenvalue problem, for which we use the standard matrix package
 LAPACK to solve.  
 
 In the following examples we consider a vertically isothermal disk
-($\Gamma=1$) with a numerical surface such 
-that $\rho(\zmax)=0.05\rho_0$, and use $N=65$. 
+($\Gamma=1$). Then in the viscous case $\alpha$ is vertically
+constant (Eq. \ref{alpha_beta_relation}). We use $N=65$  and apply
+numerical disk surface such that $\rho(\zmax)=0.05\rho_0$.   
 
 %in practice eliminate density with poisson
 \subsection{Inviscid disk}
 
 Fig. \ref{3d_inviscid} show growth rates and the most unstable wavenumber
-obtained for a 3D inviscid disk without irradiation. We also plot 2D
+obtained for a 3D inviscid disk with $\qthree=0.71$
+($Q=2Q_\mathrm{crit}$) and $\theta=0$. We also plot 2D
 results with the 3D correction as described in Appendix
-\ref{3dcorr}. While the chosen value of $H_\mathrm{sg}$ results in a close
-match between 2D and 3D growth rates, the 3D wavenumber is somewhat
-smaller. This reflects self-gravity being weakened in the verical
+\ref{3dcorr}. The (empirically) chosen value of
+$H_\mathrm{sg}=0.64H$ results in a close match between 2D and 3D
+growth rates, but the most unstable wavenumber in 3D is somewhat smaller. 
+This reflects self-gravity being weakened in the verical 
 direction: a larger horizontal scale is required to achieve the same
-strength of self-gravity (and hence growth rate) as the 2D case.  
+strength of self-gravity as the 2D case. Similarly, 
+choosing $H_\mathrm{sg}=0.53H$ matches the optimum wavenumbers, but
+growth rates are over-estimated in 2D.    
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0.23cm
@@ -96,10 +105,19 @@ qualitative behavior as in the full 3D case, but it is clear that a
 single, constant value of $H_\mathrm{sg}$ cannot re-produce 3D growth 
 rates for all $\beta$. 
 This suggests that the exact value of
-$H_\mathrm{sg}$ is problem-dependent (cooling and viscosity), although taking
+$H_\mathrm{sg}$ is problem-dependent, although taking
 $H_\mathrm{sg}\sim O(H)$ should give the correct 3D growth rate within
-a factor of two. In this respect it is easier to
-directly solve the 3D problem.  
+a factor of two. 
+%A smaller $H_\mathrm{sg}$ is needed with faster 
+%cooling (larger viscosity) and vice versa. 
+%because most unstable wavenumber is smaller with high viscosity
+
+%smaller scales with increasing beta 
+
+%, because viscosity makes the
+%disk behave more two-dimensional.   
+ 
+%by eliminating vertical velocity gradients.   
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.cm 0.23cm

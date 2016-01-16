@@ -49,7 +49,7 @@ The linearized continuity, momentum and energy equations are
   &\delta\Phi^{\prime\prime} - k^2\delta\Phi =
   \frac{\Omega^2}{Q_\mathrm{3D}}\left(\frac{\delta\rho}{\rho_0}\right)\label{lin_gravity},  
 \end{align}
-with
+where $^\prime$ denotes $d/dz$. The perturbed viscous forces are 
 \begin{align}
   \delta F_x =& \nu \left[\delta v_x^{\prime\prime} + 
     \left(\ln{\rho\nu}\right)^\prime \delta v_x^\prime - 
@@ -66,7 +66,7 @@ with
   & +\nu_b\left[\delta v_z^{\prime\prime} + \left(\ln{\rho\nu_b}\right)^\prime\delta v_z^\prime\right]\notag\\
   & + \ii \nu k  \left[\frac{1}{3}\delta v_x^\prime -  
     \frac{2}{3}\left(\ln{\rho\nu}\right)^\prime\delta v_x\right]\notag\\
-  &+\ii \nu_b k \left[\delta v_x^\prime + \left(\ln{\rho\nu_b}\right)^\prime\delta v_x\right],\\
+  &+\ii \nu_b k \left[\delta v_x^\prime + \left(\ln{\rho\nu_b}\right)^\prime\delta v_x\right],
 %  &\delta f_x = -\frac{4}{3} \nu k^2\Sigma \delta v_x,\\
 %  &\delta f_y = -\ii q k \Omega \delta(\nu\Sigma) - \nu k^2
 %  \Sigma\delta v_y,\\
@@ -79,12 +79,15 @@ with
 %  &\delta Q_\mathrm{visc} = \nu
 %  \left(q\Omega\right)^2\delta\Sigma - 2\ii\nu q k \Omega\Sigma\delta
 %  v_y. 
+\end{align}
+and the perturbed viscous heating is given by 
+\begin{align}
   \frac{\delta\mathcal{H}_\mathrm{visc}}{\rho}=& \nu (q\Omega)^2
   \delta\ln{\rho\nu} - 2\ii\nu k q \Omega \delta v_y,\\
   \delta\ln{\rho\nu} =& (1+\mu)\frac{\delta\rho}{\rho} +
-  \frac{\lambda}{c_s^2}\frac{\delta P}{\rho}, \label{linear_beta_cool}
+  \frac{\lambda}{c_s^2}\frac{\delta P}{\rho}. \label{linear_beta_cool}
 \end{align}
-where $^\prime$ denotes $d/dz$, and the 3D self-gravity parameter is
+In Eq. \ref{lin_gravity}, the 3D self-gravity parameter is
 \begin{align}
   Q_\mathrm{3D} \equiv \frac{\Omega^2}{4\pi G \rho_0}. 
 \end{align}
