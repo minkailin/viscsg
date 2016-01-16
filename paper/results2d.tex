@@ -1,13 +1,10 @@
 \section{Two-dimensional disks with beta cooling}\label{result_2d}
 We begin in the 2D limit with beta cooling  to make connection 
 with previous studies. The disk
-material assumed to be confined to the midplane so $\delta v_z=0$. 
-We make the replacements 
-$\rho \to \Sigma$ and $P\to\Pi$, the vertically-integrated
+material is assumed to be confined to the midplane so $\delta v_z=0$. 
+We make the replacement  
+$\rho \to \Sigma$, re-interpret $P$ as the vertically-integrated
 pressure, and set $\Gamma=1$ without loss of generality. 
-%The perturbations $\delta\Sigma$, 
-%$\delta\Pi$, $\delta v_x$ and $\delta v_y$ have no vertical
-%dependence and $\delta v_z=0$. 
 The gravitational potential perturbation remains 3D and its midplane
 value is given by    
 \begin{align}
@@ -15,9 +12,8 @@ value is given by
 \end{align}
 \citep{shu70}.
  
-We obtain from the linearized equations 
-an algebraic dispersion relation $s = s(k)$. It is simplest
-to write this  
+The linearized equations yield an algebraic dispersion relation $s =
+s(k)$. We write this  
 in terms of the dimensionless growth rate $S = s/\Omega$ and
 wavenumber $K=kH = k c_{s0}/\Omega$ as
 \begin{align}\label{thindisk}
@@ -27,12 +23,15 @@ where the functions $A,B,C,D$ are given in Appendix \ref{2ddisp}.
 
 \subsection{Inviscid limit}\label{2d_inviscid}
 Here we neglect viscosity by setting 
-$\alpha = \alpha_b = 0$. This implies an external,
-time-independent heat source must be invoked to balance the imposed
-cooling rate in equilibrium ($\mathcal{H}_\mathrm{ext}\neq 0$). Alternatively, we are assuming 
-viscosity is only important for setting up thermal equilibrium, and
-can be neglected for the pertubations. This eliminates viscous GI and 
-allows us to quantify the \emph{sole} effect of cooling.   
+$\alpha = \alpha_b = 0$. This eliminates viscous GI and 
+allows us to quantify the \emph{sole} effect of cooling on the
+perturbations. An external, time-independent heat source should be
+invoked to balance the imposed cooling to allow an equilibrium to be
+defined ($\mathcal{H}_\mathrm{ext}\neq 0$). Alternatively, we are
+assuming viscosity only provides a background heating and does not
+play an active role in the perturbed state. %may or may not be true in a real
+                                %disk because we are using viscosity
+                                %as proxy for turbulence
 
 Eq. \ref{thindisk} simplifies to  
 \begin{align}\label{inviscid}
@@ -42,21 +41,23 @@ Eq. \ref{thindisk} simplifies to
   S^2 = \frac{2|K|}{Q} - 2(2-q) - \left(\frac{\theta + \beta \gamma
     S}{1+\beta S}\right)K^2, 
 \end{align}
-similar to the classic Lin-Shu dispersion relation. The first term on
+similar to the classic Lin-Shu dispersion relation, which may be
+obtained by taking the limit $|\beta S|\to\infty$. 
+The first term on
 the right-hand-side represents destabilization by self-gravity; 
 the second and third terms represent stabilization by rotation and
-pressure, respectively. The imposed cooling term only affects the
+pressure, respectively. The imposed cooling only affects the
 pressure response. 
 
-Eq. \ref{inviscid} is a cubic equation in $S$. Applying the
-Routh-Hurwitz criterion, we find that stability is ensured if 
+Eq. \ref{inviscid} is a cubic equation in $S$. The 
+Routh-Hurwitz criteria imply that stability is ensured if 
 \begin{align}
   \gamma > \theta \quad \text{and} \quad 
   Q > \frac{1}{\sqrt{2\theta(2-q)}} 
 \end{align}
-are both satisfied. Thus, the question of stability does not depend on
-the cooling rate $\beta$ (provided it is non-zero and finite). The
-system becomes more unstable with decreasing $\theta$.   
+are both satisfied. Thus, whether or not the system is stable is
+independent of the cooling rate $\beta$ (provided it is non-zero and
+finite). The system becomes more unstable with decreasing $\theta$.   
 
 Consider the most unstable wavenumber $|K_*|$ at which $\p S/\p |K| =
 0$ and $S = 
@@ -65,6 +66,8 @@ S_*$. By differentiating Eq. \ref{inviscid}, we obtain
 %  |K_*| = \frac{1}{\gamma \qtwo} \left(1 + \frac{1}{\beta S_*}\right). 
   |K_*| = \frac{1+\beta S_*}{Q\left(\theta + \gamma \beta S_*\right)}
 \end{align}
+%Eq. \ref{kstar} describes how the most unstable  mode is affected by
+%cooling ($\beta$) and external heating ($\theta$). 
 Inserting this into Eq. \ref{inviscid}, we find the maximum growth
 rate satisfies
 \begin{align}\label{inviscid_max}
@@ -75,39 +78,18 @@ rate satisfies
 \end{align}
 General solutions to this cubic for $S_*$ are unwieldy, but simple
 results may be obtained in special cases, discussed next. 
-%We plot examples of the maximimum growth rate as a function of cooling
-%times in Fig. \ref{2d_inviscid}. General expressions for the solution
-%of Eq. \ref{inviscid_max} are unwieldy, but simple results may 
-%be obtained for special cases, as discussed below.  
-%\begin{figure}
-%  \includegraphics[width=\linewidth,clip=true,trim=0cm 0.cm 0cm 0cm]{figures/inviscsg}
-%  \caption{Maximum growth rate $s$ in the inviscid limit,
-%    obtained from Eq. \ref{inviscid}, as a function of the cooling
-%    time $\beta$ for $Q/Q_\mathrm{crit}=1,\,2,\,10$, where $\qcrit$ is
-%    defined in Eq. \ref{qcrit_def} as 
-%    the value of $Q$ such that the disk is marginally stable in the
-%    adiabatic limit. 
-%    \label{2d_inviscid}}
-%\end{figure}
 
-\subsubsection{$\theta = 0$ and $Q=Q_\mathrm{crit}$}  
-Beta cooling with $\theta=0$ is the standard choice for numerical
-simulations of self-gravitating disks \citep{gammie01}. There, 
-a steady state corresponds to the imposed cooling entirely balanced by heat generated through 
-gravito-turbulence. In the present framework, this gravito-turbulence 
-is assumed to provide a constant 
-background heating ($\mathcal{H}_\mathrm{ext}$) and does
-not enter the linearized equations. Cooling, however, is still imposed in the perturbed state. 
-For $\theta=0$ the system is unconditionally unstable for
-finite $Q$. The most unstable wavelength decreases with decreasing
-$\beta$. The $\beta\to0$ limit corresponds to a pressureless disk (not
-merely isothermal).   
 
-% it is always
-%possible to find a sufficiently small scale such that pressure effects
-%are   
+\subsubsection{$\theta = 0$}  
+%Beta cooling with $\theta=0$ is commonly employed in 
+%numerical simulations of self-gravitating disks \citep{gammie01}. 
+For beta cooling with $\theta=0$, the disk is unconditionally
+unstable for finite $Q$. The most unstable wavelength decreases with
+decreasing $\beta$. The $\beta\to0$ limit corresponds to a
+pressureless disk (not merely isothermal).   
 
-Specifically, let us consider a disk with 
+
+Let us consider a disk with 
 \begin{align}\label{qcrit_def}
   \qtwo = \frac{1}{\sqrt{2\gamma(2-q)}}\equiv Q_{\mathrm{crit}},
 \end{align} 
@@ -118,7 +100,7 @@ $\theta=0$, we find
 %In this case the coefficient of 
 %$S_*$ in Eq. \ref{inviscid_max} vanish, so that  
 \begin{align}\label{sstar}
-  S_*^3 = \left(\frac{1}{\gamma Q_\mathrm{crit}^2 \beta}\right). 
+  S_*^3 = \frac{1}{\gamma Q_\mathrm{crit}^2 \beta}. 
 \end{align}
 The maximum growth rate, $S_*\propto \beta^{-1/3}$, smoothly
 increases with decreasing $\beta$. Instability does not require the
@@ -126,7 +108,7 @@ cooling time to be below some critical value.
 
 Nevertheless, we can define a characteristic cooling
 time $\beta_*$ as that which removes pressure support against
-self-gravity over the only natural lengthscale in the problem, $H$. We
+self-gravity over the natural lengthscale in the problem, $H$. We
 thus set $|K_*|=1$ and find, for the Keplerian disk, 
 
 \begin{align}\label{betastar}
@@ -136,10 +118,13 @@ thus set $|K_*|=1$ and find, for the Keplerian disk,
 %previously reported values of $\beta_c$ 
 %for which fragmentation
 %occurs.
-It is interesting to note that this $\beta_*$ is similar to previously reported 
-values of the cooling times, $\beta_c$, below which fragmentation
-occurs on a dynamical timescale. We compare these in Table
-\ref{bstar_compare}, showing rough agreement. 
+This $\beta_*$ is similar to values of the cooling times, $\beta_\mathrm{c}$,
+below which fragmentation occur on dynamical timescales in
+numerical simulations of self-gravitating disks
+\citep{gammie01,rice05,rice11}, which employ the same beta cooling prescription.    
+We compare these in Table \ref{bstar_compare}, showing rough
+agreement; and further discuss the potential significance of this result in
+\S\ref{prev_works}. 
 
 %{\bf brief physical interpretation. gravito-turbulent heating is a
 %  constant background heating - it does not affect perturbations about
@@ -172,7 +157,7 @@ $2$    &  3.75 & 3 & \cite{gammie01}
 \enddata
 \end{deluxetable}
 
-\subsubsection{Passive disk with $\theta = 1$}
+\subsubsection{$\theta = 1$}
 Beta cooling with $\theta=1$ corresponds to 
 `thermal-relaxation' in a strictly inviscid disk: the temperature is restored to its initial
 value over the cooling time \citep{lin15,mohandas15}. In this case 
@@ -258,21 +243,21 @@ This exercise yields
 %gravito-viscous instability 
 
 As a numerical example, we consider a model with $\alpha_b=0$ and
-$\alpha=\alpha(\beta)$ given by thermal equilibrium,
-Eq. \ref{alpha_beta_relation}. Furthermore, we set
+$\alpha=\alpha(\beta)$ given by thermal equilibrium (
+Eq. \ref{alpha_beta_relation}). Furthermore, we relate 
 \begin{align}
   Q = \frac{Q_\mathrm{crit}}{\sqrt{\alpha}},\label{Qalpha}
 \end{align}
-to mimic a basic state maintained by gravito-turbulence where one can 
-expect the dimensionless stress $\alpha \sim Q^{-2}$ \citep{lin87}.  
+to mimic a basic state maintained by gravito-turbulence where one
+might expect the dimensionless stress $\alpha \sim Q^{-2}$
+\citep{lin87}.   
 
 Fig. \ref{gammie_rate_plot} show growth rates as a function of the
 wavenumber $k$ obtained from the dispersion relation
 Eq. \ref{thindisk}. The limiting behavior for small/large $K$ are
 well-captured by Eq. \ref{gammie_smallk} and
 \ref{gammie_bigk}. Comparing the two panels shows that increasing the
-irradiation level ($\theta$) surpress  
-small-scale perturbations.    
+irradiation level ($\theta$) surpresses small-scale perturbations.     
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0.4cm
@@ -289,7 +274,7 @@ small-scale perturbations.
 \end{figure}
 
 Fig. \ref{gammie_maxrate_plot} show the maximum growth rate as a
-function of the cooling time $\beta$ for the case $\theta=0$. 
+function of the cooling time $\beta$ for $\theta=0$. 
 %We set $\alpha_b=\theta=0$ and 
 %consider three cases (top to bottom panels): 
 %\begin{enumerate}[(a)]
@@ -304,57 +289,62 @@ function of the cooling time $\beta$ for the case $\theta=0$.
 %    \label{gvisc}
 %\end{enumerate} 
 There is good agreement between numerical results and
-Eq. \ref{gammie_maxrate_simple} for $\beta \gtrsim 1$. The assumption
-of $|\beta S|\ll 1$ is not well satisfied at smaller $\beta$ which
-explains the mismatch there. 
-
-Eq. \ref{gammie_maxrate_simple} gives the limiting behavior (for
-negligible $\theta$) as 
+Eq. \ref{gammie_maxrate_simple} for $\beta \gtrsim 1$. 
+%The assumption
+%of $|\beta S|\ll 1$ is not well satisfied at smaller $\beta$ which
+%explains the mismatch there. 
+Eq. \ref{gammie_maxrate_simple} gives the
+limiting behavior for this case as   
 \begin{align*}
   S_*\propto \begin{cases}
-    \frac{\alpha^{1/4}}{Q\beta^{3/4}} \propto \beta^{-3/2} &  \beta
-    \gg \alpha, \\
-    \frac{1}{Q\sqrt{\alpha}}  \propto \mathrm{const.} & \beta \ll \alpha,
+%    \frac{\alpha^{1/4}}{Q\beta^{3/4}} \propto \beta^{-3/2} 
+    \alpha^{1/4}\beta^{-3/4}Q^{-1}\propto \beta^{-3/2} 
+    &  \beta \gg \alpha, \\
+%    \frac{1}{Q\sqrt{\alpha}}  
+    \alpha^{-1/2}Q^{-1} = \mathrm{const.} & \beta \ll \alpha,    
   \end{cases}
 \end{align*}
-where the second proportionality applies Eq. \ref{alpha_beta_relation}
-and \ref{Qalpha}. The disk is formally unstable for all $\beta$, but
+where we have applied Eq. \ref{alpha_beta_relation}
+and \ref{Qalpha} to obtain the final result. 
+The disk is formally unstable for all $\beta$, but
 the growth timescales are long ($>10$ orbits) for $\beta \gtrsim
-20$. This region is marked by the vertical dashed-dotted lines in
+20$. This region is marked by the vertical dashed-dotted line in
 Fig. \ref{gammie_maxrate_plot}.  
 
+%As $\beta\to 0$ the required viscous heating to set up an equilibrium
+%state diverges ($\alpha\to\infty$). 
+%In the present model the increased
+%viscous damping, which is stabilizing, is balanced by the decreasing
+%(and hence destablizing) $Q$ required to achieve large $\alpha$
+%(Eq. \ref{Qalpha}). 
 
-As $\beta\to 0$ the required viscous heating to set up an equilibrium
-state diverges ($\alpha\to\infty$). 
-In the present model the increased
-viscous damping, which is stabilizing, is balanced by the decreasing
-(and hence destablizing) $Q$ required to achieve large $\alpha$
-(Eq. \ref{Qalpha}). 
-
-Physically, however, we expect $\alpha < 1$. In fact, numerical
-simulations of self-gravitating disks show there is a maximum $\alpha$
-($\sim 0.06$) that can be sustained before fragmentation
-\citep{rice11}. We can interpret this result in our linear framework.
+{\bf maybe move following to discussion}
+Numerical simulations of self-gravitating disks show there is a
+maximum $\alpha$ ($\sim 0.06$) that can be sustained before
+fragmentation \citep{rice11}. We can interpret this result in our
+linear framework. 
 %We can use our case (\ref{gvisc}) to interpret this
 Suppose it is possible to balance rapid cooling ($\beta\lesssim1$) 
 by generating a large gravito-turbulent heating rate
 ($\alpha\gtrsim 1$) through a small $Q$. Fig. \ref{gammie_maxrate_plot} 
-shows that such a system is dynamically unstable with 
-growth rate $s = O(\Omega)$.  Thus we do not expect rapidly-cooled,
-self-gravitating steady disks to exist for extended periods of
-time. This is consistent with previous numerical simulations performed
-by \cite{lodato05}.   
-
+shows that such a system would be dynamically unstable with 
+growth rate $s = O(\Omega)$. This due to the direct effect of viscous 
+stress promoting instability, rather than cooling. Thus, we do not expect rapidly-cooled, 
+and hence highly turbulent, self-gravitating disks to persist beyond
+dynamical timescales. This is consistent with previous numerical
+simulations performed by \cite{lodato05}. 
 %Case (\ref{gvisc}) is consistent with 
-
 \begin{figure}
 %  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0cm
 %    0.0cm]{figures/result2d_fixalpha}\\
 %  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0cm
 %    0.0cm]{figures/result2d_fixQ}\\
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0.cm
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0.cm
     0.0cm]{figures/result2d_gvisc}
-  \caption{Growth rates maximized over wavenumber as a function of cooling time for the
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0.cm
+    1.0cm]{figures/result2d_gvisc_kmax}
+  \caption{Growth rates (top) at the optimal wavenumber (bottom) for
+    viscous GI as a function of cooling time for the
     case shown in Fig. \ref{gammie_rate_plot}. Solid lines are
     computed from the dispersion relation (Eq. \ref{thindisk}), and the dotted line is an
     estimate from Eq. \ref{gammie_maxrate_simple}. The vertical dashed

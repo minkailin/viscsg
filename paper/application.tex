@@ -1,12 +1,12 @@
 \section{Application to protoplanetary disks}\label{2dppd}
-We consider the stability of realistic, self-gravitating
+We now consider the stability of realistic, self-gravitating
 protoplanetary disks. Specifically, we will apply our linear framework
 to the gravito-turbulent disk model recently developed by 
 \cite{rafikov15}. This 2D, Keplerian disk orbits a Solar mass star and 
 is defined by the following parameters, 
 
 \begin{itemize}
-  \item $\dot{M}$, the global radial accretion rate;
+  \item $\dot{M}$, the global radial mass accretion rate;
   \item $Q_0$, the value of the 2D Toomre parameter where the disk is
     gravito-turbulent;
   \item $T_\mathrm{irr}$, the irradiation or floor temperature;
@@ -17,9 +17,9 @@ These are used in the statements of thermal equilibrium, mass and
 angular momentum conservation, together with an opacity law, 
 to construct a global disk model with surface density $\Sigma(R)$ and
 temperature $T(R)$ where $R$ is the global cylindrical radius from the
-star. This gives the $Q(R)$ value required for input
-into our linear framework. We derive other dimensionless
-parameters below. 
+star. \citep[See][for details.]{rafikov15} This gives the $Q(R)$
+value required for input into our linear framework. We derive other
+dimensionless parameters below. 
 
 Note that we are considering the local stability at each radius. We
 are thus neglecting the slow, background viscous radial flow in the
@@ -98,7 +98,6 @@ cooling has  $\theta=0$, but realistic beta cooling has $\theta\neq
 0$. However, fully-irradiated disks with $T=T_\mathrm{irr}$ can be
 modeled by simple beta cooling since in both cases $\theta=1$.  
 
-
 %{\bf caution in applying numerical results obtained from beta cooling to
 %systems modeled with real cooling. above example shows that to model
 %real, non-irradiated disk with beta cooling actually requires irradiation in
@@ -116,13 +115,25 @@ We note that for the adopted opacity law, Eq. \ref{opacity_law},
 implying $5/6<\theta<3/2$. 
 %For a non-irradiated disk, $T_\mathrm{irr}=0$, $\theta\to5/6$ as
 %$\tau\to0$ and $\theta\to3/2$ as $\tau\to\infty$.  
-From our discussion in \S\ref{2d_inviscid}, we conclude that this
-system cannot be unstable without
+From the results in \S\ref{2d_inviscid}, we conclude that this
+system cannot be unstable anywhere without
 viscous effects acting on the perturbations if 
 \begin{align}
   \gamma > \frac{3}{2} \quad \text{and} \quad Q > \sqrt{\frac{6}{5}} \label{ppd_invisc_cond}
 \end{align} 
 are both satisfied.  
+
+A PPD becomes optically-thin ($\tau\to 0$) at
+large radii, and $\theta$ decreases. The first inequality in
+Eq. \ref{ppd_invisc_cond} then relaxes to $\gamma > 5/6$ in the
+outer disk, which is always true. On the other hand, gravito-turbulent
+simulations typically show $Q\simeq 1.5$---2, which satisfies the
+second critrion. This means that in the
+outer regions of a realistic PPD, cooling itself cannot cause instability. 
+
+%conditions are likely satisfied in the outer disk 
+%Condition \ref{ppd_invisc_cond} must be violated in order for cooling
+%to destablize 
 
 \subsection{Example 2D calculation}\label{pp2d_example}
 We consider a disk with $\dot{M} = 10^{-6}M_\sun\,\yr^{-1}$, $Q_0=1.5$, 
@@ -130,43 +141,49 @@ $\tirr=10\mathrm{K}$, and $\alpha_m=10^{-3}$. For the adopted opacity
 law we follow \citeauthor{rafikov15} and take $\kappa_{d0} =
 5\times10^{-4}\mathrm{cm}^2\,\mathrm{g}^{-1}\,\mathrm{K}^{-2}$. Here we use
 $\gamma=1.6$ so the inviscid stability condition
-(Eq. \ref{ppd_invisc_cond}) is satisfied. 
-%{\bf actually this opacity law only valid $>30$au for this disk}
+(Eq. \ref{ppd_invisc_cond}) is satisfied. Then cooling alone cannot
+destabilize the disk. Fig. \ref{rafikov_model} shows the equilirbium
+disk profile in terms of $Q$, $\alpha$, $\beta$, and $\theta$.  
+These are set as input to the 2D dispersion relation.  
 
-Fig. \ref{rafikov_model} shows the equilirbium disk profile in terms
-of $Q$, $\alpha$, $\beta$, and $\theta$. These are set as input to the
-2D dispersion relation to yield a growth timescale, in units of the
-local orbital period, shown in Fig. \ref{rafikov_growth}. We also plot
-an analytic estimate based on Eq. \ref{gammie_smallk} (instead of
-Eq. \ref{gammie_maxrate_simple} since here $\theta\sim 1$) which gives 
+Fig. \ref{rafikov_growth} show growth timescales and
+optimum wavenumbers for viscous GI in this disk model.  
+We also plot analytic estimates based on Eq. \ref{gammie_smallk} (instead of
+Eq. \ref{gammie_maxrate_simple} since here $\theta\sim 1$) 
+which gives the optimum wavenumber as
 \begin{align}
-  S = \frac{27\alpha}{16\theta^3Q^4}, 
+  |K| = \frac{3}{2\theta Q},
 \end{align}
-and the optimum wavenumber is
-\begin{align}
-  |K| = \frac{3}{2\theta Q}.
+with growth rate
+\begin{align} 
+  S = \frac{27\alpha}{16\theta^3Q^4}. 
 \end{align}
-%For the
-%stability calculation we use $\mu=-1, \lambda=0$ for the viscosity
-%prescription.  
+These are similar to the isothermal results of
+\citet[][their Eq. 19 and 21, respectively]{sterzik95}, and identical if one
+takes $\theta=1$. 
+ 
+The most unstable wavelength is a few times the disk thickness. The
+increase in $|K|$ from $\sim 10\mathrm{AU}$ to $\sim 20\mathrm{AU}$ is
+due to the decrease in $Q$; while that from $\sim 60\mathrm{AU}$ to
+$\sim 100\mathrm{AU}$ occurs as the disk transitions from optically
+thick to optically thin regimes. The mismatch at large distances is
+not surprising since the above expressions assume $|K|\ll
+1$. Nevertheless the analytic estimates reproduce the correct
+behavior.  
 
-The disk becomes dynamically unstable with growth timescales $\lesssim
-10$ orbits for $R\gtrsim60$AU. Coincidentally, beyond this radius
+The disk is subject to viscous GI on dynamical timescales ($\lesssim
+10$ orbits) for $R\gtrsim60$AU. Coincidentally, beyond this radius
 $\alpha\gtrsim 0.1$ and $\beta\lesssim 3$, which is often quoted as 
 criteria for disk fragmentation \citep[e.g.][]{rafikov15}. 
-%{\bf despite apply beta cooling results to realistic cooling disks}
-Our result suggest an alternative interpretation of disk fragmentation
-is where the gravito-turbulent state becomes dynamically unstable due to
-both viscosity and self-gravity. 
+This suggests that fragmentation in the outer parts of a realistic PPD
+occurs is physically due to large turbulent stresses. 
 
-Fig. \ref{rafikov_model} shows that the most unstable wavelength is a
-few times the disk thickness. The increase in $|K|$ from $\sim
-10\mathrm{AU}$ to $\sim 20\mathrm{AU}$ is due to the decrease in $Q$;
-while that from $\sim 60\mathrm{AU}$ to $\sim 100\mathrm{AU}$ occurs
-as the disk transitions from optically thick to optically thin
-regimes. The mismatch at large distances is not surprising since the
-above expressions assume $|K|\ll 1$. Nevertheless the analytic
-estimates reproduce the correct behavior. 
+%{\bf despite apply beta cooling results to realistic cooling disks}
+%Our result suggest an alternative interpretation of disk fragmentation
+%is where the gravito-turbulent state becomes dynamically unstable due to
+%both viscosity and self-gravity. 
+
+
 
 %{\bf note: disk might be stablized by extremely large alpha at large
 %  distances but `turbulent' framework no longer valid }
@@ -197,7 +214,7 @@ estimates reproduce the correct behavior.
 \end{figure}
 
 
-\subsection{3D PPD}
+\subsection{3D PPD with radiative diffusion}
 %{\bf radiative diffusion only for optically thick disk. how to connect
 %to optically thin regions?}
 We briefly consider 3D PPDs subject to explicit radiative diffusion 
