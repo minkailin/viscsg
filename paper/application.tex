@@ -1,7 +1,8 @@
 \section{Application to protoplanetary disks}\label{2dppd}
 We now apply our linear framework to assess the stability of realistic 
 protoplanetary disks. We consider the gravito-turbulent disk models recently
-developed by \cite{rafikov15}. This 2D, Keplerian disk orbits a Solar 
+developed by \cite[][hereafter \citetalias{rafikov15}]{rafikov15}. 
+This 2D, Keplerian disk orbits a Solar 
 mass star and is defined by the following parameters, 
 
 \begin{itemize}
@@ -16,7 +17,7 @@ These are used in the statements of thermal equilibrium, mass and
 angular momentum conservation, together with an opacity law, 
 to construct a global disk model with surface density $\Sigma(R)$ and
 temperature $T(R)$ where $R$ is the global cylindrical radius from the
-star. \citep[See][for details.]{rafikov15} This gives the $Q(R)$
+star. \citepalias[See][for details.]{rafikov15} This gives the $Q(R)$
 value required for input into our linear framework. We derive other
 dimensionless parameters below. 
 
@@ -39,7 +40,7 @@ approximately, $\nu\Sigma = \dot{M}/3\pi$. Hence
 which sets the viscosity coefficient to be used at each radius. 
 
 \subsection{PPD cooling}
-Energy loss in \citeauthor{rafikov15}'s model is given by 
+Energy loss in \citetalias{rafikov15}'s model is given by 
 \begin{align}\label{real_cool}
   \Lambda = \frac{2\sigma}{f(\tau)}\left(T^4 - T_\mathrm{irr}^4\right)
 \end{align}
@@ -108,28 +109,26 @@ viscous effects acting on the perturbations if
 are both satisfied.  
 
 PPDs become optically-thin ($\tau\to 0$) with 
-increasing distance from its host star. Then $\theta$ decreases, and
+increasing distance from the star. Then $\theta$ decreases, and
 the first inequality in Eq. \ref{ppd_invisc_cond} relaxes to $\gamma >
-5/6$ in the (gravito-turbulent) outer disk, which is always satisfied.  
+5/6$ in the outer disk, which is always satisfied.  
 On the other hand, numerical simulations of gravito-turbulence
 show that the second inequality is generally satisfied \citep{rice11}.  
-Taken together, this means that the outer regions of a realistic PPD,
-cooling itself cannot cause instability.  
-
-%conditions are likely satisfied in the outer disk 
-%Condition \ref{ppd_invisc_cond} must be violated in order for cooling
-%to destablize 
+Taken together, this means that in the outer regions of a realistic PPD,
+cooling itself cannot cause instability. 
 
 \subsection{Example 2D calculation}\label{pp2d_example}
-We consider a disk with $\dot{M} = 10^{-6}M_\sun\,\yr^{-1}$, $Q_0=1.5$, 
-$\tirr=10\mathrm{K}$, and $\alpha_m=10^{-3}$. For the adopted opacity
-law we follow \citeauthor{rafikov15} and take $\kappa_{d0} =
-5\times10^{-4}\mathrm{cm}^2\,\mathrm{g}^{-1}\,\mathrm{K}^{-2}$. Here we use
+We consider a model with $\dot{M} = 10^{-6}M_\sun\,\yr^{-1}$, $Q_0=1.5$, 
+$\tirr=10\mathrm{K}$, and $\alpha_m=10^{-3}$. 
+We adopt the opacity scale $\kappa_{d0} =
+5\times10^{-4}\mathrm{cm}^2\,\mathrm{g}^{-1}\,\mathrm{K}^{-2}$  as in
+\citetalias{rafikov15}. We use 
 $\gamma=1.6$ so the inviscid stability condition
 (Eq. \ref{ppd_invisc_cond}) is satisfied
 everywhere. Fig. \ref{rafikov_model} shows the equilirbium 
 disk profile in terms of $Q$, $\alpha$, $\beta$, and $\theta$.  
-These are set as input to the 2D dispersion relation.  
+These are set as input to the 2D dispersion relation
+(Eq. \ref{thindisk}).    
 
 Fig. \ref{rafikov_growth} show growth timescales and
 optimum wavenumbers for viscous GI in this disk model.  
@@ -150,8 +149,9 @@ takes $\theta=1$.
 The most unstable wavelength is a few times the disk thickness. The
 increase in $|K|$ from $\sim 10\mathrm{AU}$ to $\sim 20\mathrm{AU}$ is
 due to the decrease in $Q$; while that from $\sim 60\mathrm{AU}$ to
-$\sim 100\mathrm{AU}$ occurs as the disk transitions from optically
-thick to optically thin regimes. The mismatch at large distances is
+$\sim 100\mathrm{AU}$ occurs as the disk transitions from
+optically-thick to optically-thin regimes. The mismatch at large
+distances is  
 not surprising since the above expressions assume $|K|\ll
 1$. Nevertheless the analytic estimates reproduce the correct
 behavior.  
@@ -167,9 +167,6 @@ occurs is physically due to large turbulent stresses.
 %Our result suggest an alternative interpretation of disk fragmentation
 %is where the gravito-turbulent state becomes dynamically unstable due to
 %both viscosity and self-gravity. 
-
-
-
 %{\bf note: disk might be stablized by extremely large alpha at large
 %  distances but `turbulent' framework no longer valid }
 
@@ -201,9 +198,10 @@ occurs is physically due to large turbulent stresses.
 
 \subsection{3D PPD with radiative diffusion}
 %{\bf radiative diffusion only for optically thick disk. how to connect
-%to optically thin regions?}
-We briefly consider 3D PPDs subject to explicit radiative diffusion 
-(\S\ref{rad_cool}). Given the $\alpha(R)$ and $Q(R)$ profiles obtained
+%to optically thin regions?} 
+We briefly consider 3D PPDs with explicit radiative diffusion
+(\S\ref{rad_cool}). 
+Given the $\alpha(R)$ and $Q(R)$ profiles obtained
 from the 2D model above, at each radius $R$ we obtain the vertical
 structure from Eq. \ref{vert_eq1}---\ref{thermal_eq}, with 
 Eq. \ref{rad_cool1}---\ref{rad_cool2} for the radiative flux.
@@ -214,19 +212,17 @@ irradiation ($T_\mathrm{irr}=0$), and a slightly smaller vertical
 domain with $\rho(\zmax)=0.1\rho_0$.  %to avoid very low density 
 
 Fig. \ref{rafikov_growth3d} show the growth rates and most unstable
-wavenumber for $R\in[10,100]$AU. We also plot the corresponding 2D
+wavenumber for $R\in[10,100]$AU; along with corresponding 2D 
 results with softened self-gravity. There is a close match for
 $R\lesssim60$AU where the disk is optically thick ($\tau\gtrsim
-1$) and both models apply. However, beyond $60$AU where the disk is
-optically thin, radiative diffusion (the 3D curve) does not apply and
-under-estimates the growth rates. Nevertheless, the comparison shows
-that the transition radius $R\sim60$AU can be calculated within the 2D
-framework. This is not surprising since the instability is 
-fundamentally driven by viscous and self-gravity forces in the
-momentum equations, not the energy equation. 
-
-%the instability is due to viscosity/gravity in momenta equation so
-%details of energy eq doesn't matter 
+1$) and both models apply. However, beyond $60$AU where the disk
+becomes optically-thin, radiative diffusion (the 3D curve) is not
+valid and under-estimates the growth rates. Nevertheless, the
+comparison shows that the transition radius $R_t\sim60$AU can be
+calculated within the 2D framework. 
+%This is not surprising since the
+%instability is fundamentally driven by viscous and self-gravity forces in the
+%momentum equations, not the energy equation. 
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0cm
@@ -235,22 +231,14 @@ momentum equations, not the energy equation.
     0.8cm]{figures/ppd_3d_maxk}
   \caption{Growth timescales (top) of the most unstable
     wavenumber (bottom) for viscous, 
-    self-gravitating unstable modes. The black curves are obtained
-    from the 3D eigenvalue problem with radiative diffusion, while the
-    green curves are 
+    self-gravitating modes. The black curves are obtained
+    from the 3D eigenvalue problem with radiative diffusion,
+    applicable to optically-thick regions ($R\lesssim 60$AU); 
+    while the green curves are obtained from the 2D corresponding
+    model, which is applicable to both optically-thick and
+    optically-thin regimes.  
     \label{rafikov_growth3d}}
 \end{figure}
 
 
 
-
-
-%3d rad diffusion is mathematically different problem (more
-%derivatives) so worth considering briefly
-%optically thin cooling in 3D is the same problem as before
-
-%use 2D model as midplane values to get 3D structure assuming radiative
-%diffusion and constant alpha w.r.t. height. allow cooling time to vary
-%with height. can't assume polytropic vertical structure. need to
-%reformulate linear framework (some transformations needed). 
-%skip 2D eigen prob if 3D works out 

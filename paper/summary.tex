@@ -1,70 +1,95 @@
 \section{Summary and discussion}\label{summary}
-In this paper, we study the implications on the stability of
-turbulent, cooling accretion disks if said turbulence is modeled as an
-effective, Navier-Stokes viscosity. This viscosity provides a 
-background heating and may also be active in the perturbed 
-state. We pay particular attention to 
-protoplanetary disks subject to `gravito-turbulence'. 
-Our framework provide an alternative interpretation of existing
-results on PPD fragmentation established from direct numerical
-simulations. 
-{\bf cooling removes pressure support, viscosity removes rotational support}
-{\bf our conclusions do require input of emperical resuls from numerical
-sims}
+In this paper, we develop the linear theory of cooling,
+turbulent accretion disks in order to understand gravitational
+instability (GI) in realistic protoplanetary disks (PPDs). 
+We model turbulence as an effective, 
+Navier-Stokes viscosity. This viscosity provides a 
+background heating to balance the imposed cooling rate,  
+and may also be active in the perturbed state. We provide physical
+interpretations of disk fragmentation, observed in 
+numerical simulations, as a secondary GI from a 
+gravito-turbulent state, driven by cooling and/or viscosity. 
+%{\bf cooling removes pressure support, viscosity removes rotational support}
+%{\bf our conclusions do require input of emperical resuls from numerical
+%sims}
+%going beyond toomre 
+%move to subsection?
+While viscosity and cooling are inversely related through thermal
+balance, they independently enhance GI: cooling reduces thermal
+support; and viscous forces compromise rotational support. 
 
 %generalized dispersion relation (inviscid)
 %no magic beta - connection with stochastic 
 
-We derive the disperion relation for local axisymmetric density waves 
-subject to external heating and cooling (Eq. \ref{inviscid}), but
-without viscous effects on the waves. We find
-the sufficient condition for stability 
-is \emph{independent} of the cooling rate. Long cooling times can
+The effect of cooling on GI is quantified by the dispersion
+relation Eq. \ref{inviscid}. 
+%We derive the disperion relation for local axisymmetric density waves 
+%subject to external heating and cooling (Eq. \ref{inviscid}), but
+%without viscous effects. 
+We find
+the sufficient condition for stability is \emph{independent} of the
+cooling rate, provided it is non-zero and finite.   
+Long cooling times can
 formally lead to instability, but the growth timescales may be
-uninterestingly long. We obtain an analytic expression for the
-dimensionless cooling time, $\beta_*$, required to remove pressure
-support against self-gravity on radial lengthscales comparable to the 
-disk scale height. We find $\beta_*$ reproduces the fragmentation
-boundary found in previous numerical simulations (Table
-\ref{bstar_compare}).  
+uninterestingly long. 
 
-%viscous GI ad connection with frag
+%We obtain an analytic expression for the
+%dimensionless cooling time, $\beta_*$, required to remove pressure
+%support against self-gravity on radial lengthscales comparable to the 
+%disk scale height. We find $\beta_*$ reproduces the fragmentation
+%boundary found in previous numerical simulations (Table
+%\ref{bstar_compare}).  
 
-We then include viscosity in the linear problem and generalize the
-`viscous gravitational instability', previously discussed in 
+
+%viscous GI (new: 3D, cooling, ext. heating)  
+
+We generalize the `viscous gravitational instability', previously discussed in 
 simpler disk models \citep{lynden-bell74,gammie96,hunter83}, to include
-heating/cooling and three-dimensionality. Our generalized framework is
+heating/cooling and three-dimensionality. 
+
+
+
+%application to PPD
+
+Our generalized framework is
 readily applied to realistic protoplanetary disk models. For
 gravito-turbulent PPDs, we find viscous GI grows on orbital time-scales
 beyond $\sim 100\mathrm{AU}$. This means the assumed gravito-turbulent
 steady state should not exist beyond dynamical time-scales in the
 outer parts of PPDs. 
 
-%viscosity > 0.1, beta < 3 - 4 
-
-Our results bear striking similarities with the current consensus on
-PPD fragmentation. It is generally accepted that PPDs can fragment
-beyond a few tens of $\mathrm{AU}$. This conclusion results from
-applying a Toomre stability condition (e.g. $Q\lesssim 1.5$) and a
-cooling time or viscosity criteria (e.g. $\beta\lesssim 3$ or
-$\alpha\gtrsim 0.1$), the latter of which is
-based on numerical simulations. We find these
-emperical conditions essentially translates to viscous GI on dynamical
-time-scales. This suggests that gravito-turbulent
-PPDs fragment because the associated viscous stresses further
-destabilize the disk against self-gravity. 
+Our results bear striking similarities with the current
+consensus on PPD fragmentation. It is generally ac-
+cepted that PPDs can fragment beyond a few tens of
+AU. This conclusion results from applying a Toomre
+stability condition (e.g. $Q\lesssim 1.5$) and a cooling time or
+viscosity criteria (e.g. $\beta\lesssim3$ or $\alpha\gtrsim 0.1$), the latter of
+which is based on numerical simulations. We find these
+emperical conditions essentially translates to viscous GI
+on dynamical time-scales. This suggests that gravito-
+turbulent PPDs fragment because the associated viscous
+stresses further destabilize the disk against self-gravity.
 
 
 %ultimately: why do disks fragment? viscosity may play a role
+%details of thermo doesn't matter if it's viscosity that leads to
+%fragmentation 
+
 
 \subsection{Relation to numerical simulations}\label{prev_works}
 
+
+
+
+
+
+
 %frag due to cooling -> structures less than H
 %frag due to viscosity -> structures more than H
+%stochastic frag
+%non-convergence with resolution 
 
-
-
-\subsection{Other sources of turbulence}
+\subsection{MHD turbulence}
 %application to gravito-turbulence but actually linear theory does not assume
 %actually application to 
 %MHD turbulence prob makes more sense 
