@@ -1,9 +1,8 @@
 \section{Application to protoplanetary disks}\label{2dppd}
-We now consider the stability of realistic, self-gravitating
-protoplanetary disks. Specifically, we will apply our linear framework
-to the gravito-turbulent disk model recently developed by 
-\cite{rafikov15}. This 2D, Keplerian disk orbits a Solar mass star and 
-is defined by the following parameters, 
+We now apply our linear framework to assess the stability of realistic 
+protoplanetary disks. We consider the gravito-turbulent disk models recently
+developed by \cite{rafikov15}. This 2D, Keplerian disk orbits a Solar 
+mass star and is defined by the following parameters, 
 
 \begin{itemize}
   \item $\dot{M}$, the global radial mass accretion rate;
@@ -40,36 +39,29 @@ approximately, $\nu\Sigma = \dot{M}/3\pi$. Hence
 which sets the viscosity coefficient to be used at each radius. 
 
 \subsection{PPD cooling}
-Energy loss in \citeauthor{rafikov15}'s model is given
-by 
+Energy loss in \citeauthor{rafikov15}'s model is given by 
 \begin{align}\label{real_cool}
   \Lambda = \frac{2\sigma}{f(\tau)}\left(T^4 - T_\mathrm{irr}^4\right)
 \end{align}
 per unit area, 
 \begin{align}
-  f(\tau) = \tau + \frac{1}{\tau},
+  f(\tau) = \tau + \frac{1}{\tau}, \label{ftau} 
 \end{align}
 and
 \begin{align}
   \tau = \kappa_d(T)\Sigma
 \end{align}
 is the optical depth and recall Eq. \ref{opacity_law} 
-is our opacity model. 
-%and $\kappa_d$ is the opacity. 
-%We parameterize
-%\begin{align}
-%  \kappa_d = \kappa_{d0} \Sigma^a T^b,
-%\end{align}
-%where $\kappa_{d0}, a, b$ are constants. 
+is our opacity model. Eq. \ref{ftau} accounts for cooling in the
+optically-thin ($\tau\ll 1$) and optically-thick ($\tau\gg1$)
+regimes. 
 
 Since we are interested in the linear response of the system, the
-corresponding parameters $\beta$ and $\theta$ are found by
+corresponding cooling parameters $\beta$ and $\theta$ are found by
 comparing the linearized form of the cooling function
 (Eq. \ref{real_cool}) to that of the model function
 (Eq. \ref{beta_cool}).  
-
 %{\bf as opposed to comparing their unperturbed forms, as done in literature}
-
 Linearizing Eq. \ref{real_cool} gives   
 \begin{align}\label{linear_real_cool}
   (\gamma-1)\frac{\delta\Lambda}{\Sigma} = \frac{2\sigma(\gamma-1)
@@ -98,16 +90,7 @@ cooling has  $\theta=0$, but realistic beta cooling has $\theta\neq
 0$. However, fully-irradiated disks with $T=T_\mathrm{irr}$ can be
 modeled by simple beta cooling since in both cases $\theta=1$.  
 
-%{\bf caution in applying numerical results obtained from beta cooling to
-%systems modeled with real cooling. above example shows that to model
-%real, non-irradiated disk with beta cooling actually requires irradiation in
-%the latter.}
-
-%Notice that $\theta\to 1$ as 
-%$T\toT_\mathrm{irr}$ the disk becomes passive. 
-
-\subsection{Inviscid stability condition} 
-%We specialize to $a=0, b=2$ for the opacity law. 
+\subsection{Inviscid stability condition}
 We note that for the adopted opacity law, Eq. \ref{opacity_law}, 
 \begin{align*}
   \theta = \frac{4-g}{4-2g},
@@ -119,17 +102,19 @@ From the results in \S\ref{2d_inviscid}, we conclude that this
 system cannot be unstable anywhere without
 viscous effects acting on the perturbations if 
 \begin{align}
-  \gamma > \frac{3}{2} \quad \text{and} \quad Q > \sqrt{\frac{6}{5}} \label{ppd_invisc_cond}
+  \gamma > \frac{3}{2} \quad \text{and} \quad Q >
+  \sqrt{\frac{6}{5}} \label{ppd_invisc_cond} 
 \end{align} 
 are both satisfied.  
 
-A PPD becomes optically-thin ($\tau\to 0$) at
-large radii, and $\theta$ decreases. The first inequality in
-Eq. \ref{ppd_invisc_cond} then relaxes to $\gamma > 5/6$ in the
-outer disk, which is always true. On the other hand, gravito-turbulent
-simulations typically show $Q\simeq 1.5$---2, which satisfies the
-second critrion. This means that in the
-outer regions of a realistic PPD, cooling itself cannot cause instability. 
+PPDs become optically-thin ($\tau\to 0$) with 
+increasing distance from its host star. Then $\theta$ decreases, and
+the first inequality in Eq. \ref{ppd_invisc_cond} relaxes to $\gamma >
+5/6$ in the (gravito-turbulent) outer disk, which is always satisfied.  
+On the other hand, numerical simulations of gravito-turbulence
+show that the second inequality is generally satisfied \citep{rice11}.  
+Taken together, this means that the outer regions of a realistic PPD,
+cooling itself cannot cause instability.  
 
 %conditions are likely satisfied in the outer disk 
 %Condition \ref{ppd_invisc_cond} must be violated in order for cooling
@@ -141,8 +126,8 @@ $\tirr=10\mathrm{K}$, and $\alpha_m=10^{-3}$. For the adopted opacity
 law we follow \citeauthor{rafikov15} and take $\kappa_{d0} =
 5\times10^{-4}\mathrm{cm}^2\,\mathrm{g}^{-1}\,\mathrm{K}^{-2}$. Here we use
 $\gamma=1.6$ so the inviscid stability condition
-(Eq. \ref{ppd_invisc_cond}) is satisfied. Then cooling alone cannot
-destabilize the disk. Fig. \ref{rafikov_model} shows the equilirbium
+(Eq. \ref{ppd_invisc_cond}) is satisfied
+everywhere. Fig. \ref{rafikov_model} shows the equilirbium 
 disk profile in terms of $Q$, $\alpha$, $\beta$, and $\theta$.  
 These are set as input to the 2D dispersion relation.  
 
