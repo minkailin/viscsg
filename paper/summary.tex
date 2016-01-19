@@ -37,7 +37,7 @@ finite. This means that long cooling times can still
 formally lead to instability. However, growth timescales may be 
 uninterestingly long for cooling times $\tcool\Omega\gtrsim
 O(10)$. Because cooling affects pressure support, GI driven by cooling
-occur on small scales, $kH\lesssim O(1)$.   
+occur on small scales, $kH\gtrsim O(1)$.   
 
 %We obtain an analytic expression for the
 %dimensionless cooling time, $\beta_*$, required to remove pressure
@@ -50,16 +50,16 @@ occur on small scales, $kH\lesssim O(1)$.
 We generalize the `viscous gravitational instability', previously 
 studied in isothermal disks
 \citep{lynden-bell74,willerding92,gammie96}, to include 
-cooling, viscous heating and irradiation. Our fiducial example,  
-where the viscosity and self-gravity are inversely
-related ($\alpha\propto Q^{-2}$), is a toy model for a
-gravito-turbulent disk. We find viscous GI occurs on orbital  
+cooling, viscous heating and irradiation. In our fiducial disk,  
+where viscosity and self-gravity are inversely
+related ($\alpha\propto Q^{-2}$) to model a
+gravito-turbulent background, viscous GI occurs on orbital  
 timescales for $\alpha\gtrsim 0.1$. This is consistent with the notion
 of a maximum stress sustainable by gravito-turbulence established in
-previous numerical simulations. Because viscosity affects
-rotational support, viscous GI occurs on large scales, $kH\gtrsim
+previous numerical simulations \citep{rice05}. Because viscosity affects 
+rotational support, viscous GI occurs on large scales, $kH\lesssim
 O(1)$.  Furthermore, irradiation preferentially
-stabilizes small-scale perturbations.     
+stabilizes small-scale perturbations. %maybe that's why irradiated disks produce smaller alpha     
 
 %application to PPD %realistic relation between alpha and Q 
 
@@ -68,11 +68,13 @@ realistic models for cooling and gravito-turbulence
 \citep{rafikov15}. We show that, for linear dynamics, realistic 
 cooling in a physically non-irradiated disk ($T_\mathrm{irr}=0$) is
 actually modeled by `beta' cooling with a  
-non-zero irradiation parameter ($\theta\neq0$). However, 
-numerical simulations typically employ beta cooling with 
+non-zero irradiation parameter ($\theta\neq0$), in contrast to 
+numerical simulations which typically employ beta cooling with  
 $\theta=0$ \citep[e.g.][]{gammie01}. How relevant 
 are such simulations to realistic PPDs must then be further 
-investigated. The important implication of having 
+investigated. 
+
+The important implication of having 
 $\theta\sim 1$ in a PPD is that cooling alone cannot 
 destabilize the disk at large radii. Instead, viscous GI occurs on
 dynamical timescales for $R\gtrsim 60$AU because 
@@ -80,7 +82,7 @@ $\alpha\gtrsim0.1$ there. This corresponds to a Toomre $Q\simeq 1.5$ and
 a cooling time $\tcool\lesssim 3\Omega^{-1}$. These are coincident with 
 \emph{empirical} conditions cited in the literature to determine disk
 fragmentation 
-\citep[e.g.][]{rafikov15}. By contrast, we attribute a \emph{physical}
+\citep[e.g.][]{rafikov15}. Here, we attribute a \emph{physical}
 cause for the fragmentation of realistic PPDs: gravito-turbulent PPDs
 fragment when turbulent stresses are large enough to further
 destabilize the disk against self-gravity.    
@@ -125,8 +127,8 @@ resort to rapid cooling for destabilization.
 We note that power in gravito-turbulence is dominated by scales with
 $kH\sim 1$ \citep{cossins09}, and this is always  
 well-resolved by modern numerical simulations. However, this does not
-necessarily imply small-scale dynamics are unimportant, as is evident
-from the non-converging simulations described above.   
+necessarily imply small-scale dynamics are unimportant \citep[especially for non-linear evolution, see][]{young15}, 
+as is evident from the non-converging simulations described above.   
 
 %it is true that most unstable wavelength is H is this is always
 %resolved
@@ -185,7 +187,7 @@ the use of a viscosity to represent turbulence.
 %and frag 
 True disk fragmentation is a non-linear process characterized by clumps   
 reaching densities orders of magnitude above the ambient value, and
-which survives tidal shear and shocks \citep{paardekooper12}.  
+which survives tidal shear and shocks \citep{paardekooper12,young16}.  
 %cite the young papers 
 Clearly, our linear models cannot address fragmentation
 directly. Technically, we have only demonstrated that a 
@@ -196,6 +198,17 @@ possible outcomes of cooling, self-gravitating disks: steady
 gravito-turbulence or fragmentation. It seems then reasonable to 
 speculate that the non-existence of a gravito-turbulent state, here due to
 dynamical instability, implies disk fragmentation.  
+
+{\bf comment on stochasitc frag. we only consider 
+how to enhance GI by reducing rotation and pressure. but a third route is 
+increasing sigma. according to toomre Q these are the 3 effects one should consider
+for SG. turbulent flucations may occasionally produce high sigma dens perts. 
+possible relation to current framework? high sigma perts arise because of viscous GI? 
+high alpha $\to$ small-scale transport $\to$ enhance over-dense regions}
+
+
+
+
 
 %modeling turb as visc %explore other visc laws 
 The most important assumption in this work is modeling turbulence as a  
@@ -231,3 +244,6 @@ stability of gravito-turbulent disks.
 %chosen a particular mu and lambda 
 %link between linear instability and frag is issue
 %true successful frag also depend on frag survival 
+
+
+%large stresses -> viscous GI operates quickly -> get non-linear den perts quickly 
