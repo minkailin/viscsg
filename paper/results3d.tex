@@ -16,45 +16,6 @@ avoid such uncertainties.
 %take k>0 wlog
 %consider Gamma=1
 %height s.t. rho(zmax) = 0.05 rho(0) avoid very low densities 
-\subsection{Numerical procedure}
-{\bf move to appendix?}
-We use a pseudo-spectral method to solve the set of ordinary
-differential equations, Eq. \ref{lin_mass}---\ref{lin_gravity}, on 
-the domain $ z\in[0,\zmax]$ with a parity condition at the midplane.
-We expand $\bm{U}=[\delta P,\delta\rho,\delta\Phi,
-  \delta v_x, \delta 
-  v_y]$ in even Chebyshev polynomials,
-\begin{align}
-  \bm{U}(z) = \sum_{j=1}^N \bm{a}_jT_{2(j-1)}(z/\zmax), 
-\end{align}
-and the vertical velocity in odd Chebyshev polynomials,
-\begin{align}
-  \delta v_z(z) = \sum_{j=1}^N b_jT_{2j-1}(z/\zmax),   
-\end{align}
-where $\bm{a}_j$ and $b_j$ are the spectral coefficients. 
-The basis functions are chosen to satisfy a reflecting boundary
-condition at the midplane, %GI has even symmetry across midplane 
-\begin{align}
-  \bm{U}^\prime(0) = \bm{0}, \quad \delta v_z(0) = 0.
-\end{align}
-%At the upper disk boundary we also apply reflection,
-We explicitly apply a reflecting upper disk boundary, 
-\begin{align}
-  \delta v_z(\zmax) = \delta v_x^\prime(\zmax) = \delta
-  v_y^\prime(\zmax) = 0,
-\end{align}
-and the potential satisfies
-\begin{align}
-  \delta \Phi^\prime (\zmax) + k \delta\Phi(\zmax) = 0, 
-\end{align}
-as derived by \cite{goldreich65a} and used in similar studies  
-\citep{kim12,lin14c}. %reflection is standard in direct simulations 
-
-We discretize the equations, including upper disk boundary conditions,
-over the $N$ positive abscissae of the extrema of $T_{2N-1}$. This
-procedure converts the differential equations into a generalized
-eigenvalue problem, for which we use the standard matrix package
-LAPACK to solve.  
 
 In the following examples we consider a vertically isothermal disk
 ($\Gamma=1$). Then in the viscous case $\alpha$ is vertically

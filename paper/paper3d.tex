@@ -86,11 +86,18 @@ University of
 \email{minkailin@email.arizona.edu}
 
 \begin{abstract}
- Low mass, self-gravitating accretion disks can remain in a  
-quasi-steady, `gravito-turbulent' state provided that thermal 
-time-scales are sufficiently long, or equivalently for sufficiently
-weak turbulent stresses. Otherwise, numerical simulations show that
-disk fragmentation ensues. 
+%Low mass, self-gravitating accretion disks can remain in a  
+%quasi-steady, `gravito-turbulent' state provided that thermal 
+%time-scales are sufficiently long, or equivalently for sufficiently
+%weak turbulent stresses. Otherwise, numerical simulations show that
+%disk fragmentation ensues. 
+%{\bf
+Low mass, self-gravitating accretion disks admit a quasi-steady,
+`gravito-turbulent' state in which cooling balances turbulent
+heating. However, numerical simulations show that gravito-turbulence
+cannot be sustained when the cooling rate or  
+turbulent viscosity is too large, resulting in disk fragmentation.     
+%} 
 We quantify the interpretation of this result as the
 compromise of gravitational stability by: 
 \begin{inparaenum}[1)] 
@@ -99,24 +106,29 @@ cooling, which reduces pressure support; and/or
 \item 
 viscosity, which reduces rotational support. 
 \end{inparaenum}
-We analyse the gravitational stability of accretion disks
-including these non-ideal effects explicitly.   
+We analyze the gravitational stability of accretion disks 
+including these non-ideal effects explicitly.    
 We derive a general dispersion relation for linear waves in a 
 self-gravitating, viscous, non-adiabatic disk with internal and
 external heating, and cooling. We 
 consider parameterized cooling functions in two and three dimensions,
 as well as full radiative diffusion in 3D. 
 We apply linear theory to 
-global models of protoplanetary disks (PPDs) subject to gravito-turbulence, modeled as an effective
-viscosity, and cooling via dust opacity. We find the sole effect of cooling is insufficient to
+global models of protoplanetary disks (PPDs) subject to gravito-turbulence modeled as an effective
+viscosity and cooling via dust opacity. We find the sole effect of cooling is insufficient to
 destabilize a realistic PPD. However, inclusion of viscosity renders
 the disk beyond $\sim 60$AU dynamically unstable on radial 
 lengthscales a few times the local disk thickness. This is coincident 
 with the empirical condition for disk fragmentation based on a
-maximum sustainable stress. We suggest that realistic disk fragmentation can be
-physically attributed,  
-at least partially, to the removal of rotational stabilization against
-self-gravity by turbulence.   
+maximum sustainable stress. 
+%We suggest that realistic disk fragmentation can be
+%physically attributed,  
+%at least partially, to the removal of rotational stabilization against
+%self-gravity by turbulence.   
+We suggest turbulent stresses play an active role in realistic disk
+fragmentation by removing rotational stabilization against 
+self-gravity. 
+%}
 \end{abstract}
 %we suggest turbulent stresses play an active, dynamical role in disk fragmentation by 
 %removing rotational stabilization against self-gravity. 
@@ -124,13 +136,14 @@ self-gravity by turbulence.
 
 
 \section{Introduction}\label{intro} 
-The gravitational instability (GI) of rotating disks   
+The gravitational instability (GI) of rotating disks    
 plays a fundamental role in many astrophysical problems. In the context of 
-protoplanetary disks (PPDs), GI has two applications. It can 
+gaseous protoplanetary disks (PPDs), GI has two applications. It can  
 provide gravitational torques to transport angular momentum outwards
 and thus enable mass accretion inwards \citep{armitage10,turner14}.   
-GI may also lead to disk fragmentation, which has been invoked to explain planet formation at
-large radii \citep{helled14}. Any realistic study of these phenomena require direct
+GI may also lead to disk fragmentation, which has been invoked to 
+explain giant planet formation at large radii \citep{helled14}. Any 
+realistic study of these phenomena require direct   
 numerical simulations. Nevertheless, physical insight can be  
 obtained through analytical understanding of GI.  %physical insight 
 
@@ -143,33 +156,37 @@ The standard metric for the (inverse) strength of disk self-gravity is the
 $\kappa$ is the epicyclic frequency (which equals the rotation
 frequency $\Omega$ in a Keplerian disk), $\Sigma$ is the surface
 density and $G$ is the gravitational constant. The Toomre $Q$ is a
-measure of the destabilizing effect of self-gravity ($\Sigma$) against 
-the stabilzing effect of rotation ($\kappa$) and pressure
+measure of the destabilizing effect of self-gravity ($G\Sigma$) against 
+the stabilzing effect of rotation ($\kappa$) and pressure 
 ($c_s$). When $Q\leq 1$ the disk is formally unstable to local,
 axisymmetric disturbances in a two-dimensional (2D, razor-thin),
 inviscid and adiabatic (including isothermal) disk.  
 
 %assess GI in general 
 
-The Toomre  parameter is widely applied to assess GI in more general 
+The Toomre parameter is widely applied to assess GI in more general 
 situtations (cf. the ideal disk models from which $Q$ is derived
-from).  This includes realistic disk structures
-obtained with non-ideal physics that are not explicitly contained in
-$Q$ \citep[e.g.][]{kimura12}.  It is, however, not obvious that such additions
-leave the stability condition unaltered. Indeed, we show that GI in more
-realistic disk models cannot be described by a single `Toomre-like' 
-condition.   
+from). This includes realistic disk structures 
+that account for non-ideal physics not 
+explicitly reflected by $Q$ \citep[e.g.][]{kimura12}.  It is, however,
+not obvious that such additions leave the stability condition
+unaltered. 
 
+Indeed, we show that when cooling and viscosity are  
+included, as expected in realistic disks, GI cannot be assessed from a
+single `Toomre-like' condition.      
 %disk structure may be computed with sophisticated physics but
 %stability condition still based on ideal disk models. 
 %three main ingredients - gravity, pressure, rotation 
 %a standard way to apply this condition is to compute the disk
 %structure  based on realistic physics 
-
 The goal of this work is to generalize the analytic treatment of disk 
-GI to allow a self-consistent discussion of GI in realistic accretion
-disk models. Specifically, we will examine the effect of cooling and
-viscosity on GI in PPDs.  
+GI to allow a self-consistent discussion of GI in realistic accretion 
+disk models. 
+%Specifically, we will examine the effect of cooling and  
+%viscosity on GI in PPDs.  
+
+
 %Their relevance to PPDs are described below.  
 
 %stuff aboout gravito turbulence 
