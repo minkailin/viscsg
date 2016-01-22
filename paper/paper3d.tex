@@ -146,53 +146,59 @@ frequency $\Omega$ in a Keplerian disk), $\Sigma$ is the surface
 density and $G$ is the gravitational constant. The Toomre $Q$ is a
 measure of the destabilizing effect of self-gravity ($G\Sigma$) against 
 the stabilzing effect of rotation ($\kappa$) and pressure 
-($c_s$). This is evident from the dispersion relation for local,
-axisymmetric waves in a two-dimensional (2D, razor-thin), 
-inviscid and adiabatic (including isothermal) disk, 
-\begin{align} 
-  s^2 =  2\pi G\Sigma|k| - \kappa^2 - c_s^2k^2 , 
+($c_s$). This is evident from the dispersion relation, 
+\begin{align}\label{classic_dr}
+  s^2 =  2\pi G\Sigma|k| - \kappa^2 - c_s^2k^2,   
 \end{align}
-relating the growth rate $s$ and the radial wavenumber $k$. When
-$Q\leq 1$ the disk is formally unstable. 
+which relates the growth rate $s$ and radial wavenumber $k$ for local,
+axisymmetric waves in a two-dimensional (2D, razor-thin), inviscid and
+adiabatic (including isothermal) disk. Such disturbances are formally
+unstable when the Toomre condition, $Q<1$, is satisfied.
+Non-axisymmetric modes can develop for  larger but still order-unity
+values of $Q$ . {\bf ref} 
+%strictly speaking non axi *local* modes are stable -> only transient
+%growth
+%true non-axi instability needs global disk  model 
+%non-axi GI at slightly larger Q, but still characterized by Q 
 
+%qualitative intro to gravito-turbulence 
+%role of cooling and resulting viscosity 
+
+It is important to remember that the dispersion relation
+Eq. \ref{classic_dr}  is derived from \emph{idealized} conditions: 
+the disk is laminar and does not experience any net thermal
+losses\footnote{Isothermal disks implicitly assume  
+  heating and thermal losses are exactly balanced at all 
+  times, so these do not cool in the current context.} 
+(hereafter `cooling').  
+However, real disks can cool, for example,
+due to radiative losses. Accretion disks may also be turbulent, for
+which its dynamic and thermodynamic effect is often modeled through an
+effective viscosity \citep{shakura73,lin87,rafikov15}. {\bf 
+  more refs here? non-sg refs} 
+%in terms of AM transport and heating 
 %assess GI in general 
 
-The Toomre parameter is widely applied to assess GI in more general 
-situtations (cf. the ideal disk models from which $Q$ is derived
-from). This includes realistic disk structures 
-that account for non-ideal physics not 
-explicitly reflected by $Q$ \citep[e.g.][]{kimura12}.  It is, however,
-not obvious that such additions leave the stability condition
-unaltered. 
+Despite this, the Toomre parameter, and its associated
+dispersion relation, are still widely applied to realistic disk models
+with viscosity and cooling \citep[e.g.][]{cossins09, kimura12}, 
+even though Eq. \ref{toomreQ_criterion}---\ref{classic_dr} were 
+derived from inviscid disks without cooling. 
 
-Indeed, we show that when cooling and viscosity are  
-included, as expected in realistic disks, GI cannot be assessed from a
-single `Toomre-like' condition.      
-%disk structure may be computed with sophisticated physics but
-%stability condition still based on ideal disk models. 
-%three main ingredients - gravity, pressure, rotation 
-%a standard way to apply this condition is to compute the disk
-%structure  based on realistic physics 
-The goal of this work is to generalize the analytic treatment of disk 
-GI to allow a self-consistent discussion of GI in realistic accretion 
-disk models. 
+However, as we emphasize in this work, the inclusion of non-ideal
+physics, such as cooling and viscosity, modifies the dispersion
+relation, Eq. \ref{classic_dr}, and hence the condition for GI. This 
+means that the Toomre condition alone is insufficient to assess GI
+in realistic disks. The goal of this work is to generalize the
+analytic treatment of disk GI to allow a self-consistent discussion of
+GI in realistic accretion disk models. Specifically, we consider the non-ideal
+effects of viscosity and cooling on GI. 
+
 %Specifically, we will examine the effect of cooling and  
 %viscosity on GI in PPDs.  
 
-
-%Their relevance to PPDs are described below.  
-
-%stuff aboout gravito turbulence 
-%Th
-%we focus on cooling and viscosity but also do 3D 
-%but real disks have cooling and viscosity/turbulence
-%(e.g. gravito-turbulent disks) 
-
 \subsection{Cooling-driven gravitational instability}
-A net thermal loss\footnote{Isothermal disks implicitly assume 
-  heating and cooling processes are exactly balanced at all
-  times, so these do not have cooling in the current context.} (hereafter `cooling')
-reduces pressure (thermal) support against self-gravity. The cooling time 
+Cooling reduces pressure (thermal) support against self-gravity. The cooling time 
 $\tcool$ is the time-scale over which the disk temperature $T$ is relaxed
 to some pre-defined value $T_0$, which may be zero. That is, $\p_t T =
 -(T-T_0)/\tcool$. It is often written as 
@@ -205,14 +211,19 @@ simple parameterization that allows the full range of thermodynamic
 response to be explored. 
 {\bf physical origin of cooling in PPDs}
 
-The Toomre $Q$ parameter does not include cooling, and thus cannot be
-formally applied to assess GI in realistic disks. Indeed, there exists
-a separate, \emph{empirical} cooling time criterion which governs
-stability against disk fragmentation (see below), but this is not well
-understood.     
+%The Toomre $Q$ parameter does not include cooling, and thus cannot be
+%formally applied to assess GI in realistic disks. Indeed, there exists
+%a separate, \emph{empirical} cooling time criterion which governs
+%stability against disk fragmentation (see below), but this is not well
+%understood.     
 
-We shall quantify how cooling removes pressure
-support to enable GI even when $Q>1$. 
+We shall quantify how cooling removes pressure support to enable GI
+even when $Q>1$.  
+
+
+
+
+
 We will find that cooling in fact changes the 
 qualitative nature of GI, in that its mere presence can
 formally lead to instability.  
@@ -262,11 +273,16 @@ GI in realistic PPDs.
 %secular instability 
 %but adding viscosity means viscous heating should also be included 
 
-\subsection{Relevance to gravito-turbulent disk fragmentation}%and ring
-                                %formation 
-%can the continous formation/destruction of clumps (as seen in sims)
-%be interpreted as `overstability'? 
-%for overstable modes over-density oscilates 
+\subsection{Relevance to gravito-turbulent disk fragmentation}
+
+% Then the disk temperature will be lowered 
+% until $Q\sim 1$, whence non-axisymmetric modes grow 
+% and heats the disk through dissipation of spiral shocks. This may 
+% lead to a quasi-steady turbulent state with $Q\sim 1$ in
+% which cooling is balanced by shock heating to maintain thermal
+% equilibrium \citep{gammie01}.  
+
+
 The two effects described above are immediately relevant to
 `gravito-turbulence'. This is a steady disk state in which cooling is
 balanced by turbulent heating, itself caused by GI. In this case 
