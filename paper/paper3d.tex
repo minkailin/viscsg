@@ -4,7 +4,7 @@
 %\usepackage{draftwatermark}
 %\usepackage{paralist}
 \shorttitle{Non-ideal Gravitational instability}
-\shortauthors{M-K.\ Lin \& K. Kratter}
+\shortauthors{M.-K.\ Lin \& K. Kratter}
 
 \usepackage{amsmath}
 \usepackage{paralist}
@@ -154,7 +154,7 @@ which relates the growth rate $s$ and radial wavenumber $k$ for local,
 axisymmetric waves in a two-dimensional (2D, razor-thin), inviscid and
 adiabatic (including isothermal) disk. Such disturbances are formally
 unstable when the Toomre condition, $Q<1$, is satisfied.
-Non-axisymmetric modes can develop for  larger but still order-unity
+Non-axisymmetric modes can develop for larger, but still order-unity
 values of $Q$ . {\bf ref} 
 %strictly speaking non axi *local* modes are stable -> only transient
 %growth
@@ -164,8 +164,8 @@ values of $Q$ . {\bf ref}
 %qualitative intro to gravito-turbulence 
 %role of cooling and resulting viscosity 
 
-It is important to remember that the dispersion relation
-Eq. \ref{classic_dr}  is derived from \emph{idealized} conditions: 
+It is important to remember that the popular dispersion relation, 
+Eq. \ref{classic_dr},  is derived from \emph{idealized} conditions: 
 the disk is laminar and does not experience any net thermal
 losses\footnote{Isothermal disks implicitly assume  
   heating and thermal losses are exactly balanced at all 
@@ -180,7 +180,7 @@ effective viscosity \citep{shakura73,lin87,rafikov15}. {\bf
 %assess GI in general 
 
 Despite this, the Toomre parameter, and its associated
-dispersion relation, are still widely applied to realistic disk models
+dispersion relation, are still widely applied to accretion disk models
 with viscosity and cooling \citep[e.g.][]{cossins09, kimura12}, 
 even though Eq. \ref{toomreQ_criterion}---\ref{classic_dr} were 
 derived from inviscid disks without cooling. 
@@ -191,8 +191,10 @@ relation, Eq. \ref{classic_dr}, and hence the condition for GI. This
 means that the Toomre condition alone is insufficient to assess GI
 in realistic disks. The goal of this work is to generalize the
 analytic treatment of disk GI to allow a self-consistent discussion of
-GI in realistic accretion disk models. Specifically, we consider the non-ideal
-effects of viscosity and cooling on GI. 
+GI in realistic accretion disk models. Specifically, we will examine how the
+effects of cooling and viscosity can lead to GI by removing pressure
+and rotational support, respectively, even when the Toomre condition
+for instability is not satisfied. 
 
 %Specifically, we will examine the effect of cooling and  
 %viscosity on GI in PPDs.  
@@ -200,7 +202,7 @@ effects of viscosity and cooling on GI.
 \subsection{Cooling-driven gravitational instability}
 Cooling reduces pressure (thermal) support against self-gravity. The cooling time 
 $\tcool$ is the time-scale over which the disk temperature $T$ is relaxed
-to some pre-defined value $T_0$, which may be zero. That is, $\p_t T =
+to some floor value $T_0$, which may be zero. That is, $\p_t T =
 -(T-T_0)/\tcool$. It is often written as 
 \begin{align} 
   \tcool = \beta \Omega^{-1},
@@ -217,23 +219,32 @@ response to be explored.
 %stability against disk fragmentation (see below), but this is not well
 %understood.     
 
-We shall quantify how cooling removes pressure support to enable GI
-even when $Q>1$.  
+We will quantify how cooling removes pressure support to enable GI
+even when $Q>1$. For example, if perturbations are
+cooled towards zero tempertaure, we find the above dispersion relation is
+modified to read 
+\begin{align}\label{cool_dr}
+s^2 = 2\pi G\Sigma |k| - \kappa^2 - \gamma \left(\frac{\tcool s}{1 +
+  \tcool s}\right)c_s^2k^2,
+\end{align}
+where $\gamma$ is the adiabatic index. This equation shows that
+cooling increases the growth rate by reducing the magnitude of the
+pressure term. In fact, Eq. \ref{cool_dr} implies that instability is
+possible for any finite $Q$. This shows that cooling can change the
+qualitative nature of GI compared to the classic Toomre condition. 
 
-
-
-
-
-We will find that cooling in fact changes the 
-qualitative nature of GI, in that its mere presence can
-formally lead to instability.  
+%Eq. \ref{cool_dr} is a cubic in $s$ and differs qualitatively from the
+%classic result, Eq. \ref{classic_dr}, which is quadratic in $s$. In
+%fact, 
+%We will find that cooling in fact changes the 
+%qualitative nature of GI, in that its mere presence can
+%formally lead to instability.
 
 \subsection{Viscosity-driven gravitational instability}
 %there is also viscous damping which stabilizes
-Viscous disks can develop GI even when $Q>1$. This is because
-viscosity compromises rotational support against self-gravity for
-long-wavelength disturbances
-\citep{lynden-bell74,willerding92,gammie96}. A similar effect  
+Viscous disks can develop GI even when $Q>1$. This is because, as demonstrated below, viscosity compromises rotational support against
+self-gravity for long-wavelength disturbances
+\citep{lynden-bell74,willerding92,gammie96}. A similar effect   
 occurs in dusty fluids where the required frictional forces are 
 provided by dust-gas drag \citep{ward00, takahashi14}. In fact, this
 is a mechanism to enhance particle clumping for planetesimational formation 
@@ -260,6 +271,19 @@ support. (This is, after all, the physical cause for turbulent mass
 accretion.) In this work, we use viscosity to represent this physical
 effect.  
 
+
+
+
+\begin{align}
+s \simeq \frac{\nu k^2\left(2\pi G\Sigma |k| -
+  c_s^2k^2\right)}{\kappa^2 + c_s^2k^2 - 2\pi G\Sigma|k|}
+\end{align}
+The condition for instability,  
+%\begin{align}
+$  2\pi G \Sigma > c_s^2|k|$, is identical that obtained from 
+Eq. \ref{classic_dr} with 
+%\end{align}
+
 Viscosity is absent in the standard Toomre parameter. The above
 studies account for viscosity but consider isothermal disks. On the
 other hand, proper inclusion of viscosity should also account for
@@ -267,6 +291,7 @@ viscous heating which, as discussed above, also affect stability.
 We thus extend the study of viscous GI to include an energy equation
 with viscous heating and explicit cooling. This allows us to consider
 GI in realistic PPDs.  
+
 
 
 %effect of viscosity 
