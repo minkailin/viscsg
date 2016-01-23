@@ -4,7 +4,7 @@ with previous studies. The disk
 material is assumed to be confined to the midplane so $\delta v_z=0$. 
 We make the replacement  
 $\rho \to \Sigma$, re-interpret $P$ as the vertically-integrated
-pressure, and set $\Gamma=1$ without loss of generality. 
+pressure, and set $\Gamma=1$. % without loss of generality. 
 The gravitational potential perturbation remains 3D and its midplane
 value is given by    
 \begin{align}
@@ -20,11 +20,14 @@ wavenumber $K=kH = k c_{s0}/\Omega$ as
   f(S,K)\equiv AD - BC = 0,   
 \end{align}
 where the functions $A,B,C,D$ are given in Appendix \ref{2ddisp}. 
+We use this generalized dispersion relation to investigate GI driven
+solely by cooling in \S\ref{2d_inviscid}; and GI driven by viscosity
+in \S\ref{2dvisc}. 
 
 \subsection{Inviscid limit}\label{2d_inviscid}
-Here we neglect viscosity by setting 
-$\alpha = \alpha_b = 0$. This eliminates viscous GI and 
-allows us to quantify the \emph{sole} effect of cooling on the
+We first simplify the problem by setting $\alpha = \alpha_b = 0$. This
+eliminates viscous effects and allows us to quantify the 
+\emph{sole} effect of cooling on the 
 perturbations. An external, time-independent heat source should be
 invoked to balance the imposed cooling to allow an equilibrium to be
 defined ($\mathcal{H}_\mathrm{ext}\neq 0$). Alternatively, we are
@@ -32,8 +35,9 @@ assuming viscosity only provides a background heating and does not
 play an active role in the perturbed state. %may or may not be true in a real
                                 %disk because we are using viscosity
                                 %as proxy for turbulence
-
-Eq. \ref{thindisk} simplifies to  
+                                %maybe turb heating actually behaves
+                                %like background heat source only 
+Eq. \ref{thindisk} becomes 
 \begin{align}\label{inviscid}
 %  &\beta S^3 + S^2 - \beta \left\{ \frac{2|K|}{\qtwo} - \left[2(2-q) +
 %    \gamma K^2\right]\right\}S \notag\\ &- \left[\frac{2|K|}{\qtwo} - 2(2-q)\right]
@@ -41,10 +45,10 @@ Eq. \ref{thindisk} simplifies to
   S^2 = \frac{2|K|}{Q} - 2(2-q) - \left(\frac{\theta + \beta \gamma
     S}{1+\beta S}\right)K^2, 
 \end{align}
-similar to the classic Lin-Shu dispersion relation, which may be
-obtained by taking the limit $|\beta S|\to\infty$. 
-The first term on
-the right-hand-side represents destabilization by self-gravity; 
+similar to the classic Lin-Shu dispersion relation
+(i.e. Eq. \ref{classic_dr}), which may be obtained by taking the limit
+$|\beta S|\to\infty$. %with gamma=1
+The first term on the right-hand-side represents destabilization by self-gravity; 
 the second and third terms represent stabilization by rotation and
 pressure, respectively. The imposed cooling only affects the
 pressure response. 
