@@ -128,7 +128,7 @@ with the empirical condition for disk fragmentation based on a
 maximum sustainable stress. 
 We suggest turbulent stresses can play an active role in realistic disk 
 fragmentation by removing rotational stabilization against 
-self-gravity. {\bf shorten abstract more?}
+self-gravity. {\bf shorten abstract?}
 \end{abstract}
 
 \section{Introduction}\label{intro} 
@@ -209,7 +209,7 @@ cooling time
 $\tcool$ is the time-scale over which the disk temperature $T$ is relaxed
 to some floor value $T_0$, which may be zero. That is, $\p_t T =
 -(T-T_0)/\tcool$. It is often written as 
-\begin{align} 
+\begin{align} \label{beta_def}
   \tcool = \beta \Omega^{-1},
 \end{align}
 where $\beta$ is the corresponding dimensionless cooling time. This
@@ -289,9 +289,10 @@ turbulence can enhance GI and lead to disk fragmentation (see also
 
 In this work, we use viscosity to model such a 
 physical effect due to turbulence, but we note that viscous 
-GI does not assume any origin for the viscosity. We will extend theory
-of viscous GI to include an energy equation  with viscous heating,
-irradiation, explicit cooling, as well as three-dimensionality. This
+GI does not assume any origin for the viscosity. We will generalized
+the theory of viscous GI to include an energy equation  with viscous
+heating, irradiation, explicit cooling, as well as
+three-dimensionality (3D). This 
 allows us to consider viscous GI in more realistic PPD models. 
 
 
@@ -344,7 +345,7 @@ gravitational stability. These considerations motivate a physical
 interpretation of disk fragmentation as the inability to maintain a
 gravito-turbulent state due to the action of cooling and/or viscosity.
 
-Indeed, we will find that the region where a gravito-turbulent PPD is
+Indeed, we find that the region where a gravito-turbulent PPD is
 dynamically unstable agrees with the current consensus on  where, and
 the conditions under which, a PPD is expected to fragment based on
 Eq. \ref{frag_cond}, with typical critical values cited in the
@@ -357,11 +358,9 @@ literature \citep[e.g. $\beta_c\sim
 %aim to analyse GI in realistic disks with minimal input from numerical
 %simulation 
 
-The basic equations, disk equilibria, and the two cooling models  
-considered --- parametrized `beta' cooling and radiative diffusion, 
-are given in \S\ref{basic}. 
-The linear stability problem is defined in
-\S\ref{linear}. We present results with beta cooling in
+The basic equations, disk equilibria, cooling and viscosity models are 
+given in \S\ref{basic}. The linear stability problem is defined in 
+\S\ref{linear}. We present results with parameterized `beta' cooling in 
 \S\ref{result_2d} and \S\ref{3ddisk} for 2D and 3D disks,
 respectively. %key result: generalized dispersion relation 
 In \S\ref{2dppd} we consider PPDs with realistic viscosity/cooling   

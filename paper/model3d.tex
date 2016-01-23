@@ -1,5 +1,5 @@
 \section{Basic equations}\label{basic}
-We consider a three-dimensional (3D), self-gravitating,
+We consider a 3D, self-gravitating,
 viscous disk with heating and cooling. We use the shearing box framework to
 study a small patch of the disk \citep{goldreich65}. The local frame
 co-rotates with a fiducial point in the unperturbed disk at angular
@@ -14,8 +14,8 @@ The fluid equations are
   +2\Omega^2qx\hat{\bm{x}} -\Omega_z^2z\hat{\bm{z}} 
    + \frac{1}{\rho}\nabla\cdot\bm{T},\label{momentum_eq}\\
   & \frac{\p E}{\p t} + \nabla\cdot\left(E\bm{v}\right) = - P
-  \nabla\cdot\bm{v} + \mathcal{H}_\mathrm{visc} +
-  \mathcal{H}_\mathrm{ext} - \Lambda,\label{energy_eq}
+  \nabla\cdot\bm{v} + \mathcal{H}_\mathrm{visc} - \Lambda +
+  \mathcal{H}_\mathrm{ext} ,\label{energy_eq}
 \end{align} 
 where $\rho$ is the density field and $\bm{v} = (v_x, v_y, v_z)$ is
 the velocity field.% $q$ is the shear parameter and $\Omega_z$ is the
@@ -25,14 +25,13 @@ density $E$ are related by
 \begin{align}
   P = (\gamma-1)E = \mathcal{R}\rho T, 
 \end{align}
-where $\gamma$ is the adiabatic index, $\mathcal{R}$ is the gas
-constant, and $T$ is the temperature. We use $\gamma=1.4$ unless
-otherwise stated. The gas 
+where $\mathcal{R}$ is the gas constant and $T$ is the temperature. We
+use $\gamma=1.4$ unless otherwise stated. The gas 
 gravitatational potential $\Phi$ is given via the Poisson equation,  
 \begin{align}
- \nabla^2\Phi = 4 \pi G \rho, 
+ \nabla^2\Phi = 4 \pi G \rho. 
 \end{align}
-where $G$ is the gravitational constant.  
+%where $G$ is the gravitational constant.  
 
 In the momentum equation (Eq. \ref{momentum_eq}), the third,
 fourth/fifth, and last term on the right-hand side represent the Coriolis, 
@@ -41,11 +40,11 @@ Keplerian disks with shear paramter $q=3/2$ and vertical oscillation
 frequency $\Omega_z=\Omega$.  
 
 In the energy equation (Eq. \ref{energy_eq}) the source terms 
-$\mathcal{H}_\mathrm{visc}$, $\mathcal{H}_\mathrm{ext}$ and $\Lambda$
-represent viscous heating, any time-independent heat
-source/sinks, and time-dependent thermal losses, respectively. These
-are described below. We normally set
-$\mathcal{H}_\mathrm{ext}=0$ unless otherwise stated. 
+$\mathcal{H}_\mathrm{visc}$ and $\Lambda$
+represent viscous heating and time-dependent cooling, 
+respectively, and $\mathcal{H}_\mathrm{ext}$ represents any
+time-independent heat source/sinks. We normally set
+$\mathcal{H}_\mathrm{ext}=~0$ unless otherwise stated.  
 
 \subsection{Viscosity and heating}\label{visc_model}
 The Cartesian components of the viscous stress tensor $\bm{T}$ is
@@ -55,9 +54,9 @@ defined by
     \left(\nu_b-\frac{2}{3}\nu\right)\delta_{ij}\nabla\cdot\bm{v}\right], 
 \end{align}
 %bulk visc ignored 
-where $\rho\nu$ is the shear viscosity, and we include a bulk
-viscosity $\rho\nu_b$ for completeness.  
-The associated viscous heating given by
+where $\rho\nu$ is the shear viscosity. We also include a bulk
+viscosity $\rho\nu_b$ for completeness, but will neglect it in
+numerical calculations. The associated viscous heating given by 
 \begin{align}
   \mathcal{H}_\mathrm{visc} \equiv \left(\p_jv_i\right)T_{ij}, 
 \end{align}
@@ -66,61 +65,56 @@ where summation over repeated indices is implied.
 We adopt the viscosity law  
 \begin{align}\label{visc_law}
   \nu = \alpha
-  \frac{c_{s0}^2}{\Omega}\left(\frac{\rho}{\rho_\mathrm{eq}}\right)^\mu\left(\frac{P}{P_\mathrm{eq}}\right)^\lambda,            
+  \frac{c_{s0}^2}{\Omega}\left(\frac{\rho}{\rho_\mathrm{eq}}\right)^\mu\left(\frac{P}{P_\mathrm{eq}}\right)^\lambda,             
 \end{align}
 where subscript `eq' denotes the equilibrium state and  
-%$c_{s0}$ is a modified sound-speed defined below. 
-$c_{s0}^2\equiv P_\mathrm{eq}(0)/\rho_\mathrm{eq}(0)$. 
-The dimensionless coefficient
+$c_{s0}^2\equiv P_\mathrm{eq}(z=0)/\rho_\mathrm{eq}(z=0)$. 
+The dimensionless viscosity coefficient 
 $\alpha=~\alpha(\rho_\mathrm{eq},P_\mathrm{eq})$ characterizes the
 magnitude of the shear viscosity \emph{in steady state}. The indices
 $\mu,\,\lambda$ are free parameters chosen to model how the viscosity
 behaves in the perturbed state.  
-%Given the uncertain
-%properties of gravito-turbulence, we will treat $\mu,\lambda$ as free
-%parameters. 
 We adopt the same prescription for the bulk viscosity but
 with $\alpha\to\alpha_b$.   
 
 Our numerical calculations use $\mu=-1,\lambda=0$ so 
-that $\rho\nu$ is time-indpendent, as adopted in previous 
-studies of viscous GI 
+that $\rho\nu$ is time-indpendent, folling previous 
+studies of viscous GI  
 \citep{lynden-bell74,hunter83,willerding92,gammie96}.  
 This choice also conveniently eliminates viscous over-stability
 \citep{schmit95,latter06}, which is unrelated to self-gravity, that
 would otherwise contaminate our results. %obscure   
 
-While steady-state viscosity values can be determined analytically
-\citep[e.g.][]{rafikov15}, its time-dependent behavior is not
-well-explored. We emphasize the choice $\mu=-1,\lambda=0$ is made to
-bring out the physically relevant process --- viscosity-assisted
-gravitational instability. %expect to be generally present, but will
-                           %be obscured by viscous over-stability with
-                           %other indices
+While steady-state viscosity values can be determined 
+analytically \citep[e.g.][]{rafikov15}, its time-dependent behavior is
+not well-explored. We emphasize the choice $\mu=-1,\lambda=0$ is made
+to bring out the physical process of interest --- viscous GI. %expect
+                                %to 
+%be generally present, but will 
+%be obscured by viscous over-stability with
+%other indices
 Interestingly, though, \cite{laughlin96b} have suggested a $\nu \propto 1/\Sigma$
-dependence when modeling the evoluting of self-gravitating disks 
-as a viscous process. Furthermore, \cite{paardekooper12} measured
-an increase in the effective viscosity when their gravito-turbulent
-disk models underwent fragmentation (i.e. as $\Sigma$ increases).  
+dependence when modeling the evoluting of 2D self-gravitating disks 
+as a viscous process. We note that if $\rho\nu$ is constant in time
+then increasing the density leads to reduction in the viscosity. 
+This is perhaps not inconsistent with numerical simulations of disk
+fragmentation which show the internal structure of clumps, which
+represent increased density, is laminar \citep{gammie01}.  
+{\bf is this true?}
 
+%Furthermore, \cite{paardekooper12} measured
+%an increase in the effective viscosity when their gravito-turbulent
+%disk models underwent fragmentation (i.e. as $\Sigma$ increases).  
 %{\bf note paardekooper 2012: alpha goes down as Sigma goes up}
 
 \subsection{Steady states and cooling models}
 We consider equilibrium solutions (here omitting the `eq' subscripts
-for clarity) 
+for simplicity)  
 \begin{align}
   \bm{v} &= -q\Omega x \hat{\bm{y}}, \\
   \rho   &= \rho(z),\\
   P      &= P(z) \equiv c_s^2(z)\rho.
 \end{align} 
-%and assume a polytropic relation for the equilibrium pressure,
-%\begin{align}
-%  P  =
-%  \frac{c_{s0}^2\rho_0}{\Gamma}\left(\frac{\rho}{\rho_0}\right)^\Gamma
-%  \equiv \frac{c_s^2(z)}{\Gamma}\rho,
-%\end{align}
-%where $\rho_0$ is the equilibrium midplane density and $\Gamma$ is the
-%constant polytropic index.  
 The equilibrium density and pressure fields are obtained by solving
 the vertical momentum equation with self-gravity,
 \begin{align}
@@ -128,13 +122,8 @@ the vertical momentum equation with self-gravity,
   \Omega_z^2z + \frac{d\Phi}{dz} = 0, \label{vert_eq1}\\
  &\frac{d^2\Phi}{dz^2} = 4 \pi G \rho,\label{vert_eq2}
 \end{align}
-%A numerical solution is usually required to obtain the equilibrium
-%state, except for special values of $\Gamma$. 
 together with thermodynamic equilibrium,
-%\subsection{Thermal equilibrium}
-%In equilibrium the energy equation implies
 \begin{align}\label{thermal_eq}
-%  \mathcal{H}_\mathrm{visc} + \mathcal{H}_\mathrm{ext} = \Lambda.   
 (q\Omega)^2\rho\nu + \mathcal{H}_\mathrm{ext} = \Lambda,
 \end{align}
 where the first term represents viscous heating. For the viscous
@@ -152,23 +141,35 @@ A prototypical example is
 \begin{align}\label{beta_cool}
   \Lambda =
   %  \frac{P}{(\gamma-1)T}\frac{\left(T-T_\mathrm{irr}\right)}{t_c}, 
-  \frac{\mathcal{R}\rho}{(\gamma-1)}\frac{\left(T-T_\mathrm{irr}\right)}{t_c}, 
+  \frac{\mathcal{R}\rho}{(\gamma-1)}\frac{\left(T-T_\mathrm{irr}\right)}{t_c}. 
 \end{align}
-where 
-\begin{align}
-  \tcool = \beta\Omega^{-1} 
-\end{align}
-is the cooling timescale with $\beta$ a constant input parameter, and
+Recall from Eq. \ref{beta_def} that 
+%\begin{align}
+  $\tcool = \beta\Omega^{-1}$ is 
+%\end{align}
+the cooling timescale with $\beta$ a constant input parameter. Here, 
 \begin{align}
   \tirr = \theta T_\mathrm{eq}
 \end{align}
-is a reference temperature field, here parameterized as a constant fraction
-$\theta$ of the equilibrium temperature $T_\mathrm{eq}$. We will refer
-to $\theta$ as the `irradiation level'.  
-%This cooling function restores 
-%the disk temperature to $\tirr$ over a time-scale $\tcool$. 
+is a reference temperature field parameterized as a constant 
+fraction $\theta$ of the equilibrium temperature
+$T_\mathrm{eq}$. Physically, $\tirr$ is the floor temperature set by,
+for example, stellar irradiation. We will thus refer to $\theta$ as
+the `irradiation level'. %stellar illum or env rad      
 
-For models with beta cooling we assume an equilibrium polytropic relation
+We will formulate the linear problem with beta cooling using the
+functional form for $\Lambda$ as given by
+Eq. \ref{beta_cool}. However, any explicit cooling function, say
+$\Lambda=\Lambda_1(\rho,T)$, can be mapped to that obtained from
+Eq. \ref{beta_cool} by equating their linearized forms, i.e. $\delta
+\Lambda \equiv \delta \Lambda_1$, which then defines the $\beta$ and
+$\theta$ parameters to be used in the framework we develop. This is
+done in \S\ref{2dppd} where we adopt a more realistic beta cooling 
+prescription for 2D PPDs. In this case, $\theta$ may or may not
+represent a physical irradiation.     
+
+For models with beta cooling given by Eq. \ref{beta_cool} we assume an 
+equilibrium polytropic relation 
 \begin{align} 
   P  =
 %  \frac{c_{s0}^2\rho_0}{\Gamma}\left(\frac{\rho}{\rho_0}\right)^\Gamma,
@@ -176,11 +177,11 @@ For models with beta cooling we assume an equilibrium polytropic relation
 c_{s0}^2\rho_0\left(\frac{\rho}{\rho_0}\right)^\Gamma,
 \end{align}
 where $\Gamma$ is the constant polytropic index and $\rho_0 =
-\rho(0)$. The vertical
-structure is first obtained from Eq. \ref{vert_eq1}---\ref{vert_eq2}
-then inserted into Eq. \ref{thermal_eq} to infer the required
-viscosity profile,  
-
+\rho(z=0)$ is the equilibrium midplane density. 
+The vertical structure is first obtained from
+Eq. \ref{vert_eq1}---\ref{vert_eq2} then inserted into
+Eq. \ref{thermal_eq} to infer the required viscosity profile for
+thermal equilibrium,   
 \begin{align}\label{alpha_beta_relation}
 \alpha(z) = \frac{1}{(\gamma-1)\beta
    q^2}\frac{c_s^2(z)}{c_{s0}^2}\left(1 - \theta\right). 
@@ -188,16 +189,13 @@ viscosity profile,
 %    q^2}\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left(1 - \theta\right). 
 \end{align}
 
-
- Beta cooling is widely applied in 2D and 3D
+Beta cooling is widely applied in 2D and 3D
 numerical simulations of self-gravitating disks \citep{gammie01,
   rice05,baehr15}. It permits numerical experiments to be carried out in a
-controlled manner as a function of the cooling time $\beta$. 
-We remark that for the linear problem  
-any explicit cooling function $\Lambda=\Lambda(\rho,T)$ can be
-mapped to that obtained from the standard function in Eq.
-\ref{beta_cool}. We do this in \S\ref{2dppd} where we adopt a more
-realistic beta cooling prescription for 2D PPDs.  
+controlled manner as a function of the cooling time $\beta$. An
+adiabatic disk corresponds to $\beta\to \infty$. The
+physical meaning of the limit $\beta\to0$ depends on $\theta$, as
+discussed in \S\ref{theta0}---\ref{theta1}.  
 
 \subsubsection{Radiative cooling}\label{rad_cool}
 Here we assume energy transfer by radiative diffusion. Then
