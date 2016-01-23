@@ -206,16 +206,17 @@ removing pressure and rotational support, respectively.
 \subsection{Cooling-driven gravitational instability}\label{cool_gi}
 Cooling reduces pressure support against self-gravity. The
 cooling time  
-$\tcool$ is the time-scale over which the disk temperature $T$ is relaxed
-to some floor value $T_0$, which may be zero. That is, $\p_t T =
--(T-T_0)/\tcool$. It is often written as 
+$\tcool$ is the timescale over which the disk temperature $T$ is relaxed
+to some floor value $T_0$, which may be zero. 
+%That is, $\p_t T =
+%-(T-T_0)/\tcool$. 
+ It is often written as 
 \begin{align} \label{beta_def}
   \tcool = \beta \Omega^{-1},
 \end{align}
 where $\beta$ is the corresponding dimensionless cooling time. This
-type of cooling function, first applied by \cite{gammie01}, is a
-simple parameterization that allows the full range of thermodynamic
-response to be explored. 
+type of parameterized cooling, first applied by \cite{gammie01},
+allows the full range of thermodynamic response to be explored. 
 {\bf physical origin of cooling in PPDs}
 
 We will quantify how cooling removes pressure support to enable GI
@@ -226,12 +227,26 @@ modified to read
 s^2 = 2\pi G\Sigma |k| - \kappa^2 - \gamma \left(\frac{\tcool s}{1 +
   \tcool s}\right)c_s^2k^2,
 \end{align}
-where $\gamma$ is the adiabatic index. This equation shows that
-cooling increases the growth rate by reducing the magnitude of the
-pressure term. In fact, Eq. \ref{cool_dr} implies that instability is
-possible for any finite $Q$. %any finite pair of Q and beta 
-This shows that cooling can change the
-qualitative nature of GI compared to the simple Toomre condition.  
+where $\gamma$ is the adiabatic index. Cooling increases the growth
+rate by reducing the magnitude of the 
+pressure term. In fact, for $t_c\in(0,\infty)$ the formal condition
+for instability is  
+\begin{align*}
+  2\pi G \Sigma |k| > \kappa^2,
+\end{align*}
+which is what would be obtained from Eq. \ref{classic_dr} with 
+pressure neglected ($c_s\to 0$). This condition does not actually
+depend on the cooling rate, and instability is
+possible for any finite $Q$. %at sufficiently small scales 
+This shows that the mere presence of
+cooling changes the qualitative nature of GI compared to the simple
+Toomre condition.   
+%{\bf numerical implications? if using standard beta cooling, then as
+%  long as it's there then sufficiently small scales will be
+ % unstbale. can access those scales with high resolution. defer to
+ % discussion section}
+
+
 
 %current understanding of frag is all due to cooling (viscosity is
 %just a reflection of cooling)
@@ -270,7 +285,7 @@ Assuming $Q>1$, instability occurs if
 \begin{align*}
   2\pi G \Sigma > c_s^2|k|,
 \end{align*}
-provided that $\nu k^2\neq0$. The above condition for viscous GI is 
+provided that $\nu k^2\neq0$. This condition for viscous GI is 
 identical that would be obtained from Eq. \ref{classic_dr} with
 rotation neglected ($\Omega\to 0$). That is, a classically stable
 disk can be made unstable by viscosity as it effectively removes

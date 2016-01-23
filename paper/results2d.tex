@@ -20,15 +20,18 @@ wavenumber $K=kH = k c_{s0}/\Omega$ as
   f(S,K)\equiv AD - BC = 0,   
 \end{align}
 where the functions $A,B,C,D$ are given in Appendix \ref{2ddisp}. 
-We use this generalized dispersion relation to investigate GI driven
-solely by cooling in \S\ref{2d_inviscid}; and GI driven by viscosity
+We use this generalized dispersion relation, which does not assume any
+$\alpha$-$\beta$ relation, %dispersion relation treats alpha/beta as
+                           %independent 
+to investigate GI driven
+by cooling in \S\ref{2d_inviscid}; and GI driven by viscosity 
 in \S\ref{2dvisc}. 
 
 \subsection{Inviscid limit}\label{2d_inviscid}
 We first simplify the problem by setting $\alpha = \alpha_b = 0$. This
 eliminates viscous effects and allows us to quantify the 
 \emph{sole} effect of cooling on the 
-perturbations. An external, time-independent heat source should be
+perturbations. A time-independent heat source should be
 invoked to balance the imposed cooling to allow an equilibrium to be
 defined ($\mathcal{H}_\mathrm{ext}\neq 0$). Alternatively, we are
 assuming viscosity only provides a background heating and does not
@@ -46,12 +49,13 @@ Eq. \ref{thindisk} becomes
     S}{1+\beta S}\right)K^2, 
 \end{align}
 similar to the classic Lin-Shu dispersion relation
-(i.e. Eq. \ref{classic_dr}), which may be obtained by taking the limit
-$|\beta S|\to\infty$. %with gamma=1
+(Eq. \ref{classic_dr}), which may be obtained by taking the limit
+$|\beta S|\to\infty$. %then setting gamma=1. other params fixed
+                      %(finite theta)
 The first term on the right-hand-side represents destabilization by self-gravity; 
 the second and third terms represent stabilization by rotation and
-pressure, respectively. The imposed cooling only affects the
-pressure response. 
+pressure, respectively. The imposed cooling/irradiation only affects the
+pressure response. {\bf do we need to explain the terms again?}
 
 Eq. \ref{inviscid} is a cubic equation in $S$. The 
 Routh-Hurwitz criteria imply that stability is ensured if 
@@ -59,13 +63,20 @@ Routh-Hurwitz criteria imply that stability is ensured if
   \gamma > \theta \quad \text{and} \quad 
   Q > \frac{1}{\sqrt{2\theta(2-q)}} 
 \end{align}
-are both satisfied. Thus, whether or not the system is stable is
-independent of the cooling rate $\beta$ (provided it is non-zero and
-finite). The system becomes more unstable with decreasing $\theta$.   
+are both satisfied. If only real growth rates are considered, then the
+second condition alone is sufficient for stability. %from property of
+                                %cubic crossing the real axis 
+%gamma/theta condition is related to some kind of thermal instability
+%oscilitory convection?? 
+%second condition concerning Q is associated with self-g 
+Whether or not the system is stable does not 
+depend on the actual cooling time $\beta$ (provided it is non-zero and
+finite). The system becomes more unstable with decreasing 
+irradiation levels $\theta$, i.e. as the floor temperature, towards which
+perturbations are cooled, drops. 
 
 Consider the most unstable wavenumber $|K_*|$ at which $\p S/\p |K| =
-0$ and $S = 
-S_*$. By differentiating Eq. \ref{inviscid}, we obtain 
+0$ and $S = S_*$. By differentiating Eq. \ref{inviscid}, we obtain 
 \begin{align}\label{kstar}
 %  |K_*| = \frac{1}{\gamma \qtwo} \left(1 + \frac{1}{\beta S_*}\right). 
   |K_*| = \frac{1+\beta S_*}{Q\left(\theta + \gamma \beta S_*\right)}
@@ -87,8 +98,10 @@ results may be obtained in special cases, discussed next.
 \subsubsection{$\theta = 0$}\label{theta0}
 %Beta cooling with $\theta=0$ is commonly employed in 
 %numerical simulations of self-gravitating disks \citep{gammie01}. 
-For beta cooling with $\theta=0$, the disk is unconditionally
-unstable for finite $Q$. The most unstable wavelength decreases with
+For beta cooling with $\theta=0$, the disk is unconditionally unstable
+for finite $Q$: instability is always possible at sufficiently small
+scales (recall the discussion in \S\ref{cool_gi}). At fixed $Q$,  
+the most unstable wavelength decreases with
 decreasing $\beta$. The $\beta\to0$ limit corresponds to a
 pressureless disk (not merely isothermal).   
 
