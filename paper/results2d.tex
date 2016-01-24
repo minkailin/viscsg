@@ -111,7 +111,7 @@ the disk becomes more unstable at shorter wavelengths.
 %and elim dS*/d beta 
 
 Next, we consider two special cases: $\theta=0$, so perturbations are
-cooled towards zero temperature \citep[as typically employed in
+cooled towards zero temperature \citep[typically employed in
 numerical simulations, e.g.][]{gammie01}; and $\theta=1$, where the
 equilibrium disk temperature equals the irradiation temperature.  
 
@@ -146,7 +146,7 @@ thus set $|K_*|=1$ and find, for the Keplerian disk,
 \begin{align}\label{betastar}
   \beta_* = \frac{1}{\left(\sqrt{\gamma} - 1\right)^{3/2}}. 
 \end{align}
-It is interesting to note that this equation reproduce similar values 
+This equation reproduce similar values 
 of the cooling times below which 
 %dynamical disk 
 %fragmentation occurs in numerical simulations
@@ -154,8 +154,8 @@ numerical simulations show dynamical disk fragmentation
 \citep{gammie01,rice05,rice11}. These simulations employ the same beta  
 cooling prescription with $\theta=0$, and determine the fragmentation
 boundary, $\beta_c$, as a function of the adiabatic index $\gamma$.  
-We compare these in Table \ref{bstar_compare}, showing rough
-agreement. 
+Table \ref{bstar_compare} shows rough agreement between $\beta_*$ and 
+$\beta_c$.  
 
 \begin{deluxetable}{rrrr}
   \tablecolumns{4}
@@ -218,14 +218,17 @@ rates vary weakly with $\beta$.
 %\end{figure}
 
 \subsection{Viscous disk}\label{2dvisc}
-We now consider a viscous disk with 
-$\mu=-1,\,\lambda=0$ as discussed in \S\ref{visc_model}. We first
-check in Appendix \ref{gammie_check} that our dispersion relation
-reduces previous results in the adiabatic/isothermal limit.  
+We now consider a viscous disk with parameters $\mu=-1,\,\lambda=0$ in our
+adopted viscosity law, Eq. \ref{visc_law}. In the 2D case this implies
+$\nu\Sigma$ is constant.   
+%\S\ref{visc_model}. 
+We check in Appendix \ref{gammie_check} that our dispersion relation
+reduces to previous results for viscous GI in the isothermal limit (by
+taking $|\beta S|\to~\infty$ and $\gamma=1$).   
 
-To see the effect of finite cooling, we simplify the dispersion relation,
-Eq. \ref{thindisk}, by assuming $|\beta S|\ll 1$. Then  
-for $|K| \to 0$ we find
+To see the effect of cooling and irradiation, we simplify the
+dispersion relation, Eq. \ref{thindisk}, by assuming $|\beta S|\ll
+1$. Then for $|K| \to 0$ we find
 \begin{align}\label{gammie_smallk}
 %  S \sim \frac{\alpha |K|^3}{(2-q)Q},%derived assuming |beta*S|<<1 
 %  S \sim \frac{\alpha K^2\left[2|K|Q^{-1} - \gamma K^2 + 2\alpha q
@@ -241,7 +244,6 @@ wavenumber. For $|K|\to\infty$ we find
   S \simeq\left(\frac{2}{Q|K|} - \theta\right)\left(\frac{4}{3}\alpha + 
   \alpha_b + \gamma\beta\right)^{-1}.
 \end{align}
-
 
 
 For $\theta\ll1$ a rough measure of the maximum growth rate can be obtained by
@@ -268,16 +270,28 @@ Eq. \ref{alpha_beta_relation}). Furthermore, we relate
 \begin{align}
   Q = \frac{Q_\mathrm{crit}}{\sqrt{\alpha}},\label{Qalpha}
 \end{align}
+%with $Q_\mathrm{crit}$ given by 
 to mimic a basic state maintained by gravito-turbulence where one
 might expect the dimensionless stress $\alpha \sim Q^{-2}$
 \citep{lin87}.   
+%should really only use this Q-alpha relation for order-unity values
+%of Q
 
 Fig. \ref{gammie_rate_plot} show growth rates as a function of the
 wavenumber $k$ obtained from the dispersion relation
 Eq. \ref{thindisk}. The limiting behavior for small/large $K$ are
 well-captured by Eq. \ref{gammie_smallk} and
 \ref{gammie_bigk}. Comparing the two panels shows that increasing the
-irradiation level ($\theta$) surpresses small-scale perturbations.     
+irradiation level ($\theta$) surpresses small-scale
+perturbations. %(This also occurs in the inviscid case.)
+
+
+%The case $\beta=100$ is shown for completeness but is not physically
+%consistent with gravito-turbulence, as the assumed $Q(\alpha)$
+%relation (Eq. \ref{Qalpha}) imply $Q\gg 1$, whereas $Q$ of order unity
+%is expected for a gravito-turbulent background. Nevertheless, it
+%illustrates that viscous GI is qualitatively different to classic
+%GI. Here, instability can occur for high $Q$. 
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0.4cm
@@ -316,13 +330,15 @@ limiting behavior for this case as
 where we have applied Eq. \ref{alpha_beta_relation}
 and \ref{Qalpha}. The disk is formally unstable for all $\beta$, but
 growth timescales are long ($>10$ orbits) for $\beta \gtrsim
-20$. This region is marked by the vertical dashed-dotted line in
+20$. %increase beta -> drop alpha -> increase Q. latter two expected
+     %to stablize
+This region is marked by the vertical dashed-dotted line in
 Fig. \ref{gammie_maxrate_plot}. The optimum wavenumber decreases with
 the cooling time for $\beta\lesssim O(1)$ because larger scales are
 more resistant to the associated increase in viscous damping.      
 
-{\bf maybe move following to discussion}
-Numerical simulations of self-gravitating disks show there is a
+%{\bf maybe move following to discussion}
+Numerical simulations of gravito-turbulent disks show there is a
 maximum $\alpha$ ($\sim 0.06$) that can be sustained before
 fragmentation \citep{rice11}. We can interpret this result in our
 linear framework. 

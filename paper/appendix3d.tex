@@ -94,7 +94,7 @@ $H_\mathrm{sg}\sim H$, but its precise value is not known a priori.
 We regard $H_\mathrm{sg}$ as a free parameter of the problem.    
 
 
-\section{Numerical method for the 3D eigenvalue problem}
+\section{Numerical method for the 3D eigenvalue problem}\label{3d_method}
 We use a pseudo-spectral method to solve the set of ordinary
 differential equations, Eq. \ref{lin_mass}---\ref{lin_gravity}, on 
 the domain $ z\in[0,\zmax]$ with a parity condition at the midplane.
@@ -115,7 +115,8 @@ condition at the midplane, %GI has even symmetry across midplane
   \bm{U}^\prime(0) = \bm{0}, \quad \delta v_z(0) = 0.
 \end{align}
 %At the upper disk boundary we also apply reflection,
-We explicitly apply a reflecting upper disk boundary, 
+For simplicity we apply a reflecting upper disk boundary, %free
+                                %boundary give similar results
 \begin{align}
   \delta v_z(\zmax) = \delta v_x^\prime(\zmax) = \delta
   v_y^\prime(\zmax) = 0,

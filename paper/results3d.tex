@@ -5,7 +5,9 @@ because the disk mass is spread across the vertical dimension. It is
 possible to incorportate this effect in the previous 2D framework, but this
 introduces additional parameters as discussed in Appendix
 \ref{3dcorr}. It is more direct to solve the 3D eigenvalue problem to
-avoid such uncertainties. 
+avoid such uncertainties. Our numerical approach is outlined in Appendix
+\ref{3d_method}. 
+
 %We will find that while softening the
 %self-gravity in 2D can produce qualitatively similar results to 3D, a
 %quantitative match is  
@@ -17,20 +19,27 @@ avoid such uncertainties.
 
 In the following examples we consider a vertically isothermal disk
 ($\Gamma=1$). Then in the viscous case $\alpha$ is vertically
-constant (Eq. \ref{alpha_beta_relation}). We use $N=65$  and apply
-numerical disk surface such that $\rho(\zmax)=0.05\rho_0$.   
+constant (Eq. \ref{alpha_beta_relation}). We consider even modes about
+the midplane, ane apply a numerical disk surface at $z=\zmax$ such
+that $\rho(\zmax)=0.05\rho_0$.    
 
 %in practice eliminate density with poisson
 \subsection{Inviscid disk}
 
-Fig. \ref{3d_inviscid} show growth rates and the most unstable wavenumber
-obtained for a 3D inviscid disk with $\qthree=0.71$
-($Q=2Q_\mathrm{crit}$) and $\theta=0$. We also plot 2D
+We consider an inviscid disk with $\qthree=0.71$ and $\theta=0$. 
+Recall the 3D gravity parameter $\qthree$ is defined by 
+Eq. \ref{Q3d_def}. This corresponds to a Toomre parameter of
+$Q=2Q_\mathrm{crit}$; where $Q_\mathrm{crit}$, defined by
+Eq. \ref{qcrit_def}, is the Toomre parameter value such that the 2D
+disk would be marginally stable in the absence of cooling. 
+
+Fig. \ref{3d_inviscid} show growth rates and the most unstable
+wavenumber obtained for this model. We also plot 2D
 results with the 3D correction as described in Appendix
 \ref{3dcorr}. The (empirically) chosen value of
 $H_\mathrm{sg}=0.64H$ results in a close match between 2D and 3D
 growth rates, but the most unstable wavenumber in 3D is somewhat smaller. 
-This reflects self-gravity being weakened in the verical 
+This reflects self-gravity being weakened in the vertical 
 direction: a larger horizontal scale is required to achieve the same
 strength of self-gravity as the 2D case. Similarly, 
 choosing $H_\mathrm{sg}=0.53H$ matches the optimum wavenumbers, but
@@ -67,16 +76,18 @@ This suggests that the exact value of
 $H_\mathrm{sg}$ is problem-dependent, although taking
 $H_\mathrm{sg}\sim O(H)$ should give the correct 3D growth rate within
 a factor of two. 
-%A smaller $H_\mathrm{sg}$ is needed with faster 
-%cooling (larger viscosity) and vice versa. 
-%because most unstable wavenumber is smaller with high viscosity
 
-%smaller scales with increasing beta 
-
-%, because viscosity makes the
-%disk behave more two-dimensional.   
- 
-%by eliminating vertical velocity gradients.   
+%cooling helps vertical modes (convection) 
+%slower variation wrt z for low beta because of associated high
+%viscosity
+%smooth out vertical gradients 
+Fig. \ref{3d_visc_vz} shows the magnitude of the vertical velocity
+$|\delta v_z|$ scaled by the total horizontal velocity for $\beta =
+1,\,10$ and $100$. Cooling generally enhances vertical motion
+(convection). However, even in the highly unstable case with $\beta=1$,
+vertical speeds are sub-dominant at $\sim 30\%$ of the horizontal
+speeds. This suggests that it is not essential to consider 3D models
+when considering gravitational instabilities. 
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.cm 0.23cm
@@ -86,6 +97,8 @@ a factor of two.
     relation (Eq. \ref{thindisk}) but with a modified gravitational
     constant as described in Appendix \ref{3dcorr}. \label{3d_visc}}
 \end{figure}
+
+
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.cm 0.23cm
