@@ -127,7 +127,9 @@ together with thermodynamic equilibrium,
 (q\Omega)^2\rho\nu + \mathcal{H}_\mathrm{ext} = \Lambda,
 \end{align}
 where the first term represents viscous heating. For the viscous
-problem, $\nu\neq0$, we may set $\mathcal{H}_\mathrm{ext}=0$. However,
+problem, $\nu\neq0$, we may set $\mathcal{H}_\mathrm{ext}=0$ and
+obtain a relation between $\alpha$ and $\Lambda$
+(e.g. Eq. \ref{alpha_beta_relation} below). However,
 if we wish to neglect viscosity but include cooling, we must invoke
 $\mathcal{H}_\mathrm{ext}\neq0$ to define an equilibrium state.  
 To proceed further, we separately describe the two cooling models
@@ -157,9 +159,8 @@ $T_\mathrm{eq}$. Physically, $\tirr$ is the floor temperature set by,
 for example, stellar irradiation. We will thus refer to $\theta$ as
 the `irradiation level'. %stellar illum or env rad      
 
-We shall formulate the linear problem with beta cooling using the
-functional form for $\Lambda$ as given by
-Eq. \ref{beta_cool}. However, any explicit cooling function, say
+We shall formulate the linear problem with beta cooling of the
+functional form given by Eq. \ref{beta_cool}. However, any explicit cooling function, say
 $\Lambda=\Lambda_1(\rho,T)$, can be mapped to that obtained from
 Eq. \ref{beta_cool} by equating their linearized forms, i.e. $\delta
 \Lambda \equiv \delta \Lambda_1$, which then defines the $\beta$ and
@@ -181,13 +182,22 @@ where $\Gamma$ is the constant polytropic index and $\rho_0 =
 The vertical structure is first obtained from
 Eq. \ref{vert_eq1}---\ref{vert_eq2} then inserted into
 Eq. \ref{thermal_eq} to infer the required viscosity profile for
-thermal equilibrium,   
+thermal equilibrium. If  $\mathcal{H}_\mathrm{ext}=0$, 
 \begin{align}\label{alpha_beta_relation}
 \alpha(z) = \frac{1}{(\gamma-1)\beta
    q^2}\frac{c_s^2(z)}{c_{s0}^2}\left(1 - \theta\right). 
 %  \alpha(z) = \frac{1}{\Gamma(\gamma-1)\beta
 %    q^2}\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left(1 - \theta\right). 
 \end{align}
+%This relation applies if 
+%For generality, we will formulate the linear problem without assuming
+%Eq. \ref{alpha_beta_relation} (i.e. treat $\alpha$ and $\beta$ as
+%independent) and only apply it in numerical
+%calculations.   
+
+%{\bf prob formulation treats alpha-beta independent. this relation
+%  only needed if hext is zero}
+
 
 Beta cooling is widely applied in 2D and 3D
 numerical simulations of self-gravitating disks \citep{gammie01,

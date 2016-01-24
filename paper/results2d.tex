@@ -1,10 +1,12 @@
 \section{Two-dimensional disks with beta cooling}\label{result_2d}
 We begin in the 2D limit with beta cooling  to make connection 
 with previous studies. The disk
-material is assumed to be confined to the midplane so $\delta v_z=0$. 
+material is assumed to be confined to the midplane and $\delta v_z=0$. 
 We make the replacement  
 $\rho \to \Sigma$, re-interpret $P$ as the vertically-integrated
 pressure, and set $\Gamma=1$. % without loss of generality. 
+%big gamma only controls vertical structure
+%can absorb big gamma into def of cs
 The gravitational potential perturbation remains 3D and its midplane
 value is given by    
 \begin{align}
@@ -19,17 +21,15 @@ wavenumber $K=kH = k c_{s0}/\Omega$ as
 \begin{align}\label{thindisk}
   f(S,K)\equiv AD - BC = 0,   
 \end{align}
-where the functions $A,B,C,D$ are given in Appendix \ref{2ddisp}. 
-We use this generalized dispersion relation, which does not assume any
-$\alpha$-$\beta$ relation, %dispersion relation treats alpha/beta as
-                           %independent 
-to investigate GI driven
+where the functions $A,B,C,D$ are given in Appendix \ref{2ddisp},
+which do not impose any $\alpha$-$\beta$ relation. We use this generalized
+dispersion relation  to investigate GI driven 
 by cooling in \S\ref{2d_inviscid}; and GI driven by viscosity 
 in \S\ref{2dvisc}. 
 
 \subsection{Inviscid limit}\label{2d_inviscid}
 We first simplify the problem by setting $\alpha = \alpha_b = 0$. This
-eliminates viscous effects and allows us to quantify the 
+eliminates viscous heating and forces, allowing us to quantify the 
 \emph{sole} effect of cooling on the 
 perturbations. A time-independent heat source should be
 invoked to balance the imposed cooling to allow an equilibrium to be
@@ -40,6 +40,7 @@ play an active role in the perturbed state. %may or may not be true in a real
                                 %as proxy for turbulence
                                 %maybe turb heating actually behaves
                                 %like background heat source only 
+
 Eq. \ref{thindisk} becomes 
 \begin{align}\label{inviscid}
 %  &\beta S^3 + S^2 - \beta \left\{ \frac{2|K|}{\qtwo} - \left[2(2-q) +
@@ -48,7 +49,7 @@ Eq. \ref{thindisk} becomes
   S^2 = \frac{2|K|}{Q} - 2(2-q) - \left(\frac{\theta + \beta \gamma
     S}{1+\beta S}\right)K^2, 
 \end{align}
-similar to the classic Lin-Shu dispersion relation
+similar to the classic dispersion relation
 (Eq. \ref{classic_dr}), which may be obtained by taking the limit
 $|\beta S|\to\infty$. %then setting gamma=1. other params fixed
                       %(finite theta)
@@ -63,19 +64,30 @@ Routh-Hurwitz criteria imply that stability is ensured if
   \gamma > \theta \quad \text{and} \quad 
   Q > \frac{1}{\sqrt{2\theta(2-q)}} 
 \end{align}
-are both satisfied. If only real growth rates are considered, then the
-second condition alone is sufficient for stability. %from property of
-                                %cubic crossing the real axis 
+are both satisfied. 
 %gamma/theta condition is related to some kind of thermal instability
 %oscilitory convection?? 
 %second condition concerning Q is associated with self-g 
 Whether or not the system is stable does not 
-depend on the actual cooling time $\beta$ (provided it is non-zero and
-finite). The system becomes more unstable with decreasing 
-irradiation levels $\theta$, i.e. as the floor temperature, towards which
-perturbations are cooled, drops. 
+depend on the cooling time $\beta\in(0,\infty)$, 
+but on the irradiation level $\theta$.  
+The disk becomes more unstable with decreasing $\theta$, i.e. as the
+floor temperature, towards which perturbations are cooled, drops. 
 
-Consider the most unstable wavenumber $|K_*|$ at which $\p S/\p |K| =
+If only real growth rates are considered, then violating the second
+condition in Eq. \ref{stable_condition} alone is sufficient for instability. 
+%from property of cubic crossing the real axis 
+In that case the wavenumbers satisfying
+\begin{align}
+  \theta K^2 - \frac{2}{Q}|K| + 2(2-q) < 0 
+\end{align}
+are unstable. Thus the range of unstable wavenumbers increases with
+decreasing irradiation $\theta$. For $\theta\ll 1$ this range is 
+$(2-q)Q\lesssim|K|\lesssim2/\theta Q$. Without irradiation there is no
+upper limit to unstable wavenumbers, which could have important
+implications for numerical simulations (see \S\ref{prev_works}). 
+
+Consider the most unstable wavenumber $|K_*|$ at which $\p S/\p|K| =
 0$ and $S = S_*$. By differentiating Eq. \ref{inviscid}, we obtain 
 \begin{align}\label{kstar}
 %  |K_*| = \frac{1}{\gamma \qtwo} \left(1 + \frac{1}{\beta S_*}\right). 
@@ -91,21 +103,24 @@ rate satisfies
   S_*^2 = \frac{1+\beta S_*}{Q^2\left(\theta + \beta\gamma S_*\right)}
   - 2(2-q).
 \end{align}
-General solutions to this cubic for $S_*$ are unwieldy, but simple
-results may be obtained in special cases, discussed next. 
+Eq. \ref{kstar}---\ref{inviscid_max} imply $\p_\beta|K_*|,\,\p_\beta
+S_*<0 $ for $\gamma>\theta$. That is, as cooling becomes more rapid
+the disk becomes more unstable at shorter wavelengths. 
+%show dK*/dbeta < 0 
+%by diff K* wrt beta and diff S* wrt beta from the equations
+%and elim dS*/d beta 
 
+Next, we consider two special cases: $\theta=0$, so perturbations are
+cooled towards zero temperature \citep[as typically employed in
+numerical simulations, e.g.][]{gammie01}; and $\theta=1$, where the
+equilibrium disk temperature equals the irradiation temperature.  
 
 \subsubsection{$\theta = 0$}\label{theta0}
-%Beta cooling with $\theta=0$ is commonly employed in 
-%numerical simulations of self-gravitating disks \citep{gammie01}. 
 For beta cooling with $\theta=0$, the disk is unconditionally unstable
-for finite $Q$: instability is always possible at sufficiently small
-scales (recall the discussion in \S\ref{cool_gi}). At fixed $Q$,  
-the most unstable wavelength decreases with
-decreasing $\beta$. The $\beta\to0$ limit corresponds to a
+for finite $Q$.  The $\beta\to0$ limit corresponds to a 
 pressureless disk (not merely isothermal).   
 
-
+%for definiteness 
 Let us consider a disk with 
 \begin{align}\label{qcrit_def}
   \qtwo = \frac{1}{\sqrt{2\gamma(2-q)}}\equiv Q_{\mathrm{crit}},
@@ -114,14 +129,14 @@ so that it is marginally stable in the absence of cooling.
 How does finite cooling destabilize the disk?  
 Inserting Eq. \ref{qcrit_def} into Eq. \ref{inviscid_max} and setting
 $\theta=0$, we find 
-%In this case the coefficient of 
-%$S_*$ in Eq. \ref{inviscid_max} vanish, so that  
 \begin{align}\label{sstar}
   S_*^3 = \frac{1}{\gamma Q_\mathrm{crit}^2 \beta}. 
 \end{align}
 The maximum growth rate, $S_*\propto \beta^{-1/3}$, smoothly
-increases with decreasing $\beta$. Instability does not require the
-cooling time to be below some critical value. 
+increases with decreasing $\beta$. Instability formally occurs for
+arbitrarily long but finite cooling times. 
+%Instability does not require the
+%cooling time to be below some critical value. 
 
 Nevertheless, we can define a characteristic cooling
 time $\beta_*$ as that which removes pressure support against
@@ -131,28 +146,16 @@ thus set $|K_*|=1$ and find, for the Keplerian disk,
 \begin{align}\label{betastar}
   \beta_* = \frac{1}{\left(\sqrt{\gamma} - 1\right)^{3/2}}. 
 \end{align}
-%Table \ref{bstar_compare} compares Eq. \ref{betastar} to 
-%previously reported values of $\beta_c$ 
-%for which fragmentation
-%occurs.
-This $\beta_*$ is similar to values of the cooling times, $\beta_\mathrm{c}$,
-below which fragmentation occur on dynamical timescales in
-numerical simulations of self-gravitating disks
-\citep{gammie01,rice05,rice11}, which employ the same beta cooling prescription.    
+It is interesting to note that this equation reproduce similar values 
+of the cooling times below which 
+%dynamical disk 
+%fragmentation occurs in numerical simulations
+numerical simulations show dynamical disk fragmentation 
+\citep{gammie01,rice05,rice11}. These simulations employ the same beta  
+cooling prescription with $\theta=0$, and determine the fragmentation
+boundary, $\beta_c$, as a function of the adiabatic index $\gamma$.  
 We compare these in Table \ref{bstar_compare}, showing rough
-agreement; and further discuss the potential significance of this result in
-\S\ref{prev_works}. 
-
-%{\bf brief physical interpretation. gravito-turbulent heating is a
-%  constant background heating - it does not affect perturbations about
-%  the turbulent state.  
-%  imposed beta cooling works on all
-%  scales. but `gravito-turbulence' only makes sense on scales larger
-%  than averaging procedure (probably about $H$). }
-%{\bf wild guess: fragmentation had high resolution because internal
-%  structure of forming-clumps become resolved. internal turbulence
-%  helps collapse. 
-%}
+agreement. 
 
 \begin{deluxetable}{rrrr}
   \tablecolumns{4}
