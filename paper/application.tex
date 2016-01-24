@@ -11,7 +11,8 @@ mass star and is defined by the following parameters,
     gravito-turbulent;
   \item $T_\mathrm{irr}$, the irradiation or floor temperature;
   \item $\alpha_m$, the dimensionless viscosity associated with other
-    sources of turbulence.
+    sources of turbulence, such as magneto-rotational instabilities
+    (MRI), see also \S\ref{visc_gi} and \S\ref{MHD}. 
 \end{itemize} 
 These are used in the statements of thermal equilibrium, mass and
 angular momentum conservation, together with an opacity law, 
@@ -22,25 +23,20 @@ value required for input into our linear framework. We derive other
 dimensionless parameters below. 
 
 Note that we are considering the local stability at each radius. We
-are thus neglecting the slow, background viscous radial flow in the
-linear problem. 
-
-%proper treatment of cooling  in 3d
-%vertically isothermal basic state for simplicity (also appropriate for
-%irradiated disks) --- this formally requires zero viscosity  
-%or have viscosity but assume it does not affect basic state (dominated
-%by irradiation) but affect perturbations 
+are thus neglecting the slow, background viscous radial flow; as well
+as any global gravitational instabilities \citep{lodato05}. {\bf more refs?}
 
 \subsection{Effective $\alpha$}
-In a steady, viscously accreting Keplerian disk we have,
+In a steady, viscously accreting Keplerian disk 
+with constant $\dot{M}$ we have,
 approximately, $\nu\Sigma = \dot{M}/3\pi$. Hence
 \begin{align}
   \alpha = \frac{\dot{M}}{3\pi}\frac{\Omega(R)}{c_{s}^2(T)\Sigma(R)},  
 \end{align} 
 which sets the viscosity coefficient to be used at each radius. 
 
-\subsection{PPD cooling}
-Energy loss in \citetalias{rafikov15}'s model is given by 
+\subsection{PPD beta cooling}
+Energy loss in \citetalias{rafikov15} is given by 
 \begin{align}\label{real_cool}
   \Lambda = \frac{2\sigma}{f(\tau)}\left(T^4 - T_\mathrm{irr}^4\right)
 \end{align}
@@ -53,15 +49,24 @@ and
   \tau = \kappa_d(T)\Sigma
 \end{align}
 is the optical depth and recall Eq. \ref{opacity_law} 
-is our opacity model. Eq. \ref{ftau} accounts for cooling in the
-optically-thin ($\tau\ll 1$) and optically-thick ($\tau\gg1$)
-regimes. 
+is our opacity model where $\kappa_d\propto T^b$ with $b=2$. 
+Eq. \ref{ftau} accounts for cooling in the optically-thin ($\tau\ll
+1$) and optically-thick ($\tau\gg1$) regimes. 
 
-Since we are interested in the linear response of the system, the
-corresponding cooling parameters $\beta$ and $\theta$ are found by
-comparing the linearized form of the cooling function
-(Eq. \ref{real_cool}) to that of the model function
-(Eq. \ref{beta_cool}).  
+Note that Eq. \ref{real_cool} is a beta cooling prescription because
+it is an explicit function of the thermodynamic states. However, we
+formulated the linear problem with beta cooling of the functional form
+given by Eq. \ref{beta_cool}. In order to adapt the developed
+framework to the above PPD beta cooling function, we
+need to identify the $\beta$ and $\theta$ parameters that enter the 
+linearized equations (Eq. \ref{linear_beta}). 
+ 
+%Since we are interested in the linear response of the system, the
+%corresponding cooling parameters $\beta$ and $\theta$ are found by
+%comparing the linearized form of the cooling function
+%(Eq. \ref{real_cool}) to that of the model function
+%(Eq. \ref{beta_cool}).  
+
 %{\bf as opposed to comparing their unperturbed forms, as done in literature}
 Linearizing Eq. \ref{real_cool} gives   
 \begin{align}\label{linear_real_cool}
@@ -74,22 +79,38 @@ where
 C_1(\tau, T) &= 4 - b\times g(\tau, T),\\ 
 C_2(\tau, T) &= 4 + (1-b)\times g(\tau, T),\\ 
   g(\tau, T) &= \left( \frac{\tau^2-1}{\tau^2+1}\right)\left(1 -
-  \frac{T_\mathrm{irr}^4}{T^4}\right). 
+  \frac{T_\mathrm{irr}^4}{T^4}\right). \label{g_def}
 \end{align}
-Comparing Eq. \ref{linear_real_cool} with Eq. \ref{beta_cool}, we identify
+Comparing Eq. \ref{linear_real_cool} with the linearized form of the
+standard cooling function, Eq. \ref{linear_beta}, we identify
 \begin{align}
-  &\beta = \frac{f(\tau)c_s^2\Sigma\Omega}{2\sigma(\gamma-1)C_1T^4},\\
-  &\theta = \frac{C_2}{C_1}, 
+  &\beta = \frac{f(\tau)c_s^2\Sigma\Omega}{2\sigma(\gamma-1)C_1T^4},\label{real_beta}\\
+  &\theta = \frac{C_2}{C_1},\label{real_theta} 
 \end{align}
-to be used in the 2D linear framework. 
+to be used in the 2D dispersion relation (Eq. \ref{thindisk}). 
 
-This `realistic' beta cooling prescription can behave differently to 
-our previous, simple beta cooling (Eq. \ref{beta_cool}) for the same
-physical system. In particular, for a non-irradiated disk
-($T_\mathrm{irr}=0$), simple beta 
-cooling has  $\theta=0$, but realistic beta cooling has $\theta\neq
-0$. However, fully-irradiated disks with $T=T_\mathrm{irr}$ can be
-modeled by simple beta cooling since in both cases $\theta=1$.  
+Eq. \ref{real_beta} still represents a physical (dimensionless) cooling
+time, and is consistent with previous definitions of realistic cooling
+times within factors of order unity \citep[e.g.][their
+Eq. 2]{kratter10}.  
+
+However, here $\theta$ is an effective or generalized
+irradiation level. 
+%no longer a direct measure of
+%irradiation. 
+By Eq. \ref{real_theta}, $\theta$ is now related to the true
+irradation temperature $\tirr$ through the function $g$ given by 
+Eq. \ref{g_def}. This is
+important because a physically non-irradiated disk with $\tirr=0$ will
+still have a non-zero effective irradiation, $\theta\neq0$. 
+%On the
+%other hand, fully irradiated disks with  $T=T_\mathrm{irr}$ have 
+%$\theta=1$, as is in the previous problem formulation
+%(Eq. \ref{tirr_def}). 
+
+%the gammie-type cooling function does not represent realistic
+%cooling. because real cooling depends on sigma and pressure but gammie
+%cooling only depends on pressure 
 
 \subsection{Inviscid stability condition}
 We note that for the adopted opacity law, Eq. \ref{opacity_law}, 
