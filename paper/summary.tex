@@ -181,7 +181,7 @@ cooling and realistic cooling (\S\ref{ppd_cooling}).
 
 %point out viscosity can have a dynamic role in helping frag 
 
-However, \cite{baehr15} included a floor temperature (or irradiation)
+On the other hand, \cite{baehr15} included a floor temperature (or irradiation)
 in their simulations but still find that at fixed cooling rates, disks
 eventually fragment with sufficient spatial resolution.
 In light of our results on viscous GI, 
@@ -194,10 +194,10 @@ rely on rapid cooling.
 
 %This, in fact, has been suggested for 
 
-We note that, although power in gravito-turbulence is dominated by scales with
-$kH\sim 1$ \citep{cossins09}, which is  
-well-resolved by modern numerical simulations, that this does not
-necessarily imply small-scale dynamics/thermodynamics are unimportant
+We comment that although modern simulations resolve the dominant
+scale associated with gravito-turbulence, $kH\sim 1$
+\citep{cossins09}, this does not
+necessarily imply small-scale dynamics/thermodynamics are unimportant 
 \citep[especially for non-linear evolution, see][]{young15},  
 as is evident from the non-converging simulations described above.   
 
@@ -214,19 +214,20 @@ as is evident from the non-converging simulations described above.
 %no magic beta when non-ideal effects are included 
 
 \subsection{MHD turbulence}\label{MHD}%turbulence and viscosity 
-We emphasize the linear theory we have developed does not assume 
+We emphasize the linear theory we have developed does not assume  
+a particular origin for the turbulence represented by the imposed
+viscosity. For example, the 2D dispersion relation, Eq. \ref{thindisk}
+and Appendix \ref{2ddisp}, treats $\alpha$ as an independent
+input parameter. 
 
-
-%It is important to note that while we consider gravito-turbulent disks  
-%as an application, the linear theory itself does not assume any 
-%specific origin of turbulence. 
-
-
-
+%We only considered gravito-turbulence as an application.  
+%In
+%practice, this amounts to relating the $\alpha$ parameter to $Q$. 
+%most equations treat alpha/Q/beta as independent
 
 %effect of MHD turbulence on GI 
-Our models may thus apply to self-gravitating disks dominated by, for
-example, magneto-hydrodynamic (MHD) turbulence.   
+Our models may thus apply to self-gravitating disks dominated by MHD
+turbulence.     
 %In fact, the viscous approach may be more
 %applicable here than gravito-turbulence, because the characteristic
 %wavelength of the magneto-rotational instability (which leads to MHD
@@ -262,30 +263,40 @@ the use of a viscosity to represent turbulence.
 \subsection{Outstanding issues}
 %the link between the linear GI's discussed in this paper 
 %and frag 
-True disk fragmentation is a non-linear process characterized by clumps   
-reaching densities orders of magnitude above the ambient value, and
+True disk fragmentation is a non-linear process characterized by
+clumps reaching densities orders of magnitude above the ambient value, and
 which survives tidal shear and shocks \citep{paardekooper12,young16}.  
 %cite the young papers 
 Clearly, our linear models cannot address fragmentation
 directly. Technically, we have only demonstrated that a 
 gravito-turbulent state becomes dynamically unstable, and thus should
-not persist, when cooling (viscosity) is too rapid (large).  
-However, numerical simulations show that there are only two
-possible outcomes of cooling, self-gravitating disks: steady
-gravito-turbulence or fragmentation. It seems then reasonable to 
-speculate that the non-existence of a gravito-turbulent state, here due to
-dynamical instability, implies disk fragmentation.  
+not persist, when cooling is too rapid or when the associated viscous
+stresses are too large.  However, numerical simulations show that
+there are only two possible outcomes of cooling, self-gravitating
+disks: steady gravito-turbulence or fragmentation. It seems then
+reasonable to  speculate that the non-existence of a stable
+gravito-turbulent state, here due to dynamical instability, implies
+disk fragmentation.   
 
-{\bf comment on stochasitc frag. we only consider 
-how to enhance GI by reducing rotation and pressure. but a third route is 
-increasing sigma. according to toomre Q these are the 3 effects one should consider
-for SG. turbulent flucations may occasionally produce high sigma dens perts. 
-possible relation to current framework? high sigma perts arise because of viscous GI? 
-high alpha $\to$ small-scale transport $\to$ enhance over-dense regions}
+%Our goal is to highlight how non-ideal effects, such as viscosity and
+%cooling, can promote GI. However, the Toomre parameter
+%(Eq. \ref{toomreQ_criterion}) suggest a third possibility: increasing
+%the surface density. 
 
+Our deterministic approach cannot model `stochastic fragmentation'
+\citep{paardekooper12,hopkins13}. In this interpretation,  
+fragmentation is attributed to the occurence (and survival) 
+of non-linear density perturbations, which arise from the
+gravito-turbulent state simply by chance. 
+%Whether these high
+%density perturbations actually lead to a clump formation, 
+This might be considered as a secondary instability by lowering the
+Toomre $Q$ through a (random) increase in density
+(Eq. \ref{toomreQ_criterion}). By contrast, the viscosity/cooling
+mechanisms discussed in this paper lowers $Q$ by reducing pressure and
+Coriolis forces. %we have a physical way of lowering pressure/rotation
 
-
-
+%stochasitc frag -> it just happens by chance. no physics 
 
 %modeling turb as visc %explore other visc laws 
 The most important assumption in this work is modeling turbulence as a  
@@ -304,10 +315,11 @@ should then be modified accordingly.
 %viscosity law altogether 
 
 %non-axisymmetry and transient dynamics 
+%While our linear problem has been formulated with some 
 Another possible generalization is non-axisymmetric
 disturbances. In barotropic, inviscid disks  
-non-axisymmetric GI can develop for $Q$ somewhat larger than unity
-\citep{papaloizou89,papaloizou91}. It would be interesting to study
+non-axisymmetric global GI can develop for $Q$ somewhat larger than unity
+\citep{papaloizou89,adams89,papaloizou91}. It would be interesting to study
 how non-axisymmetric perturbations are affected by cooling and
 viscosity in order to improve %or verify 
 the link between disk fragmentation and the
