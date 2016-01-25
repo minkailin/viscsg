@@ -1,5 +1,5 @@
 \section{Two-dimensional disks with beta cooling}\label{result_2d}
-We begin in the 2D limit with beta cooling  to make connection 
+We begin in the 2D limit with standard beta cooling  to make connection 
 with previous studies. The disk
 material is assumed to be confined to the midplane and $\delta v_z=0$. 
 We make the replacement  
@@ -21,11 +21,15 @@ wavenumber $K=kH = k c_{s0}/\Omega$ as
 \begin{align}\label{thindisk}
   f(S,K)\equiv AD - BC = 0,   
 \end{align}
-where the functions $A,B,C,D$ are given in Appendix \ref{2ddisp},
-which do not impose any $\alpha$-$\beta$ relation. We use this generalized
-dispersion relation  to investigate GI driven 
+where the functions $A,B,C,D$ are given in Appendix \ref{2ddisp}. % Note
+% that these functions, as given, do not assume any $\alpha$-$\beta$
+% relation.
+We use this generalized dispersion relation  to investigate GI driven 
 by cooling in \S\ref{2d_inviscid}; and GI driven by viscosity 
 in \S\ref{2dvisc}. 
+
+
+
 
 \subsection{Inviscid limit}\label{2d_inviscid}
 We first simplify the problem by setting $\alpha = \alpha_b = 0$. This
@@ -68,11 +72,10 @@ are both satisfied.
 %gamma/theta condition is related to some kind of thermal instability
 %oscilitory convection?? 
 %second condition concerning Q is associated with self-g 
-Whether or not the system is stable does not 
-depend on the cooling time $\beta\in[0,\infty)$, 
-but on the irradiation level $\theta$.  
-The disk becomes more unstable with decreasing $\theta$, i.e. as the
-floor temperature, towards which perturbations are cooled, drops. 
+Notice these conditions do not actually
+depend on the cooling time. 
+The disk becomes more unstable with decreasing $\theta$, 
+i.e. as the floor temperature, towards which perturbations are cooled, drops. 
 
 If only real growth rates are considered, then violating the second
 condition in Eq. \ref{stable_condition} alone is sufficient for instability. 
@@ -81,8 +84,8 @@ In that case the wavenumbers satisfying
 \begin{align}
   \theta K^2 - \frac{2}{Q}|K| + 2(2-q) < 0 
 \end{align}
-are unstable. Thus the range of unstable wavenumbers increases with
-decreasing irradiation $\theta$. For $\theta\ll 1$ this range is 
+are unstable. The range of unstable wavenumbers
+increases with decreasing irradiation $\theta$. For $\theta\ll 1$ this range is 
 $(2-q)Q\lesssim|K|\lesssim2/\theta Q$. Without irradiation there is no
 upper limit to unstable wavenumbers, which could have important
 implications for numerical simulations (see \S\ref{prev_works}). 
@@ -140,8 +143,9 @@ arbitrarily long but finite cooling times.
 
 Nevertheless, we can define a characteristic cooling
 time $\beta_*$ as that which removes pressure support against
-self-gravity over the natural lengthscale in the problem, $H$. We
-thus set $|K_*|=1$ and find, for the Keplerian disk, 
+self-gravity over the natural lengthscale in the problem, the
+scale-height $H$. We thus set $|K_*|=1$ and find, for the Keplerian
+disk,  
 
 \begin{align}\label{betastar}
   \beta_* = \frac{1}{\left(\sqrt{\gamma} - 1\right)^{3/2}}. 
@@ -178,7 +182,7 @@ $2$    &  3.75 & 3 & \cite{gammie01}
 \end{deluxetable}
 
 \subsubsection{$\theta = 1$}\label{theta1}
-Beta cooling with $\theta=1$ corresponds to 
+Standard beta cooling with $\theta=1$ corresponds to 
 `thermal-relaxation' in a strictly inviscid disk: the temperature is restored to its initial
 value over the cooling time \citep{lin15,mohandas15}. In this case 
 $\beta\to 0$ corresponds to an isothermal disk and $\beta
@@ -347,7 +351,7 @@ Suppose it is possible to balance rapid cooling ($\beta\lesssim1$)
 by generating a large gravito-turbulent heating rate
 ($\alpha\gtrsim 1$) through a small $Q$. Fig. \ref{gammie_maxrate_plot} 
 shows that such a system would be dynamically unstable with 
-growth rate $s = O(\Omega)$. This due to the direct effect of viscous 
+growth rate $s = O(\Omega)$. This is due to the direct effect of viscous 
 stress promoting instability, rather than cooling. Thus, we do not expect rapidly-cooled, 
 and hence highly turbulent, self-gravitating disks to persist beyond
 dynamical timescales. This is consistent with previous numerical

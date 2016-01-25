@@ -91,11 +91,10 @@ Low mass, self-gravitating accretion disks admit quasi-steady,
 heating. However, numerical simulations show that gravito-turbulence
 cannot be sustained beyond dynamical timescales when the cooling rate
 or turbulent viscosity is too large, resulting in disk fragmentation.        
-% `alternative' or `physical' here?
-%quantify or develop
-We motivate and quantify an alternative interpretation of disk
+We motivate and quantify an interpretation of disk % a physical
+                                % interpretation 
 fragmentation as the inability to maintain gravito-turbulence due to  
-secondary gravitational instabilities driven by:  
+secondary instabilities driven by:  
 \begin{inparaenum}[1)] 
 \item 
   cooling, which reduces pressure support; and/or
@@ -109,11 +108,10 @@ self-gravitating, viscous, non-adiabatic disk with internal heating,
 external irradiation, and cooling. We  
 consider parameterized cooling functions in two and three dimensions,
 as well as full radiative diffusion in 3D. We show that 
-cooling/viscosity can destabilize the disk even when the classic
-Toomre stability condition is satisfied; and generally there is
-no critical cooling rate/viscosity below which the disk is formally
-stable. %there is no special/precise cooling/visc that marks the
-        %stable/unstable boundary
+%cooling/viscosity can destabilize the disk even when the classic
+%Toomre stability condition is satisfied; 
+generally there is no critical cooling rate/viscosity below which 
+the disk is formally stable. 
 We apply linear theory to 
 global models of protoplanetary disks (PPDs) subject to
 gravito-turbulence modeled as an effective 
@@ -128,20 +126,20 @@ with the empirical condition for disk fragmentation based on a
 maximum sustainable stress. 
 We suggest turbulent stresses can play an active role in realistic disk 
 fragmentation by removing rotational stabilization against 
-self-gravity. {\bf shorten abstract?}
+self-gravity. 
 \end{abstract}
 
 \section{Introduction}\label{intro} 
-The gravitational instability (GI) of rotating disks    
-plays a fundamental role in many astrophysical problems. In the context of 
-gaseous protoplanetary disks (PPDs), GI has two applications. It can  
-provide gravitational torques to transport angular momentum outwards
-and thus enable mass accretion \citep{armitage10,turner14}.   
-GI may also lead to disk fragmentation, which has been invoked to 
-explain giant planet formation at large radii
-\citep{helled14}. Studying these non-linear phenomena require direct      
-numerical simulations. Nevertheless, physical insight can be  
-obtained through analytical understanding of GI. 
+Understanding the gravitational stability of rotating disks    
+is central to many astrophysical problems. In the context of 
+gaseous protoplanetary disks (PPDs), gravitational instability (GI)
+has two applications. It can provide gravitational torques to
+transport angular momentum outwards and thus enable mass accretion
+\citep{armitage10,turner14}. GI may also lead to disk fragmentation,
+which has been invoked to explain giant planet formation at large
+radii \citep{helled14}. Studying these non-linear phenomena require
+direct numerical simulations. Nevertheless, physical insight can be    
+obtained through analytical modeling. 
 
 The standard metric for the (inverse) strength of disk self-gravity is
 the \emph{Toomre parameter}, 
@@ -151,7 +149,7 @@ the \emph{Toomre parameter},
 \citep{toomre64}. Here, $c_s$ is the sound-speed,
 $\kappa$ is the epicyclic frequency (which equals the rotation
 frequency $\Omega$ in a Keplerian disk), $\Sigma$ is the surface
-density and $G$ is the gravitational constant. The Toomre $Q$ is a
+density and $G$ is the gravitational constant. The Toomre parameter is a
 measure of the destabilizing effect of self-gravity ($G\Sigma$) against 
 the stabilzing effect of rotation ($\kappa$) and pressure 
 ($c_s$). This is evident from the dispersion relation, 
@@ -191,18 +189,16 @@ even though Eq. \ref{toomreQ_criterion}---\ref{classic_dr} were
 derived from inviscid disks without cooling. 
 %e.g. using classic DR to determine what scales need to be resolved
 
-However, as we emphasize in this work, the inclusion of non-ideal
-physics, such as cooling and viscosity, modifies the dispersion
-relation, Eq. \ref{classic_dr}, and hence the condition for GI. This 
-means that the Toomre condition alone is insufficient to assess GI
-in realistic disks. The goal of this work is to generalize the
-analytic treatment of disk GI to allow a self-consistent discussion of
-GI in realistic accretion disk models. Specifically, we will examine
-how  cooling and viscosity can lead to GI even when $Q>1$, by 
-removing pressure and rotational support, respectively. 
+However, as we emphasize in this work, including non-ideal
+physics, such as cooling and viscosity, modifies the classic dispersion
+relation, and hence the condition for GI. Thus the Toomre condition
+alone is insufficient to assess GI in realistic disks. The goal of
+this work is to generalize the analytic treatment of disk GI to allow
+a self-consistent discussion of GI in realistic accretion disk
+models. Specifically, we will examine how  cooling and viscosity can
+lead to GI even when $Q>1$, by removing pressure and rotational
+support, respectively.  
 
-%Specifically, we will examine the effect of cooling and  
-%viscosity on GI in PPDs.  
 
 \subsection{Cooling-driven gravitational instability}\label{cool_gi}
 Cooling reduces pressure support against self-gravity. The
@@ -220,7 +216,7 @@ type of parameterized cooling, first applied by \cite{gammie01},
 allows the full range of thermodynamic response to be explored. 
 {\bf physical origin of cooling in PPDs}
 
-We will quantify how cooling removes pressure support to enable GI
+We will quantify how cooling enables GI
 even when $Q>1$. For example, if perturbations are
 cooled towards zero tempertaure, we find the above dispersion relation is
 modified to read 
@@ -255,7 +251,7 @@ Toomre condition.
 \subsection{Viscosity-driven gravitational instability}\label{visc_gi}
 %there is also viscous damping which stabilizes
 Viscous disks can also develop GI even when $Q>1$. This is because, as 
-demonstrated below, viscosity compromises rotational support against  
+demonstrated below, viscosity eliminates rotational support against  
 self-gravity for long-wavelength disturbances 
 \citep{lynden-bell74,willerding92,gammie96}. A similar effect   
 occurs in dusty fluids where the required frictional forces are 
@@ -305,12 +301,12 @@ turbulence can enhance GI and lead to disk fragmentation (see also
 \S\ref{MHD}). 
 
 In this work, we use viscosity to model such a 
-physical effect due to turbulence, but we note that viscous 
-GI does not assume any origin for the viscosity. We will generalized
-the theory of viscous GI to include an energy equation  with viscous
+physical effect due to turbulence, but we emphasize that viscous 
+GI does not assume a particular origin for the viscosity. We will
+generalize the theory of viscous GI to include an energy equation  with viscous
 heating, irradiation, explicit cooling, as well as
-three-dimensionality (3D). This 
-allows us to consider viscous GI in more realistic PPD models. 
+three-dimensionality (3D). This allows us to consider viscous GI in
+more realistic PPD models.  
 
 
 %effect of viscosity 
@@ -319,8 +315,10 @@ allows us to consider viscous GI in more realistic PPD models.
 
 \subsection{Relevance to gravito-turbulent disk fragmentation}
 We develop a general framework for viscous disks without  
-assuming a specific origin of turbulence that this viscosity 
-represents. We will, however, apply the theory to `gravito-turbulent'
+assuming a specific origin of the turbulence that this viscosity 
+represents. %without assuming the nature of the turbulence represented
+            %by this viscosity  
+We will, however, apply the theory to `gravito-turbulent'
 disks in which the viscosity associated with some underlying (classic)
 GI, as described below.  
 
@@ -331,9 +329,9 @@ of spiral shocks. %new rafikov 16
 This permits a quasi-steady, turbulent state with
 $Q =O(1)$ in which cooling is balanced by shock heating to maintain
 thermal equilibrium \citep{gammie01}. 
-The dynamic and thermodynamic effect of this turbulence will be
-represented by a viscosity. Then the $\alpha$ and $\beta$ parameters
-defined above will be inversely related. 
+Represent the dynamic and thermodynamic effect of this turbulence by a
+viscosity. Then the $\alpha$ and $\beta$ parameters defined above will
+be inversely related.  
 
 Experimentally, however, it is found that if the cooling rate or
 viscosity is too large, say,   
@@ -358,7 +356,7 @@ However, it is generally accepted that \emph{steady, gravito-turbulent
   exist for sufficiently rapid cooling or large viscosity}.  
 This intriguing because, as highlighted in
 \S\ref{cool_gi}---\ref{visc_gi}, these effects can reduce
-gravitational stability. These considerations motivate a physical    
+gravitational stability. This motivates a physical    
 interpretation of disk fragmentation as the inability to maintain a
 gravito-turbulent state due to the action of cooling and/or viscosity.
 
@@ -381,8 +379,8 @@ given in \S\ref{basic}. The linear stability problem is defined in
 \S\ref{result_2d} and \S\ref{3ddisk} for 2D and 3D disks,
 respectively. %key result: generalized dispersion relation 
 In \S\ref{2dppd} we consider PPDs with realistic viscosity/cooling   
-models, including radiative diffusion in 3D, and determine where such
-disks are gravitationally unstable. We summarize our results in
+models, including radiative diffusion in 3D, and determine where PPDs
+are gravitationally unstable and why. We summarize our results in
 \S\ref{summary} with a discussion of how our models may aid the 
 physical understanding of fragmentation in realistic PPDs.   
 

@@ -18,8 +18,7 @@ The fluid equations are
   \mathcal{H}_\mathrm{ext} ,\label{energy_eq}
 \end{align} 
 where $\rho$ is the density field and $\bm{v} = (v_x, v_y, v_z)$ is
-the velocity field.% $q$ is the shear parameter and $\Omega_z$ is the
-%local vertical oscillation frequency. 
+the velocity field. 
 We assume an ideal gas so that the pressure $P$ and thermal energy
 density $E$ are related by  
 \begin{align}
@@ -31,7 +30,7 @@ gravitatational potential $\Phi$ is given via the Poisson equation,
 \begin{align}
  \nabla^2\Phi = 4 \pi G \rho. 
 \end{align}
-%where $G$ is the gravitational constant.  
+
 
 In the momentum equation (Eq. \ref{momentum_eq}), the third,
 fourth/fifth, and last term on the right-hand side represent the Coriolis, 
@@ -78,34 +77,25 @@ We adopt the same prescription for the bulk viscosity but
 with $\alpha\to\alpha_b$.   
 
 Our numerical calculations use $\mu=-1,\lambda=0$ so 
-that $\rho\nu$ is time-indpendent, folling previous 
+that $\rho\nu$ is time-indpendent, following previous 
 studies of viscous GI  
 \citep{lynden-bell74,hunter83,willerding92,gammie96}.  
-This choice also conveniently eliminates viscous over-stability
+This choice eliminates viscous over-stability
 \citep{schmit95,latter06}, which is unrelated to self-gravity, that
 would otherwise contaminate our results. %obscure   
 
 While steady-state viscosity values can be determined 
 analytically \citep[e.g.][]{rafikov15}, its time-dependent behavior is
 not well-explored. We emphasize the choice $\mu=-1,\lambda=0$ is made
-to bring out the physical process of interest --- viscous GI. %expect
-                                %to 
-%be generally present, but will 
-%be obscured by viscous over-stability with
-%other indices
+to bring out the physical process of interest --- viscous GI. 
 Interestingly, though, \cite{laughlin96b} have suggested a $\nu \propto 1/\Sigma$
 dependence when modeling the evoluting of 2D self-gravitating disks 
 as a viscous process. We note that if $\rho\nu$ is constant in time
 then increasing the density leads to reduction in the viscosity. 
 This is perhaps not inconsistent with numerical simulations of disk
-fragmentation which show the internal structure of clumps, which
-represent increased density, is laminar \citep{gammie01}.  
+fragmentation which show the internal flow of high-density clumps
+is laminar \citep{gammie01}.   
 {\bf is this true?}
-
-%Furthermore, \cite{paardekooper12} measured
-%an increase in the effective viscosity when their gravito-turbulent
-%disk models underwent fragmentation (i.e. as $\Sigma$ increases).  
-%{\bf note paardekooper 2012: alpha goes down as Sigma goes up}
 
 \subsection{Steady states and cooling models}
 We consider equilibrium solutions (here omitting the `eq' subscripts
@@ -127,28 +117,26 @@ together with thermodynamic equilibrium,
 (q\Omega)^2\rho\nu + \mathcal{H}_\mathrm{ext} = \Lambda,
 \end{align}
 where the first term represents viscous heating. For the viscous
-problem, $\nu\neq0$, we may set $\mathcal{H}_\mathrm{ext}=0$ and
-obtain a relation between $\alpha$ and $\Lambda$
+problem, $\nu\neq0$, we may set $\mathcal{H}_\mathrm{ext}=0$ to 
+obtain a relation between viscous heating and cooling 
 (e.g. Eq. \ref{alpha_beta_relation} below). However,
 if we wish to neglect viscosity but include cooling, we must invoke
 $\mathcal{H}_\mathrm{ext}\neq0$ to define an equilibrium state.  
 To proceed further, we separately describe the two cooling models
 considered in this work. 
-%It is possible to have both models present - but too complicated 
+
+
 
 \subsubsection{Beta cooling}\label{beta_cool_model}
-In this case the energy loss per unit volume is specified 
+By beta cooling we mean the energy loss per unit volume is specified  
 as an explicit function of the thermodynamic variables. 
 A prototypical example is 
 \begin{align}\label{beta_cool}
-  \Lambda =
+  \Lambda(\rho, T) =
   %  \frac{P}{(\gamma-1)T}\frac{\left(T-T_\mathrm{irr}\right)}{t_c}, 
   \frac{\mathcal{R}\rho}{(\gamma-1)}\frac{\left(T-T_\mathrm{irr}\right)}{t_c}. 
 \end{align}
-Recall from Eq. \ref{beta_def} that 
-%\begin{align}
-  $\tcool = \beta\Omega^{-1}$ is 
-%\end{align}
+Recall  $\tcool = \beta\Omega^{-1}$ is 
 the cooling timescale with $\beta$ a constant input parameter. Here, 
 \begin{align}\label{tirr_def}
   \tirr = \theta T_\mathrm{eq}
@@ -156,20 +144,11 @@ the cooling timescale with $\beta$ a constant input parameter. Here,
 is a reference temperature field parameterized as a constant 
 fraction $\theta$ of the equilibrium temperature
 $T_\mathrm{eq}$. Physically, $\tirr$ is the floor temperature set by,
-for example, stellar irradiation. We will thus refer to $\theta$ as
-the `irradiation level'. %stellar illum or env rad      
+for example, stellar or background irradiation. We will thus refer to
+$\theta$ as the `irradiation level'. %stellar illum or envelope rad      
 
-We shall formulate the linear problem with beta cooling of the
-functional form given by Eq. \ref{beta_cool}. However, any explicit cooling function, say
-$\Lambda=\Lambda_1(\rho,T)$, can be mapped to that obtained from
-Eq. \ref{beta_cool} by equating their linearized forms, i.e. $\delta
-\Lambda \equiv \delta \Lambda_1$, which then defines the $\beta$ and
-$\theta$ parameters to be used in the framework we develop. This is
-done in \S\ref{2dppd} where we adopt a more realistic beta cooling 
-prescription for 2D PPDs. In this case, $\theta$ may or may not
-represent a physical irradiation.     
 
-For models with beta cooling given by Eq. \ref{beta_cool} we assume an 
+For beta cooling given by Eq. \ref{beta_cool} we assume an 
 equilibrium polytropic relation 
 \begin{align} 
   P  =
@@ -189,23 +168,25 @@ thermal equilibrium. If  $\mathcal{H}_\mathrm{ext}=0$,
 %  \alpha(z) = \frac{1}{\Gamma(\gamma-1)\beta
 %    q^2}\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left(1 - \theta\right). 
 \end{align}
-%This relation applies if 
-%For generality, we will formulate the linear problem without assuming
-%Eq. \ref{alpha_beta_relation} (i.e. treat $\alpha$ and $\beta$ as
-%independent) and only apply it in numerical
-%calculations.   
 
-%{\bf prob formulation treats alpha-beta independent. this relation
-%  only needed if hext is zero}
-
-
-Beta cooling is widely applied in 2D and 3D
-numerical simulations of self-gravitating disks \citep{gammie01,
-  rice05,baehr15}. It permits numerical experiments to be carried out in a
-controlled manner as a function of the cooling time $\beta$. An
-adiabatic disk corresponds to $\beta\to \infty$. The
+Beta cooling of the form Eq. \ref{beta_cool} is widely applied in 2D
+and 3D numerical simulations of self-gravitating disks \citep{gammie01,
+  rice05,rice11}. For this reason we will refer to it as the
+`standard' beta cooling. It permits numerical experiments to be
+carried out in a controlled manner as a function of the cooling time
+$\beta$. An adiabatic disk corresponds to $\beta\to \infty$. The
 physical meaning of the limit $\beta\to0$ depends on $\theta$, as
 discussed in \S\ref{theta0}---\ref{theta1}.  
+
+Note that, although we assume standard beta cooling in formulating the
+linear problem later, any explicit 
+cooling function, say $\Lambda_1(\rho,T)$, can be mapped to
+that obtained from Eq. \ref{beta_cool} by equating their linearized
+forms, i.e. $\delta \Lambda \equiv \delta \Lambda_1$. This then 
+defines the $\beta$ and $\theta$ parameters to be used in the 
+framework we develop. We do this in \S\ref{2dppd} where we adopt a
+more realistic beta cooling function for PPDs. In this case, $\theta$
+may or may not represent a physical irradiation.     
 
 \subsubsection{Radiative cooling}\label{rad_cool}
 Here we assume energy transfer by radiative diffusion. Then
@@ -230,7 +211,7 @@ ordinary differential equations to obtain equilibrium profiles $P(z)$, $T(z)$, a
 $\rho(z)$.  
 
 While radiative cooling is arguably more realistic than
-parametrized beta cooling, it generally implies a vertically
+beta cooling, it generally implies a vertically
 non-isothermal equilibrium disk, and increases the order of the
 linearized equations. It formally applies to optically-thick 
 disks, but it is possible to modify the flux function to account

@@ -1,5 +1,5 @@
 \section{Application to protoplanetary disks}\label{2dppd}
-We now apply our linear framework to assess the stability of realistic 
+We now apply our linear framework to assess the stability of  
 protoplanetary disks. We consider the gravito-turbulent disk models recently
 developed by \cite[][hereafter \citetalias{rafikov15}]{rafikov15}. 
 This 2D, Keplerian disk orbits a Solar 
@@ -12,7 +12,7 @@ mass star and is defined by the following parameters,
   \item $T_\mathrm{irr}$, the irradiation or floor temperature;
   \item $\alpha_m$, the dimensionless viscosity associated with other
     sources of turbulence, such as magneto-rotational instabilities
-    (MRI), see also \S\ref{visc_gi} and \S\ref{MHD}. 
+    (MRI, see also \S\ref{visc_gi} and \S\ref{MHD}). 
 \end{itemize} 
 These are used in the statements of thermal equilibrium, mass and
 angular momentum conservation, together with an opacity law, 
@@ -48,16 +48,16 @@ and
 \begin{align}
   \tau = \kappa_d(T)\Sigma
 \end{align}
-is the optical depth and recall Eq. \ref{opacity_law} 
+is the optical depth. Recall Eq. \ref{opacity_law} 
 is our opacity model where $\kappa_d\propto T^b$ with $b=2$. 
 Eq. \ref{ftau} accounts for cooling in the optically-thin ($\tau\ll
 1$) and optically-thick ($\tau\gg1$) regimes. 
 
 Note that Eq. \ref{real_cool} is a beta cooling prescription because
 it is an explicit function of the thermodynamic states. However, we
-formulated the linear problem with beta cooling of the functional form
-given by Eq. \ref{beta_cool}. In order to adapt the developed
-framework to the above PPD beta cooling function, we
+formulated the linear problem with the standard beta cooling function 
+given by Eq. \ref{beta_cool}. In order to adapt the existing  
+framework to the above PPD beta cooling function, we 
 need to identify the $\beta$ and $\theta$ parameters that enter the 
 linearized equations (Eq. \ref{linear_beta}). 
  
@@ -89,15 +89,12 @@ standard cooling function, Eq. \ref{linear_beta}, we identify
 \end{align}
 to be used in the 2D dispersion relation (Eq. \ref{thindisk}). 
 
-Eq. \ref{real_beta} still represents a physical (dimensionless) cooling
-time, and is consistent with previous definitions of realistic cooling
-times within factors of order unity \citep[e.g.][their
-Eq. 2]{kratter10}.  
+Eq. \ref{real_beta} still represents a physical cooling 
+time, and is consistent with previous definitions within factors of
+order unity \citep[e.g.][their Eq. 2]{kratter10}.  
 
 However, $\theta$ is now an effective 
 irradiation level. 
-%no longer a direct measure of
-%irradiation. 
 Eq. \ref{real_theta} shows that $\theta$ is related to the true
 irradation temperature $\tirr$ through the function $g$ given by 
 Eq. \ref{g_def}. This is
@@ -111,10 +108,6 @@ still have a non-zero effective irradiation, $\theta\neq0$.
 %other hand, fully irradiated disks with  $T=T_\mathrm{irr}$ have 
 %$\theta=1$, as is in the previous problem formulation
 %(Eq. \ref{tirr_def}). 
-
-%the gammie-type cooling function does not represent realistic
-%cooling. because real cooling depends on sigma and pressure but gammie
-%cooling only depends on pressure 
 
 \subsection{Inviscid stability condition}
 We note that for our adopted opacity law, Eq. \ref{opacity_law}, 
@@ -132,7 +125,7 @@ the disk is stable everywhere if
 are both satisfied.  
 
 PPDs become irradiation-dominated at large distances from the star,
-where $T\to\tirr$, or $\theta\to 1$. {\bf ref?}
+where $T\to\tirr$ and $\theta\to 1$. {\bf ref?}
 Then the first inequality in Eq. \ref{ppd_invisc_cond} relaxes to
 $\gamma > 1$ in the outer disk, which is always satisfied.  
 On the other hand, numerical simulations of gravito-turbulence
@@ -142,14 +135,14 @@ means that in the outer regions of a realistic PPD, cooling itself
 cannot cause instability.  
 
 \subsection{Example 2D calculation}\label{pp2d_example}
-We consider a model with $\dot{M} = 10^{-6}M_\sun\,\yr^{-1}$, $Q_0=1.5$, 
+We consider a disk  model with $\dot{M} = 10^{-6}M_\sun\,\yr^{-1}$, $Q_0=1.5$, 
 $\tirr=10\mathrm{K}$, and $\alpha_m=10^{-3}$. 
 We adopt the opacity scale $\kappa_{d0} =
 5\times10^{-4}\mathrm{cm}^2\,\mathrm{g}^{-1}\,\mathrm{K}^{-2}$  as in
 \citetalias{rafikov15}. We use $\gamma=1.6$, approximately applicable
 to molecular gas at low temperatures and used by other authors
 \citep{rice11,baehr15}. Then the global inviscid stability condition
-(Eq. \ref{ppd_invisc_cond}) is satisfied. 
+(Eq. \ref{ppd_invisc_cond}) is satisfied. %which simplifies the problem
 %for outer disk choice of gamma doesn't matter 
 %avoid complications from over-stable thermal modes 
 Fig. \ref{rafikov_model} shows the equilirbium 
@@ -161,12 +154,12 @@ Fig. \ref{rafikov_growth} show growth timescales and
 optimum wavenumbers for viscous GI in this disk model.  
 We also plot analytic estimates based on Eq. \ref{gammie_smallk} (instead of
 Eq. \ref{gammie_maxrate_simple} since here $\theta\sim 1$) 
-which gives the optimum wavenumber as
+which gives the optimum wavenumber and growth rates as
 \begin{align}
-  |K| = \frac{3}{2\theta Q},
-\end{align}
-with growth rate
-\begin{align} 
+  |K| = \frac{3}{2\theta Q}, \quad
+%\end{align}
+%with growth rate
+%\begin{align} 
   S = \frac{27\alpha}{16\theta^3Q^4}. 
 \end{align}
 These are similar to the isothermal results of
@@ -191,12 +184,6 @@ criteria for disk fragmentation \citep[e.g.][]{rafikov15}.
 This suggests that fragmentation in the outer parts of a realistic PPD
 occurs is physically due to large turbulent stresses. 
 
-%{\bf despite apply beta cooling results to realistic cooling disks}
-%Our result suggest an alternative interpretation of disk fragmentation
-%is where the gravito-turbulent state becomes dynamically unstable due to
-%both viscosity and self-gravity. 
-%{\bf note: disk might be stablized by extremely large alpha at large
-%  distances but `turbulent' framework no longer valid }
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
@@ -250,8 +237,9 @@ $R\lesssim60$AU where the disk is optically thick ($\tau\gtrsim
 becomes optically-thin, radiative diffusion (the 3D curve) is not
 valid and under-estimates the growth rates. %; while the $f(\tau)$
 %function approximately captures opticall-thin cooling in the 2D case.  
-Nevertheless, the comparison shows that the transition radius
-$R_t\sim60$AU can be calculated within the 2D framework.  
+However, the comparison shows that the transition radius
+$R_t\sim60$AU can be correctly calculated within the 2D framework.  
+%notice the small softenings used 
 %This is not surprising since the
 %instability is fundamentally driven by viscous and self-gravity forces in the
 %momentum equations, not the energy equation. 
