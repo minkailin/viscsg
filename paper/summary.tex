@@ -1,14 +1,14 @@
 \section{Summary and discussion}\label{summary}
 In this paper, we develop the linear theory of cooling, irradiated,
-and turbulent accretion disks in order to understand gravitational
+and viscous accretion disks in order to understand gravitational
 instability (GI) in realistic protoplanetary disks (PPDs). 
-We model turbulence as an effective, 
-Navier-Stokes viscosity. This viscosity provides a 
-background heating to balance the imposed cooling,  
-and may also be active in the perturbed state.  
-We suggest that disk fragmentation, observed in numerical simulations,
-can be understood as the non-linear outcome of a secondary
-GI of the gravito-turbulent basic state, driven by cooling and/or viscosity.   
+We use a Navier-Stokes viscosity to mimic the effects of turbulence. 
+This viscosity provides a background heating to balance the imposed cooling,  
+and may also act on linear perturbations. %thermo and dynamic 
+We suggest that disk fragmentation, observed in numerical simulations, 
+can be understood as the eventual outcome of secondary
+instabilities of the gravito-turbulent base state, driven by cooling
+and/or viscosity.     
 %This %allows us to assess realistic disk fragmentation without using
 %uncertain empirical conditions based on numerical simulations.   
 %{\bf cooling removes pressure support, viscosity removes rotational support}
@@ -16,9 +16,9 @@ GI of the gravito-turbulent basic state, driven by cooling and/or viscosity.
 %sims}
 %going beyond toomre 
 %move to subsection?
-While viscosity and cooling are related through thermal
-balance, they independently enhance GI: cooling reduces thermal
-stabilization; and viscous forces compromise rotational
+While viscosity and cooling can be related through thermal
+balance, they independently enhance growth rates: cooling reduces
+thermal stabilization; and viscous forces compromise rotational
 stabilization. This provides a physical explanation as to why
 rapidly-cooled, gravito-turbulent disks cannot exist. 
 
@@ -28,14 +28,14 @@ rapidly-cooled, gravito-turbulent disks cannot exist.
 %no magic beta - connection with stochastic 
 %cooling function includes irradiation 
 
-The effect of cooling and irradiation on GI is quantified by the
+The effect of cooling and irradiation on GI is quantified by the 
 dispersion relation 
 Eq. \ref{inviscid}. The sufficient condition for stability 
-depends on the irradiation level (Eq. \ref{stable_condition}), and 
-\emph{independent} of the cooling rate, provided it is non-zero and
+depends on the irradiation level (Eq. \ref{stable_condition}), and is 
+\emph{independent} of the cooling time, provided it is non-zero and
 finite. This means that long cooling times can still  
 formally lead to instability. However, growth timescales may be 
-uninterestingly long for cooling times $\tcool\Omega\gtrsim
+uninterestingly long for cooling times $\tcool\Omega\gtrsim 
 O(10)$. Because cooling affects pressure support, GI driven by cooling
 occur on small scales, $kH\gtrsim O(1)$.   
 
@@ -53,30 +53,38 @@ studied in isothermal disks
 cooling, viscous heating and irradiation. In our fiducial disk,  
 where viscosity and self-gravity are inversely
 related ($\alpha\propto Q^{-2}$) to model a
-gravito-turbulent background, viscous GI occurs on orbital  
+gravito-turbulent background, this instability occurs on orbital  
 timescales for $\alpha\gtrsim 0.1$. This is consistent with the notion
-of a maximum stress sustainable by gravito-turbulence established in
-previous numerical simulations \citep{rice05}. Because viscosity affects 
+of a maximum stress sustainable by gravito-turbulence established
+through numerical simulations \citep{rice05}. Because viscosity affects 
 rotational support, viscous GI occurs on large scales, $kH\lesssim
 O(1)$.  Furthermore, irradiation preferentially
-stabilizes small-scale perturbations. %maybe that's why irradiated disks produce smaller alpha     
-
+stabilizes small-scale perturbations. %also true for inviscid case
+%maybe that's why irradiated disks produce smaller alpha     
+                             
 %application to PPD %realistic relation between alpha and Q 
 
 We apply our linear framework to protoplanetary disks with 
-realistic models for cooling and gravito-turbulence
-\citep{rafikov15}. We show that, for linear dynamics, realistic 
-cooling in a physically non-irradiated disk ($T_\mathrm{irr}=0$) is
-actually modeled by `beta' cooling with a  
-non-zero irradiation parameter ($\theta\neq0$), in contrast to 
-numerical simulations which typically employ beta cooling with  
-$\theta=0$ \citep[e.g.][]{gammie01}. How relevant 
-are such simulations to realistic PPDs must then be further 
-investigated. 
-
-The important implication of having 
-$\theta\sim 1$ in a PPD is that cooling alone cannot 
-destabilize the disk at large radii. Instead, viscous GI occurs on
+realistic models for cooling and gravito-turbulence. 
+%\citep{rafikov15}. 
+%We show that, for linear dynamics, realistic 
+%cooling in a physically non-irradiated disk ($T_\mathrm{irr}=0$) is
+%actually modeled by `beta' cooling with a  
+%non-zero irradiation parameter ($\theta\neq0$), in contrast to 
+%numerical simulations which typically employ beta cooling with  
+%$\theta=0$ \citep[e.g.][]{gammie01}. How relevant 
+%are such simulations to realistic PPDs must then be further 
+%investigated. 
+%The important implication of having 
+%$\theta\sim 1$ in a PPD is that cooling alone cannot 
+%destabilize the disk at large radii. 
+We show that with a realistic cooling model for PPDs,
+cooling alone cannot lead to gravitational instabilities. This is due
+to stabilization by an effective irradiation associated with the PPD
+cooling function, which is present even if 
+there is no physical irradiation. %due to matching functional forms of
+                                %cooling 
+Instead, viscous GI occurs on  
 dynamical timescales for $R\gtrsim 60$AU because 
 $\alpha\gtrsim0.1$ there. This corresponds to a Toomre $Q\simeq 1.5$ and 
 a cooling time $\tcool\lesssim 3\Omega^{-1}$. These are coincident with 
@@ -98,36 +106,99 @@ destabilize the disk against self-gravity.
 %fragment due to cooling or viscosity?
 %they should produce diff size frags
 \subsection{Relation to numerical simulations}\label{prev_works}
-Our framework may shed light on 
-%may offer an alternative understanding of 
-some recent numerical results concerning disk
-fragmentation.  \cite{paardekooper12} found that fragmentation can occur for 
-slowly-cooled disks, $\tcool\Omega\gg O(1)$, but that this requires  
+%frag in sims because of : cooling, viscosity, or high den
+%flucuations? don't know 
+Our results may shed light on some numerical simulations 
+of disk fragmentation. Table 
+\ref{bstar_compare} shows a close match between the characteristic
+cooling time for cooling-driven GI (Eq. \ref{betastar}) 
+and that for disk fragmentation observed in simulations 
+\citep{gammie01,rice05,rice11}. This suggests that, at least for those
+simulations, fragmentation is physically due to the removal of
+pressure stabilization by cooling on a radial scale of the disk scale
+height. 
+%i.e. cool-driven g 
+{\bf don't know if we want to dwell on this table}
+
+More recent simulations have raised the issue of numerical
+convergence. \cite{paardekooper12} found that fragmentation can occur
+for   
+slowly-cooled disks, $\tcool\Omega\gg O(1)$, but that this requires   
 simulations to run for significantly longer than dynamical 
 timescales. This is consistent with our finding
 that for either cooling-driven or viscous GI, there is no critical 
-cooling rate (viscosity) beyond (below) which the disk is  
+cooling rate/viscosity below  which the disk is  
 formally stable. Instead, growth rates smoothly decrease with
-increasing (decreasing) $\tcool$ ($\alpha$), implying that
-instabilities take longer to develop for slowly-cooled disks.        
+increasing $\tcool$ (decreasing $\alpha$), implying that
+instabilities, and hence fragmentation, simply take longer to develop
+for slowly-cooled disks.         
 %hopkins paper 
 
 %resolution convergence 
-Another issue is convergence with numerical resolution. Notably, 
-\cite{baehr15} found that for fixed cooling rates, disks eventually 
-fragment with sufficient spatial resolution. %This could be due to 
-%small-scale, turbulent angular momentum transport being enabled at
-%high resolutions, which aids clump formation. 
-This might be related to viscous GI in the following sense: high
-resolutions enable small-scale turbulent angular momentum transport
-away from over-dense regions, aiding clump formation. This 
-mechanism is unavailable at low resolutions, for which one can only
-resort to rapid cooling for destabilization.       
- 
-We note that power in gravito-turbulence is dominated by scales with
-$kH\sim 1$ \citep{cossins09}, and this is always  
-well-resolved by modern numerical simulations. However, this does not
-necessarily imply small-scale dynamics are unimportant \citep[especially for non-linear evolution, see][]{young15}, 
+Another issue is convergence with numerical resolution. For example,
+\cite{meru11} found that the critical cooling time for 
+disk fragmentation increases with numerical resolution. %sph particles in
+% their case 
+Follow-up studies attributed this to decreasing numerical viscous
+heating at higher resolution, which helps fragmentation
+\citep{lodato11,meru12}. %also global effects in
+                         %these. (paardekooper/meru/baruteau) 
+%note that these sims do not have a floor temp
+%is there an effective floor temp related to num visc?
+%high res -> smaller effective floor temp -> easier to frag? 
+
+Here, we highlight that most numerical experiments, including those
+above, employ the standard beta cooling function, Eq. \ref{beta_cool},
+\emph{without} a floor temperature. We show in \S\ref{2d_inviscid}
+(see also \S\ref{cool_gi}) that this implies cooling-driven GI can
+occur at any sufficiently small scales. Then as the numerical
+resolution increases, simulations can access a wider range of unstable
+scales.  %no upper bound 
+In this respect, it is not surprising to find non-convergence with 
+increasing resolution. %simple beta cooling will not give a
+                       %well-imposed problem 
+
+We thus suggest that having a floor temperature in the standard beta
+cooling prescription is a necessary condition for  
+convergence with respect to numerical resolution. This limits the
+relevant scales to a finite range.  %for cool gi 
+%physically irradiation 
+Furthermore, without a floor temperature, standard beta cooling only
+depends on the pressure/energy density field. It is not clear how
+results obtained from such models can be applied to PPDs, where
+cooling depends on two thermodynamic states (e.g. $P$ and
+$T$). A floor temperature permits a mapping between beta
+cooling and realistic cooling (\S\ref{ppd_cooling}). 
+
+%ultra-small scale cooling-GI may have slow growth rates
+%but will eventually matter if you sim for a long time 
+%
+%limit the relevant scales to a finite range 
+%we suggest that having a floor temperature (irradiation) is necessary
+%(though may not sufficient) 
+%floor temp may be physical: irradiation, or numerical (sph particles
+%can't have zero jitter)
+
+%point out viscosity can have a dynamic role in helping frag 
+
+However, \cite{baehr15} included a floor temperature (or irradiation)
+in their simulations but still find that at fixed cooling rates, disks
+eventually fragment with sufficient spatial resolution.
+In light of our results on viscous GI, 
+we here highlight a possible contribution: %in addition to num visc (meru lodato)
+high resolutions enable small-scale turbulent angular momentum transport 
+% physical, cf numerical  
+to aid clump formation (see also \S\ref{MHD} below). 
+This mechanism is unavailable at low resolutions, for which one must
+rely on rapid cooling.  
+
+%This, in fact, has been suggested for 
+
+We note that, although power in gravito-turbulence is dominated by scales with
+$kH\sim 1$ \citep{cossins09}, which is  
+well-resolved by modern numerical simulations, that this does not
+necessarily imply small-scale dynamics/thermodynamics are unimportant
+\citep[especially for non-linear evolution, see][]{young15},  
 as is evident from the non-converging simulations described above.   
 
 %it is true that most unstable wavelength is H is this is always
@@ -143,9 +214,15 @@ as is evident from the non-converging simulations described above.
 %no magic beta when non-ideal effects are included 
 
 \subsection{MHD turbulence}\label{MHD}%turbulence and viscosity 
-It is important to note that while we consider gravito-turbulent disks  
-as an application, the linear theory itself does not assume any 
-specific origin of turbulence. 
+We emphasize the linear theory we have developed does not assume 
+
+
+%It is important to note that while we consider gravito-turbulent disks  
+%as an application, the linear theory itself does not assume any 
+%specific origin of turbulence. 
+
+
+
 
 %effect of MHD turbulence on GI 
 Our models may thus apply to self-gravitating disks dominated by, for
