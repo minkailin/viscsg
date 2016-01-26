@@ -172,9 +172,16 @@ program viscsg
            err(m) = zmag(det)
            
            !filter out root with too large error
+!           if(filter .eqv. .true.) then
+!              if(err(m) .gt. tol) roots(m) = dcmplx(-1d0,0d0)
+!           endif
+             
+            !filter out over-stable modes 
            if(filter .eqv. .true.) then
-              if(err(m) .gt. tol) roots(m) = dcmplx(-1d0,0d0)
+              if(abs(x(2)/x(1)) .gt. tol) roots(m) = dcmplx(-1d0,0d0)
            endif
+
+
         enddo
         
         !pick most unstable root  among all roots, and store the associated error

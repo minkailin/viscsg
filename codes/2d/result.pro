@@ -1,4 +1,14 @@
-pro result, xrange=xrange, yrange=yrange, label=label, legend=legend, title=title 
+FUNCTION logticks_exp, axis, index, value
+   ; Determine the base-10 exponent
+   exponent   = LONG( ALOG10( value ) )
+   ; Construct the tickmark string based on the exponent
+;   tickmark = '10!E' + STRTRIM( STRING( exponent ), 2 ) + '!N'
+    tickmark = textoidl('10^{' + STRTRIM( STRING( exponent ), 2 )+'}')
+   ; Return the formatted tickmark string
+   RETURN, tickmark
+END
+
+pro result, xrange=xrange, yrange=yrange, label=label, legend=legend, title=title , ytickinterval=ytickinterval, yminor=yminor
 
 !p.font = 0 
 
@@ -100,6 +110,7 @@ endfor
 endfor 
 
 xtitle = tex2idl('$\beta$') + '!X'
+;xtitle = tex2idl('$\alpha$') + '!X'
 ytitle = tex2idl('max$(s/\Omega)$') + '!X'
 
 if not keyword_set(title) then title = ''
@@ -112,15 +123,15 @@ file = strcompress('result.ps',/remove_all)
 device, filename=file $
         ,bits_per_pixel=8,xsize=8, ysize=4.5,xoffset=0,yoffset=0,/inches,/color
 plot, baxis,rate,xmargin=[8.3,1.7],ymargin=[3.2,2], ystyle=1, xstyle=1 $
-      ,charsize=1.5, thick=4, xrange=xrange, title=textoidl(title), xtitle=xtitle, yrange=yrange,$
-      linestyle = 0, ytitle =ytitle, xtickinterval=xtickinterval, ytickinterval=ytickinterval,charthick=2,/xlog,/ylog, color=color_arr(0)
+      ,charsize=2, thick=4, xrange=xrange, title=textoidl(title), xtitle=xtitle, yrange=yrange,$
+      linestyle = 0, ytitle =ytitle, xtickinterval=xtickinterval, ytickinterval=ytickinterval,charthick=2,/xlog,/ylog, color=color_arr(0), xtickformat='logticks_exp'
 oplot, baxis, rate_special, thick=4, color=color_arr(1) 
 ;oplot, [min(baxis),max(baxis)], [0,0], linestyle=2, thick=2
-oplot, [1,1]*alpha(agrid), [1d-8,1d8], thick=2, linestyle=2
-xyouts, alpha(agrid)*0.9, 3d-2, textoidl('\alpha>1 (Q<Q_{crit})'), charsize=1.5, align=1
+oplot, [1,1]*baxis(agrid), [1d-8,1d8], thick=2, linestyle=2
+xyouts, baxis(agrid)*0.9, 3d-5, textoidl('\alpha>1'), charsize=2, align=1
 
 oplot, [1,1]*baxis[rgrid], [1d-8,1d8], thick=2, linestyle=3
-xyouts,baxis[rgrid]*1.2,3d-2, textoidl('t_{grow}>10 orbits'), charsize=1.5
+xyouts,baxis[rgrid]*1.2,3d-5, textoidl('t_{grow}>10 orbits'), charsize=2
 
 if keyword_set(legend) then begin
    x0=legend(0)
@@ -132,7 +143,7 @@ if keyword_set(legend) then begin
         ynew = 10.^(alog10(y0) - dy*j)
         oplot, [x0,x1], [ynew,ynew], thick=4, color=color_arr(j) 
       ;  print, ynew
-      xyouts, x1, ynew, textoidl(label(j)),charsize=1.5
+      xyouts, x1, ynew, textoidl(label(j)),charsize=2
    endfor
 
 endif
@@ -144,13 +155,16 @@ set_plot,'ps'
 file = strcompress('result_kmax.ps',/remove_all)
 device, filename=file $
         ,bits_per_pixel=8,xsize=8, ysize=4.5,xoffset=0,yoffset=0,/inches,/color
-plot, baxis,kmax,xmargin=[8.,2],ymargin=[3.2,1.8], ystyle=0, xstyle=1 $
-      ,charsize=1.5, thick=4, xrange=xrange, title=title, xtitle=xtitle, yrange=yrange,$
-      linestyle = 0, ytitle =ytitle, xtickinterval=xtickinterval, ytickinterval=ytickinterval,charthick=2,/xlog;,/ylog
+plot, baxis,kmax,xmargin=[8.3,1.7],ymargin=[3.2,2], ystyle=0, xstyle=1 $
+      ,charsize=2, thick=4, xrange=xrange, title=textoidl(title), xtitle=xtitle, yrange=yrange, yminor=yminor, xtickformat='logticks_exp',  $
+      linestyle = 0, ytitle =ytitle, xtickinterval=xtickinterval, ytickinterval=ytickinterval,charthick=2,/xlog,color=color_arr(0);,/ylog
+oplot, baxis, kmax_special, thick=4, color=color_arr(1)
 
-;kmax_theory = (1d0/gmma/bigQ)*(1d0 + 1d0/baxis/rate_special)
+oplot, [1,1]*baxis(agrid), [1d-8,1d8], thick=2, linestyle=2
+xyouts, baxis(agrid)*0.9, 0.2, textoidl('\alpha>1'), charsize=2, align=1
 
-;oplot, baxis, kmax_special, thick=4, linestyle=1
+oplot, [1,1]*baxis[rgrid], [1d-8,1d8], thick=2, linestyle=3
+xyouts,baxis[rgrid]*1.2,0.2, textoidl('t_{grow}>10 orbits'), charsize=2
 
 if keyword_set(legend) then begin
    x0=legend(0)
@@ -158,6 +172,11 @@ if keyword_set(legend) then begin
    y0=legend(2)
    dy=legend(3)
    for j=0, n_elements(label)-1 do begin
+
+  ynew = y0 - dy*j
+        oplot, [x0,x1], [ynew,ynew], thick=4, color=color_arr(j)
+      ;  print, ynew
+      xyouts, x1, ynew, textoidl(label(j)),charsize=2
      
    
      endfor

@@ -1,3 +1,12 @@
+FUNCTION logticks_exp, axis, index, value
+   ; Determine the base-10 exponent
+   exponent   = LONG( ALOG10( value ) )
+   ; Construct the tickmark string based on the exponent
+;   tickmark = '10!E' + STRTRIM( STRING( exponent ), 2 ) + '!N'
+    tickmark = textoidl('10^{' + STRTRIM( STRING( exponent ), 2 )+'}')
+   ; Return the formatted tickmark string
+   RETURN, tickmark
+END
 ;dispersion relation for the real growth rate s
 ;for viscosity prescription nu propto Sigma^mu Pressure^lambda
 pro viscsg_modes, bigQ=bigQ, smallq=smallq, gmma=gmma, mu=mu, lambda=lambda, xrange=xrange, yrange=yrange, fixalpha = fixalpha, kmin=kmin, kmax=kmax, $
@@ -176,8 +185,8 @@ close,1
      device, filename=file $
              ,bits_per_pixel=8,xsize=8, ysize=4.5,xoffset=0,yoffset=0,/inches,/color
      plot, kaxis, roots(0,0,*),xmargin=[8.,2],ymargin=[3.2,1.8], ystyle=0, xstyle=1 $
-           ,charsize=1.5, thick=4, xrange=xrange, xtitle=xtitle, yrange=yrange1,$
-           linestyle = 0, ytitle =ytitle, xtickinterval=xtickinterval, ytickinterval=ytickinterval,charthick=2, color=color_arr(0), /xlog , /ylog, $
+           ,charsize=2, thick=4, xrange=xrange, xtitle=xtitle, yrange=yrange1,$
+           linestyle = 0, ytitle =ytitle, xtickinterval=xtickinterval, ytickinterval=ytickinterval,charthick=2, color=color_arr(0), /xlog , /ylog, xtickformat='logticks_exp', $;ytickformat='logticks_exp', $
      title = textoidl(title)
      oplot, [kmin, kmax], roots_asymp(0)*[1,1], thick=1, linestyle=2
      oplot, kaxis, roots_gammie_largek(0,*), thick=4,color=color_arr(0), linestyle=1
@@ -203,7 +212,7 @@ close,1
         for j=0, n_elements(label)-1 do begin
            ynew = 10.^(alog10(y0) - dy*j)
            oplot, [x0,x1], [ynew,ynew], thick=4, color=color_arr(j)
-           xyouts, x1, ynew, textoidl(label(j)),charsize=1.5
+           xyouts, x1, ynew, textoidl(label(j)),charsize=2
         endfor
      endif
      device,/close

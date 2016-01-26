@@ -33,9 +33,11 @@ program viscsg
   integer :: i,j, jmid, kcount, bcount, info, lwork
   integer :: loc(1) 
   integer, allocatable :: ipiv(:)
-  real*8 :: dk, dlogb, optimize 
+  real*8 :: dk, dlogb, optimize, amid, bcool
   real*8 :: k, zbar, m, T_l, dT_l, d2T_l, n 
   complex*16, allocatable :: work(:)
+  real*8, external :: gviscosity
+
   namelist /params/ Q3d, smallq, bgmma, gmma, bmin, bmax, nb, kmin, kmax, nk, mu, lambda, gvisc, fixalpha, bulkv, tirr
   namelist /grid/   nz, zmax, nzout, vbc 
   namelist /job/    maximize, no_decay, no_oscil 
@@ -68,14 +70,12 @@ program viscsg
   !set up parameter survey axis 
   allocate(bvals(nb))
   allocate(kvals(nk))
-
+  allocate(Qarr(nb))
   !wavenumber space
   if(nk .gt. 1) then
-!     dk = (kmax - kmin)/(dble(nk)-1d0)
-      dk = log10(kmax/kmin)/(dble(nk)-1d0)
+     dk = (kmax - kmin)/(dble(nk)-1d0)
      do i=1, nk 
-!        kvals(i) = kmin + dk*(dble(i)-1d0)
-         kvals(i) = 10d0**(log10(kmin)+dk*(dble(i)-1d0))
+        kvals(i) = kmin + dk*(dble(i)-1d0)
      enddo
   else
      kvals(1) = kmin
@@ -95,29 +95,29 @@ program viscsg
   else
      bvals(1) = bmin 
   endif
-
+  
   open(10,file='bvals.dat')
   do i=1, nb
      write(10,fmt='(e22.15)') bvals(i)
   enddo
   close(10)
   
-  !****************************************!
-  !***********BASIC STATE SETUP************!
-  !****************************************!
-  write(6,fmt='(A)') '************BASIC STATE SETUP***********'
+  if(gvisc.eqv..true.) then !reset Q to depend on midplane alpha 
+     print*, 'using gviscosity, only OK for big gamma=1!'
+     do i=1, nb
+        bcool = bvals(i) 
+        amid    = 1d0/(bgmma*(gmma-1d0)*bcool*smallq**2d0)*(1d0 - tirr)
+        Qarr(i) = gviscosity(amid) 
+     enddo
+  else 
+     Qarr(:) = Q3d 
+  endif
   
-  !figure out the vertical domain size and set up vertical grid (z > 0)
-  call get_thickness
-  write(6,fmt='(A,e22.15)') 'bigH=', bigH 
-
- !setup basic state and output (fine grid for data analysis)
-  call basic_setup(nzout)
-
-  !setup basic state again (coarse spectral grid for eigen problem) 
-  call basic_setup(nz) 
-  Q2d = -2d0/(csq(nz)*dlogdens(nz) + omegaz**2d0*bigH)
-  write(6,fmt='(A,e22.15)') 'Q_2d=', Q2d
+  open(10,file='Qvals.dat')
+  do i=1, nb
+     write(10,fmt='(e22.15)') Qarr(i)
+  enddo
+  close(10)
 
   !****************************************!
   !***********EIGEN PROBLEM SETUP**********!
@@ -132,35 +132,11 @@ program viscsg
   allocate(Tp_odd(nz,nz))
   allocate(Tpp_odd(nz,nz))
   
-  do j=1, nz !jth physical grid
-     zbar = zaxis(j)/bigH
-     do i=1, nz !ith basis
-
-        !fill the even basis 
-        n = 2d0*dble(i-1)
-        call chebyshev_poly(n, zbar, T_l, dT_l, d2T_l)
-        T(j,i)  =   T_l
-        Tp(j,i) =  dT_l/bigH             !convert to deriv wrt physical grid
-        Tpp(j,i)= d2T_l/bigH**2d0        !convert to deriv wrt physical grid  
-                
-        !fill the odd basis (these operate on vz)
-        m = n+1d0
-        call chebyshev_poly(m, zbar, T_l, dT_l, d2T_l)
-        T_odd(j,i)  =   T_l
-        Tp_odd(j,i) =  dT_l/bigH
-        Tpp_odd(j,i)= d2T_l/bigH**2d0
-        
-     enddo
-  enddo
-  
   !we need the inverse of T later (declare as complex)  
   lwork = nz 
   allocate(invT(nz,nz))
   allocate(ipiv(nz))
   allocate(work(lwork))
-  invT = T 
-  call zgetrf(nz, nz, invT, nz, IPIV, INFO)
-  call ZGETRI(nz, invT, nz, IPIV, WORK, LWORK, INFO)
 
   !for the energy/pressure equation
   allocate(L11(nz,nz)) !operators on W
@@ -205,15 +181,77 @@ program viscsg
   !loop over parameter space and do eigenvalue problem 
   open(10,file='eigenvalues.dat')
   open(20,file='eigenvectors.dat')
-  do bcount=1, nb
-     write(6,fmt='(A,e8.1,A)') '************BCOOL=', bvals(bcount),'**************'
-     do kcount=1, nk
-        call fill_matrices(kcount,bcount)
-        call eigenvalue_problem(kcount,bcount)
-        
-        growth_fixb(kcount) = growth(kcount,bcount) 
 
-        if(maximize.eqv..false.) then 
+  open(30,file='basic.dat')
+
+  do bcount=1, nb
+     Q3d = Qarr(bcount)
+     
+     write(6,fmt='(A,e8.1,A)') '************BCOOL=', bvals(bcount),'**************'
+     
+     !setup basic state 
+     
+     !****************************************!
+     !***********BASIC STATE SETUP************!
+     !****************************************!
+     write(6,fmt='(A)') '************BASIC STATE SETUP***********'
+     
+     !figure out the vertical domain size and set up vertical grid (z > 0)
+     call get_thickness
+     write(6,fmt='(A,e22.15)') 'bigH=', bigH 
+     
+     !setup basic state and output (fine grid for data analysis)
+     call basic_setup(nzout)
+     
+     !output basic state 
+     do i=1, nzout
+        write(30,fmt='(7(e22.15,x))') zaxis(i), dens(i), dlogdens(i), csq(i), dcsq(i), alpha2d(i,bcount), dalpha2d(i,bcount)
+     enddo
+     
+     deallocate(zaxis)
+     deallocate(dens)
+     deallocate(dlogdens)
+     deallocate(csq)
+     deallocate(dcsq)
+     deallocate(alpha2d)
+     deallocate(dalpha2d)
+     
+     !setup basic state again (coarse spectral grid for eigen problem) 
+     call basic_setup(nz) 
+     Q2d = -2d0/(csq(nz)*dlogdens(nz) + omegaz**2d0*bigH)
+     write(6,fmt='(A,e22.15)') 'Q_2d=', Q2d
+     
+     do j=1, nz !jth physical grid
+        zbar = zaxis(j)/bigH
+        do i=1, nz !ith basis
+           
+           !fill the even basis 
+           n = 2d0*dble(i-1)
+           call chebyshev_poly(n, zbar, T_l, dT_l, d2T_l)
+           T(j,i)  =   T_l
+        Tp(j,i) =  dT_l/bigH             !convert to deriv wrt physical grid
+        Tpp(j,i)= d2T_l/bigH**2d0        !convert to deriv wrt physical grid  
+                
+        !fill the odd basis (these operate on vz)
+        m = n+1d0
+        call chebyshev_poly(m, zbar, T_l, dT_l, d2T_l)
+        T_odd(j,i)  =   T_l
+        Tp_odd(j,i) =  dT_l/bigH
+        Tpp_odd(j,i)= d2T_l/bigH**2d0
+        
+     enddo
+  enddo
+  invT = T 
+  call zgetrf(nz, nz, invT, nz, IPIV, INFO)
+  call ZGETRI(nz, invT, nz, IPIV, WORK, LWORK, INFO)
+  
+  do kcount=1, nk
+     call fill_matrices(kcount,bcount)
+     call eigenvalue_problem(kcount,bcount)
+     
+     growth_fixb(kcount) = growth(kcount,bcount) 
+     
+     if(maximize.eqv..false.) then 
         write(10,fmt='(3(e22.15,x))') growth(kcount,bcount), freq(kcount,bcount), kvals(kcount) 
         
         dpres(:) = eigen_vec(1:nz)
@@ -261,10 +299,20 @@ program viscsg
         enddo
         endif
 
-  enddo
+        deallocate(zaxis)
+        deallocate(dens)
+        deallocate(dlogdens)
+        deallocate(csq)
+        deallocate(dcsq)
+        deallocate(alpha2d)
+        deallocate(dalpha2d)
+        
+     enddo
+
   close(10)
   close(20)
-  
+  close(30)  
+
 end program viscsg
 
 subroutine fill_matrices(kgrid, bgrid)
@@ -706,7 +754,6 @@ subroutine basic_setup(ncells)
   !setup viscosity/heating array
   allocate(alpha2d(ncells,nb))
   allocate(dalpha2d(ncells,nb))
-  allocate(Qarr(nb))
 
   if(ncells.eq.nz) then !set up basic state on spectral grid
 
@@ -742,7 +789,7 @@ subroutine basic_setup(ncells)
      do i=1, nb
         bcool = bvals(i)
         alpha2d(:,i)  = csq(:)/(bgmma*(gmma-1d0)*bcool*smallq**2d0)*(1d0 - tirr)
-       dalpha2d(:,i) = dcsq(:)/(bgmma*(gmma-1d0)*bcool*smallq**2d0)*(1d0 - tirr)
+        dalpha2d(:,i) = dcsq(:)/(bgmma*(gmma-1d0)*bcool*smallq**2d0)*(1d0 - tirr)
      enddo
   else !viscosity, cooling and heating are independent (invoke unspecified heat source/sink) 
      do i=1, nb
@@ -750,49 +797,7 @@ subroutine basic_setup(ncells)
         dalpha2d(:,i) = 0d0
      enddo
   endif
- 
-  if(gvisc.eqv..true.) then !reset Q to depend on midplane alpha 
-     do i=1, nb
-     bcool = bvals(i) 
-     amid    = 1d0/(bgmma*(gmma-1d0)*bcool*smallq**2d0)*(1d0 - tirr)
-     Qarr(i) = gviscosity(amid) 
-     enddo 
-  else 
-     Qarr(:) = Q3d 
-  endif 
- 
-  if(ncells.eq.nzout) then !output basic state and deallocate arrays
-     !output basic state 
-     open(10,file='basic.dat')
-     open(20,file='visc.dat')
-     open(30,file='dvisc.dat')
-     write(nbstring, fmt='(I3)') nb
-     do i=1, nzout
-        write(10,fmt='(5(e22.15,x))') zaxis(i), dens(i), dlogdens(i), csq(i), dcsq(i)
-        write(20,fmt='('//trim(adjustl(nbstring))//'(e22.15,x))')  alpha2d(i,:)
-        write(30,fmt='('//trim(adjustl(nbstring))//'(e22.15,x))') dalpha2d(i,:)
-     enddo
-     close(10)
-     close(20)
-     close(30)
-     
-     open(10,file='Qvals.dat')
-     do i=1, nb
-        write(10,fmt='(e22.15)') Qarr(i)
-     enddo
-     close(10)
-
-     deallocate(zaxis)
-     deallocate(dens)
-     deallocate(dlogdens)
-     deallocate(csq)
-     deallocate(dcsq)
-     deallocate(alpha2d)
-     deallocate(dalpha2d)
-     deallocate(Qarr)
-     
-  endif
-
+  
 end subroutine basic_setup
 
 real*8 function gviscosity(avisc) 
