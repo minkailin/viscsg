@@ -3,8 +3,8 @@ We consider a 3D, self-gravitating,
 viscous disk with heating and cooling. We use the shearing box framework to
 study a small patch of the disk \citep{goldreich65}. The local frame
 co-rotates with a fiducial point in the unperturbed disk at angular
-frequency $\Omega$. The Cartesian co-ordinates $(x,y,z)$ corresponds
-to the radial, azimuthal and verical directions in the global disk. 
+frequency $\Omega$. The Cartesian co-ordinates $(x,y,z)$ correspond
+to the radial, azimuthal and vertical directions in the global disk. 
 The fluid equations are
 \begin{align}
   &\frac{\p\rho}{\p t} + \nabla\cdot\left(\rho\bm{v}\right) = 0, \\
@@ -24,9 +24,10 @@ density $E$ are related by
 \begin{align}
   P = (\gamma-1)E = \mathcal{R}\rho T, 
 \end{align}
-where $\mathcal{R}$ is the gas constant and $T$ is the temperature. We
-use $\gamma=1.4$ unless otherwise stated. The gas 
-gravitatational potential $\Phi$ is given via the Poisson equation,  
+where $\mathcal{R}$ is the gas constant and $T$ is the temperature. {\bf KMK cut because 
+mostly varied: We
+use $\gamma=1.4$ unless otherwise stated.} The gas 
+gravitational potential $\Phi$ is given via the Poisson equation,  
 \begin{align}
  \nabla^2\Phi = 4 \pi G \rho. 
 \end{align}
@@ -35,18 +36,18 @@ gravitatational potential $\Phi$ is given via the Poisson equation,
 In the momentum equation (Eq. \ref{momentum_eq}), the third,
 fourth/fifth, and last term on the right-hand side represent the Coriolis, 
 tidal, and viscous forces (see below), respectively. We consider    
-Keplerian disks with shear paramter $q=3/2$ and vertical oscillation 
+Keplerian disks with shear parameter $q=3/2$ and vertical oscillation 
 frequency $\Omega_z=\Omega$.  
 
 In the energy equation (Eq. \ref{energy_eq}) the source terms 
 $\mathcal{H}_\mathrm{visc}$ and $\Lambda$
 represent viscous heating and time-dependent cooling, 
 respectively, and $\mathcal{H}_\mathrm{ext}$ represents any
-time-independent heat source/sinks. We normally set
+time-independent heat source/sinks. We set
 $\mathcal{H}_\mathrm{ext}=~0$ unless otherwise stated.  
 
 \subsection{Viscosity and heating}\label{visc_model}
-The Cartesian components of the viscous stress tensor $\bm{T}$ is
+The Cartesian components of the viscous stress tensor $\bm{T}$ are
 defined by 
 \begin{align}
   T_{ij} \equiv \rho \left[\nu \left(\p_j v_i + \p_i v_j\right) +
@@ -55,13 +56,13 @@ defined by
 %bulk visc ignored 
 where $\rho\nu$ is the shear viscosity. We also include a bulk
 viscosity $\rho\nu_b$ for completeness, but will neglect it in
-numerical calculations. The associated viscous heating given by 
+numerical calculations. The associated viscous heating is given by 
 \begin{align}
   \mathcal{H}_\mathrm{visc} \equiv \left(\p_jv_i\right)T_{ij}, 
 \end{align}
 where summation over repeated indices is implied. 
 
-We adopt the viscosity law  
+We adopt a viscosity law  
 \begin{align}\label{visc_law}
   \nu = \alpha
   \frac{c_{s0}^2}{\Omega}\left(\frac{\rho}{\rho_\mathrm{eq}}\right)^\mu\left(\frac{P}{P_\mathrm{eq}}\right)^\lambda,             
@@ -77,25 +78,26 @@ We adopt the same prescription for the bulk viscosity but
 with $\alpha\to\alpha_b$.   
 
 Our numerical calculations use $\mu=-1,\lambda=0$ so 
-that $\rho\nu$ is time-indpendent, following previous 
+that $\rho\nu$ is time-independent, following previous 
 studies of viscous GI  
 \citep{lynden-bell74,hunter83,willerding92,gammie96}.  
 This choice eliminates viscous over-stability
-\citep{schmit95,latter06}, which is unrelated to self-gravity, that
+\citep{schmit95,latter06}, which is unrelated to self-gravity, and
 would otherwise contaminate our results. %obscure   
 
 While steady-state viscosity values can be determined 
-analytically \citep[e.g.][]{rafikov15}, its time-dependent behavior is
+analytically or numerically \citep[e.g.][]{martin11,kratter08,rafikov15}, the time-dependent behavior is
 not well-explored. We emphasize the choice $\mu=-1,\lambda=0$ is made
 to bring out the physical process of interest --- viscous GI. 
 Interestingly, though, \cite{laughlin96b} have suggested a $\nu \propto 1/\Sigma$
-dependence when modeling the evoluting of 2D self-gravitating disks 
+dependence when modeling the evolution of 2D self-gravitating disks 
 as a viscous process. We note that if $\rho\nu$ is constant in time
 then increasing the density leads to reduction in the viscosity. 
 This is perhaps not inconsistent with numerical simulations of disk
 fragmentation which show the internal flow of high-density clumps
-is laminar \citep{gammie01}.   
-{\bf is this true?}
+is laminar \citep{gammie01}, although once clumps form they may effectively decouple
+from the background disk state, and thus no longer be described by the same prescription.   
+{\bf is this true? KMK: maybe caveat helps?}
 
 \subsection{Steady states and cooling models}
 We consider equilibrium solutions (here omitting the `eq' subscripts
@@ -117,18 +119,18 @@ together with thermodynamic equilibrium,
 (q\Omega)^2\rho\nu + \mathcal{H}_\mathrm{ext} = \Lambda,
 \end{align}
 where the first term represents viscous heating. For the viscous
-problem, $\nu\neq0$, we may set $\mathcal{H}_\mathrm{ext}=0$ to 
+problem, $\nu\neq0$, and we set $\mathcal{H}_\mathrm{ext}=0$ to 
 obtain a relation between viscous heating and cooling 
 (e.g. Eq. \ref{alpha_beta_relation} below). However,
-if we wish to neglect viscosity but include cooling, we must invoke
+if we wish to neglect viscosity (and the accompanying dissipation) but include cooling, we must invoke
 $\mathcal{H}_\mathrm{ext}\neq0$ to define an equilibrium state.  
 To proceed further, we separately describe the two cooling models
 considered in this work. 
 
 
 
-\subsubsection{Beta cooling}\label{beta_cool_model}
-By beta cooling we mean the energy loss per unit volume is specified  
+\subsubsection{$\beta$ cooling}\label{beta_cool_model}
+In our $\beta$ cooling model, the energy loss per unit volume is specified  
 as an explicit function of the thermodynamic variables. 
 A prototypical example is 
 \begin{align}\label{beta_cool}
@@ -145,10 +147,12 @@ is a reference temperature field parameterized as a constant
 fraction $\theta$ of the equilibrium temperature
 $T_\mathrm{eq}$. Physically, $\tirr$ is the floor temperature set by,
 for example, stellar or background irradiation. We will thus refer to
-$\theta$ as the `irradiation level'. %stellar illum or envelope rad      
+$\theta$ as the `irradiation level'. As we discuss in Section ?, 
+the limits $\theta \rightarrow 0, \theta \rightarrow 1$ do not exactly 
+correspond to the limits of non-irradiated or irradiation-dominated disks
+as discussed in the literature \citep{kratter11,rice11}.%stellar illum or envelope rad      
 
-
-For beta cooling given by Eq. \ref{beta_cool} we assume an 
+For $\beta$-cooling given by Eq. \ref{beta_cool} we assume an 
 equilibrium polytropic relation 
 \begin{align} 
   P  =
@@ -189,7 +193,7 @@ more realistic beta cooling function for PPDs. In this case, $\theta$
 may or may not represent a physical irradiation.     
 
 \subsubsection{Radiative cooling}\label{rad_cool}
-Here we assume energy transfer by radiative diffusion. Then
+A more realistic treatment of cooling considers energy transfer by radiative diffusion. Then
 \begin{align}
   \Lambda &= \nabla\cdot\bm{F},\label{rad_cool1}\\
   \bm{F}   &= -\frac{16\sigma T^3}{3\kappa_d\rho}\nabla T, \label{rad_cool2}
@@ -200,7 +204,7 @@ $\kappa_d$ is the (dust) opacity. We adopt
   \kappa_d = \kappa_{d0}T^b,
 \end{align}
 and take the constant index $b=2$ as appropriate for the cold outer regions
-of a realistic PPD \citep{bell94}, but retain the general notation $b$
+of a PPD with ISM-like dust grains \citep{bell94}, but retain the general notation $b$
 to keep track of the opacity.    
 %We use radiative cooling when considering 3D PPDs in \S.  
 
@@ -216,6 +220,6 @@ non-isothermal equilibrium disk, and increases the order of the
 linearized equations. It formally applies to optically-thick 
 disks, but it is possible to modify the flux function to account
 for optically-thin disks. However, this complication is beyond the scope of
-this work. {\bf ref for flux lim diff?}
+this work. {\bf ref for flux lim diff? \citep{levermore81}?}
 
 

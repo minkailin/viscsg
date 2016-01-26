@@ -1,8 +1,8 @@
 \section{Three-dimensional disks with beta cooling}\label{3ddisk}
 We confirm the above results in 3D disks with vertical
-structure. This is expected to weaken gravitational instabilities
-because the disk mass is spread across the vertical dimension. It is
-possible to incorportate this effect in the previous 2D framework, but this
+structure. Accounting for the third dimension will weaken gravitational instabilities
+because the disk mass is spread across some vertical extent. It is
+possible to incorporate this effect in the previous 2D framework, but doing so
 introduces additional parameters as discussed in Appendix
 \ref{3dcorr}. It is more direct to solve the 3D eigenvalue problem to
 avoid such uncertainties. Our numerical approach is outlined in Appendix
@@ -19,7 +19,7 @@ avoid such uncertainties. Our numerical approach is outlined in Appendix
 
 In the following examples we consider a vertically isothermal disk
 ($\Gamma=1$). Then in the viscous case $\alpha$ is vertically
-constant (Eq. \ref{alpha_beta_relation}). We consider even modes about
+constant (Eq. \ref{alpha_beta_relation}). We consider {\bf only} even modes about
 the midplane, and apply a numerical disk surface at $z=\zmax$ such
 that $\rho(\zmax)=0.05\rho_0$.    
 
@@ -28,18 +28,18 @@ that $\rho(\zmax)=0.05\rho_0$.
 
 We consider a 3D inviscid disk with $\qthree=0.71$ and $\theta=0$. 
 The 3D gravity parameter $\qthree$ is defined by 
-Eq. \ref{Q3d_def}. For this case the corresponding Toomre parameter 
+Eq. \ref{Q3d_def}. For such a disk, the corresponding Toomre parameter 
 $Q=2Q_\mathrm{crit}$. Recall $Q_\mathrm{crit}$, defined by
 Eq. \ref{qcrit_def}, is the Toomre parameter value such that the 2D
 disk would be marginally stable in the absence of cooling. 
 
-Fig. \ref{3d_inviscid} show growth rates and the most unstable
-wavenumber obtained for this model. We also plot 2D
+Fig. \ref{3d_inviscid} shows growth rates and the most unstable
+wavenumbers obtained for this model. We also plot 2D
 results with the 3D correction as described in Appendix
 \ref{3dcorr}. The (empirically) chosen value of
-$H_\mathrm{sg}=0.64H$ results in a close match between 2D and 3D
+$H_\mathrm{sg}=0.64H$, also defined in Appendix \ref{3dcorr}, results in a close match between 2D and 3D
 growth rates, but the most unstable wavenumber in 3D is somewhat smaller. 
-This reflects self-gravity being weakened in the vertical 
+This offset reflects self-gravity being weakened in the vertical 
 direction: a larger horizontal scale is required to achieve the same
 strength of self-gravity as the 2D case. Similarly, 
 choosing $H_\mathrm{sg}=0.53H$ matches the optimum wavenumbers, but
@@ -66,10 +66,10 @@ For the 3D viscous problem we use the same set up as that in 2D
 where $Q_\mathrm{3D,crit}\simeq0.36$ is the 3D equivalent to the 2D
 critical value, $Q_\mathrm{crit}$. 
 
-Fig. \ref{3d_visc} show growth rates, maximized over $k$, as a
+Fig. \ref{3d_visc} shows growth rates, maximized over $k$, as a
 function of the cooling time $\beta$. We also plot 2D results with 3D
 corrections. Softening the self-gravity in 2D captures the correct 
-qualitative behavior as in the full 3D case, but it is clear that a
+qualitative behavior as in the full 3D case, but once again it is clear that a
 single, constant value of $H_\mathrm{sg}$ cannot re-produce 3D growth 
 rates for all $\beta$. 
 This suggests that the exact value of
@@ -84,13 +84,14 @@ a factor of two.
 Fig. \ref{3d_visc_vz} shows the magnitude of the vertical velocity
 $|\delta v_z|$ scaled by the total horizontal velocity for $\beta =
 1,\,10$ and $100$. Cooling generally enhances vertical motion
-(convection). However, even in the highly unstable case with $\beta=1$,
+(convection) {\bf KMK really convection?}. However, even in the highly unstable case with $\beta=1$,
 vertical speeds are sub-dominant at $\sim 30\%$ of the horizontal
-speeds. This suggests that it is not essential to consider 3D models
-when considering gravitational instabilities. 
+{\bf KMK  azimuthal or radial?} speeds. This suggests that it is not essential to consider 3D models
+when considering gravitational instabilities. {\bf KMK this is not true generically, so
+this statement needs to be more specific or cut}.
 
 \begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0.cm 0.cm
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0.cm 0.23cm
     0.0cm]{figures/growth_visc3d}
   \caption{Growth rates from the viscous 3D eigenvalue problem (black solid
     line). The other curves are obtained from the 2D dispersion
