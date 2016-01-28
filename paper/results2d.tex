@@ -74,12 +74,26 @@ are both satisfied.
 %gamma/theta condition is related to some kind of thermal instability
 %oscilitory convection?? 
 %second condition concerning Q is associated with self-g 
-Notice these conditions do not actually
-depend on the cooling time. 
-The disk becomes more unstable with decreasing $\theta$, 
-i.e. as the floor temperature, towards which perturbations are cooled, drops. 
-{\bf KMK maybe more words here about apparent trend of $Q \rightarrow \inf$ for small $\theta$
-even forward ref. lengthscales below?}
+A third criterion, $2(2-q)\gamma Q^2>1$, is formally required, but this
+is implied by Eq. \ref{stable_condition}. 
+Notice these conditions do not actually depend on the cooling time. 
+
+%As perturbations are cooled to lower temperatures
+%(decreasing $\theta$), the minimum $Q$ required for stability
+%increases. 
+
+If we define $Q_\mathrm{eff}=\sqrt{\theta}Q$, the second condition in
+Eq. \ref{stable_condition} is $Q_\mathrm{eff}>1$ (for
+the Keplerian case). In other words, if one  
+insists on applying a Toomre condition to a cooling disk, then the 
+Toomre parameter should be calculated with the floor
+temperature. %rather than the actual temperature 
+At fixed $Q$ this stability condition will fail for sufficiently small 
+$\theta$, i.e. as perturbations are allowed to cool to lower
+temperatures.    
+   
+%{\bf KMK maybe more words here about apparent trend of $Q \rightarrow \inf$ for small $\theta$
+%even forward ref. lengthscales below?}
 
 If only real growth rates are considered, then violating the second
 condition in Eq. \ref{stable_condition} alone is sufficient for instability. 
@@ -91,8 +105,8 @@ In that case the wavenumbers satisfying
 are unstable. The range of unstable wavenumbers
 increases with decreasing irradiation $\theta$. For $\theta\ll 1$ this range is 
 $(2-q)Q\lesssim|K|\lesssim2/\theta Q$. Without irradiation there is no
-upper limit to unstable wavenumbers, which could have important
-implications for numerical simulations probing large wavenumbers and small scales
+upper limit to unstable wavenumbers, which could have implications for
+numerical simulations probing large wavenumbers and small scales 
 at high resolution (see \S\ref{prev_works}). 
 
 Consider the most unstable wavenumber $|K_*|$ at which $\p S/\p|K| =
@@ -112,11 +126,18 @@ rate satisfies
   - 2(2-q).
 \end{align}
 Eq. \ref{kstar}---\ref{inviscid_max} imply $\p_\beta|K_*|,\,\p_\beta
-S_*<0 $ for $\gamma>\theta$. That is, as cooling becomes more rapid
-the disk becomes more unstable at shorter wavelengths.  {\bf KMK -- I don't follow}
+S_*<0 $ for $\gamma>\theta$. As cooling becomes more rapid the maximum 
+growth rate increases, and the most unstable wavelength decreases. 
 %show dK*/dbeta < 0 
 %by diff K* wrt beta and diff S* wrt beta from the equations
 %and elim dS*/d beta 
+
+If $|S_*|\ll1$, Eq. \ref{inviscid_max} gives the simple solution 
+\begin{align}
+ \beta S_*\simeq \frac{1-2(2-q)Q^2\theta}{2(2-q)Q^2\gamma-1},
+\end{align}
+implying that the system can still be formally unstable for arbitarily 
+long cooling times. {\bf optional equation?}  
 
 Next, we consider two special cases: $\theta=0$, so perturbations are
 cooled towards zero temperature \citep[typically employed in

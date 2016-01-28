@@ -24,9 +24,7 @@ density $E$ are related by
 \begin{align}
   P = (\gamma-1)E = \mathcal{R}\rho T, 
 \end{align}
-where $\mathcal{R}$ is the gas constant and $T$ is the temperature. {\bf KMK cut because 
-mostly varied: We
-use $\gamma=1.4$ unless otherwise stated.} The gas 
+where $\mathcal{R}$ is the gas constant and $T$ is the temperature. The gas 
 gravitational potential $\Phi$ is given via the Poisson equation,  
 \begin{align}
  \nabla^2\Phi = 4 \pi G \rho. 
@@ -92,12 +90,14 @@ to bring out the physical process of interest --- viscous GI.
 Interestingly, though, \cite{laughlin96b} have suggested a $\nu \propto 1/\Sigma$
 dependence when modeling the evolution of 2D self-gravitating disks 
 as a viscous process. We note that if $\rho\nu$ is constant in time
-then increasing the density leads to reduction in the viscosity. 
+then increasing the density corresponds to reduction in the viscosity. 
 This is perhaps not inconsistent with numerical simulations of disk
 fragmentation which show the internal flow of high-density clumps
-is laminar \citep{gammie01}, although once clumps form they may effectively decouple
-from the background disk state, and thus no longer be described by the same prescription.   
-{\bf is this true? KMK: maybe caveat helps?}
+appear laminar \citep{gammie01}. However, once clumps form they may
+effectively decouple from the background disk state, and thus no 
+longer be described by the same prescription. 
+%we are not concerned with non-linear evolution    
+%{\bf is this true? KMK: maybe caveat helps?}
 
 \subsection{Steady states and cooling models}
 We consider equilibrium solutions (here omitting the `eq' subscripts
@@ -147,10 +147,12 @@ is a reference temperature field parameterized as a constant
 fraction $\theta$ of the equilibrium temperature
 $T_\mathrm{eq}$. Physically, $\tirr$ is the floor temperature set by,
 for example, stellar or background irradiation. We will thus refer to
-$\theta$ as the `irradiation level'. As we discuss in Section ?, 
-the limits $\theta \rightarrow 0, \theta \rightarrow 1$ do not exactly 
-correspond to the limits of non-irradiated or irradiation-dominated disks
-as discussed in the literature \citep{kratter11,rice11}.%stellar illum or envelope rad      
+$\theta$ as the `irradiation level'. {\bf ASK} As we discuss in
+\S\ref{2d_inviscid}, the limits $\theta \rightarrow 0, \theta
+\rightarrow 1$ do not exactly correspond to the limits of
+non-irradiated or irradiation-dominated disks as discussed in the
+literature \citep{kratter11,rice11}. 
+%stellar illum or envelope rad      
 
 For $\beta$-cooling given by Eq. \ref{beta_cool} we assume an 
 equilibrium polytropic relation 
@@ -162,8 +164,9 @@ c_{s0}^2\rho_0\left(\frac{\rho}{\rho_0}\right)^\Gamma,
 \end{align}
 where $\Gamma$ is the constant polytropic index and $\rho_0 =
 \rho(z=0)$ is the equilibrium midplane density. 
-The vertical structure is first obtained from
-Eq. \ref{vert_eq1}---\ref{vert_eq2} then inserted into
+The vertical structure is first obtained from 
+Eq. \ref{vert_eq1}---\ref{vert_eq2}, %given strength of self-grav, via Q3d
+then inserted into 
 Eq. \ref{thermal_eq} to infer the required viscosity profile for
 thermal equilibrium. If  $\mathcal{H}_\mathrm{ext}=0$, 
 \begin{align}\label{alpha_beta_relation}
@@ -189,14 +192,14 @@ that obtained from Eq. \ref{beta_cool} by equating their linearized
 forms, i.e. $\delta \Lambda \equiv \delta \Lambda_1$. This then 
 defines the $\beta$ and $\theta$ parameters to be used in the 
 framework we develop. We do this in \S\ref{2dppd} where we adopt a
-more realistic beta cooling function for PPDs. In this case, $\theta$
+more realistic beta cooling function for PPDs. In that case, $\theta$
 may or may not represent a physical irradiation.     
 
 \subsubsection{Radiative cooling}\label{rad_cool}
 A more realistic treatment of cooling considers energy transfer by radiative diffusion. Then
 \begin{align}
-  \Lambda &= \nabla\cdot\bm{F},\label{rad_cool1}\\
-  \bm{F}   &= -\frac{16\sigma T^3}{3\kappa_d\rho}\nabla T, \label{rad_cool2}
+  \Lambda &= \nabla\cdot\bm{F}_\mathrm{rad},\label{rad_cool1}\\
+  \bm{F}_\mathrm{rad}   &= -\frac{16\sigma T^3}{3\kappa_d\rho}\nabla T, \label{rad_cool2}
 \end{align}
 where $\sigma$ is the Stefan-Boltzmann constant and 
 $\kappa_d$ is the (dust) opacity. We adopt
@@ -215,11 +218,11 @@ ordinary differential equations to obtain equilibrium profiles $P(z)$, $T(z)$, a
 $\rho(z)$.  
 
 While radiative cooling is arguably more realistic than
-beta cooling, it generally implies a vertically
+$\beta$-cooling, it generally implies a vertically
 non-isothermal equilibrium disk, and increases the order of the
 linearized equations. It formally applies to optically-thick 
 disks, but it is possible to modify the flux function to account
-for optically-thin disks. However, this complication is beyond the scope of
-this work. {\bf ref for flux lim diff? \citep{levermore81}?}
+for optically-thin disks \citep{levermore81}. However, this
+complication is beyond the scope of this work. 
 
 
