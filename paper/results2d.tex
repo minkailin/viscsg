@@ -77,21 +77,10 @@ are both satisfied.
 A third criterion, $2(2-q)\gamma Q^2>1$, is formally required, but this
 is implied by Eq. \ref{stable_condition}. 
 Notice these conditions do not actually depend on the cooling time. 
+At fixed $Q$, the second stability condition eventually fails for
+decreasing $\theta$, i.e. if perturbations are allowed
+to cool to sufficiently low temperatures.  
 
-%As perturbations are cooled to lower temperatures
-%(decreasing $\theta$), the minimum $Q$ required for stability
-%increases. 
-
-If we define $Q_\mathrm{eff}=\sqrt{\theta}Q$, the second condition in
-Eq. \ref{stable_condition} is $Q_\mathrm{eff}>1$ (for
-the Keplerian case). In other words, if one  
-insists on applying a Toomre condition to a cooling disk, then the 
-Toomre parameter should be calculated with the floor
-temperature. %rather than the actual temperature 
-At fixed $Q$ this stability condition will fail for sufficiently small 
-$\theta$, i.e. as perturbations are allowed to cool to lower
-temperatures.    
-   
 %{\bf KMK maybe more words here about apparent trend of $Q \rightarrow \inf$ for small $\theta$
 %even forward ref. lengthscales below?}
 
@@ -126,18 +115,21 @@ rate satisfies
   - 2(2-q).
 \end{align}
 Eq. \ref{kstar}---\ref{inviscid_max} imply $\p_\beta|K_*|,\,\p_\beta
-S_*<0 $ for $\gamma>\theta$. As cooling becomes more rapid the maximum 
+S_*<0 $ for $\gamma>\theta$. Then as cooling becomes more rapid, the maximum 
 growth rate increases, and the most unstable wavelength decreases. 
 %show dK*/dbeta < 0 
 %by diff K* wrt beta and diff S* wrt beta from the equations
 %and elim dS*/d beta 
-
-If $|S_*|\ll1$, Eq. \ref{inviscid_max} gives the simple solution 
+For $|S_*|\ll1$, Eq. \ref{inviscid_max} gives the simple solution 
 \begin{align}
- \beta S_*\simeq \frac{1-2(2-q)Q^2\theta}{2(2-q)Q^2\gamma-1},
-\end{align}
-implying that the system can still be formally unstable for arbitarily 
-long cooling times. {\bf optional equation?}  
+  \beta S_*\simeq \frac{1-2(2-q)Q^2\theta}{2(2-q)Q^2\gamma-1}.  
+\end{align} 
+Assuming the denominator is positive definite (see below for the case
+when it vanishes),  then weakly-growing modes have
+$S_*\propto\beta^{-1}$, so $\beta\gg1 $ but finite. That is, the disk
+can be formally unstable for arbitrarily long cooling times.    
+ 
+%{\bf optional equation?}  
 
 Next, we consider two special cases: $\theta=0$, so perturbations are
 cooled towards zero temperature \citep[typically employed in
@@ -145,8 +137,9 @@ numerical simulations, e.g.][]{gammie01}; and $\theta=1$, where the
 equilibrium disk temperature equals the irradiation temperature.  
 
 \subsubsection{$\theta = 0$}\label{theta0}
-For beta cooling with $\theta=0$, the disk is unconditionally unstable
-for finite $Q$. {\bf KMK some caveating about scales}  The $\beta\to0$ limit corresponds to a 
+For $\beta$-cooling with $\theta=0$, the disk is unconditionally
+unstable for finite $Q$, although instability occur on smaller scales
+as $Q$ increases.  The $\beta\to0$ limit corresponds to a 
 pressureless disk (not merely isothermal).   
 
 %for definiteness 
@@ -154,21 +147,22 @@ Let us consider a disk with
 \begin{align}\label{qcrit_def}
   \qtwo = \frac{1}{\sqrt{2\gamma(2-q)}}\equiv Q_{\mathrm{crit}},
 \end{align} 
-{\bf KMK $\gamma = \theta$ from eq. 47? I'm missing something}
-so that it is marginally stable in the absence of cooling.  
+%{\bf KMK $\gamma = \theta$ from eq. 47? I'm missing something}
+which is the condition for marginal stability in an adiabatic disk. 
 How does finite cooling destabilize the disk?  
-Inserting Eq. \ref{qcrit_def} into Eq. \ref{inviscid_max} and setting
+Inserting Eq. \ref{qcrit_def} into Eq. \ref{inviscid_max} with 
 $\theta=0$, we find 
 \begin{align}\label{sstar}
   S_*^3 = \frac{1}{\gamma Q_\mathrm{crit}^2 \beta}. 
 \end{align}
 The maximum growth rate, $S_*\propto \beta^{-1/3}$, smoothly
-increases with decreasing $\beta$. Instability formally occurs for
-arbitrarily long but finite cooling times. 
+increases with decreasing $\beta$. 
+%Instability formally occurs for
+%arbitrarily long but finite cooling times. 
 %Instability does not require the
 %cooling time to be below some critical value. 
 
-Nevertheless, we can define a characteristic cooling
+We can define a characteristic cooling
 time $\beta_*$ as that which removes pressure support against
 self-gravity over the natural lengthscale in the problem, the
 scale-height $H$. We thus set $|K_*|=1$ and find, for the Keplerian
@@ -177,10 +171,8 @@ disk,
 \begin{align}\label{betastar}
   \beta_* = \frac{1}{\left(\sqrt{\gamma} - 1\right)^{3/2}}. 
 \end{align}
-This equation reproduces remarkably similar values 
+This equation gives remarkably similar values 
 of the cooling times below which 
-%dynamical disk 
-%fragmentation occurs in numerical simulations
 numerical simulations show dynamical disk fragmentation 
 \citep{gammie01,rice05,rice11}. These simulations employ the same beta  
 cooling prescription with $\theta=0$, and determine the fragmentation
@@ -210,15 +202,25 @@ $2$    &  3.75 & 3 & \cite{gammie01}
 
 \subsubsection{$\theta = 1$}\label{theta1}
 Standard beta cooling with $\theta=1$ corresponds to 
-`thermal-relaxation' in a strictly inviscid disk: the temperature is restored to its initial
-value over the cooling time \citep{lin15,mohandas15}. In this case 
-$\beta\to 0$ corresponds to an isothermal disk and $\beta
-\to \infty$ corresponds to an adiabatic disk. (These two limits are
-equivalent for $\gamma=1$.) The most unstable wavenumber and growth
-rates vary weakly with $\beta$.   {\bf KMK: summarize boring result? not sure 
-what this simplifies to in comparison to other limits?}.
+`thermal relaxation': the temperature is restored to its initial
+value over the cooling time \citep{lin15,mohandas15}. In this case no
+additional heat source need be invoked to define a steady state. From
+Eq. \ref{stable_condition}, the instability condition is $Q<1$. This
+is the same as the classic Toomre condition for an isothermal disk,  
+which is formally obtained in the limit  $\beta\to 0$
+(i.e. the disk temperature is constant in time). In this respect, a
+fully irradiated disk, in that the equilibrium temperature is set
+externally, behaves isothermally regardless of the cooling time.  
+
+
+%The most unstable wavenumber and growth
+%rates vary weakly with $\beta$.  
+% {\bf KMK: summarize boring result? not sure 
+%what this simplifies to in comparison to other limits?}.
 
 %nothing interesting here 
+
+
 
 %\subsubsection{Expected maximum stress}
 %{\bf for notes only} 
