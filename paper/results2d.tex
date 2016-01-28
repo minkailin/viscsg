@@ -124,13 +124,12 @@ For $|S_*|\ll1$, Eq. \ref{inviscid_max} gives the simple solution
 \begin{align}
   \beta S_*\simeq \frac{1-2(2-q)Q^2\theta}{2(2-q)Q^2\gamma-1}.  
 \end{align} 
-Assuming the denominator is positive definite (see below for the case
-when it vanishes),  then weakly-growing modes have
-$S_*\propto\beta^{-1}$, so $\beta\gg1 $ but finite. That is, the disk
-can be formally unstable for arbitrarily long cooling times.    
+%Assuming the denominator is positive definite (see below for the case
+%when it vanishes),  
+Thus $S_*\to0$ as $\beta\to\infty$, but growth rates are never zero. 
+That is, the disk can be formally unstable for arbitrarily long
+cooling times.     
  
-%{\bf optional equation?}  
-
 Next, we consider two special cases: $\theta=0$, so perturbations are
 cooled towards zero temperature \citep[typically employed in
 numerical simulations, e.g.][]{gammie01}; and $\theta=1$, where the
@@ -204,13 +203,14 @@ $2$    &  3.75 & 3 & \cite{gammie01}
 Standard beta cooling with $\theta=1$ corresponds to 
 `thermal relaxation': the temperature is restored to its initial
 value over the cooling time \citep{lin15,mohandas15}. In this case no
-additional heat source need be invoked to define a steady state. From
-Eq. \ref{stable_condition}, the instability condition is $Q<1$. This
-is the same as the classic Toomre condition for an isothermal disk,  
-which is formally obtained in the limit  $\beta\to 0$
-(i.e. the disk temperature is constant in time). In this respect, a
+additional heat source need be invoked to define an inviscid steady state. From
+Eq. \ref{stable_condition}, the instability condition is $Q<1$. %no
+                                %beta dependence
+This is the same as the classic Toomre condition for an isothermal
+disk (which may be obtained from Eq. \ref{inviscid}  by taking
+$|\beta S|\to 0$). In this respect, a 
 fully irradiated disk, in that the equilibrium temperature is set
-externally, behaves isothermally regardless of the cooling time.  
+externally, behaves isothermally regardless of the cooling time. 
 
 
 %The most unstable wavenumber and growth
@@ -251,6 +251,7 @@ externally, behaves isothermally regardless of the cooling time.
 %    correspond to Eq. \ref{max_alpha}.}
 %\end{figure}
 
+
 \subsection{Viscous disk}\label{2dvisc}
 We now consider a viscous disk with parameters $\mu=-1,\,\lambda=0$ in our
 adopted viscosity law, Eq. \ref{visc_law}. In the 2D case this implies
@@ -259,21 +260,6 @@ $\nu\Sigma$ is constant.
 We check in Appendix \ref{gammie_check} that our dispersion relation
 reduces to previous results for viscous GI in the isothermal limit (by
 taking $|\beta S|\to~\infty$ and $\gamma=1$).   
-
-%KMK moved fig ref. 
-Fig. \ref{gammie_rate_plot} shows growth rates as a function of the
-wavenumber $k$ obtained from the dispersion relation
-Eq. \ref{thindisk}.  To compute growth rates numerically, 
- we consider a model with $\alpha_b=0$ and
-$\alpha=\alpha(\beta)$ given by thermal equilibrium (
-Eq. \ref{alpha_beta_relation}). Furthermore, we relate 
-\begin{align}
-  Q = \frac{Q_\mathrm{crit}}{\sqrt{\alpha}},\label{Qalpha}
-\end{align}
-%with $Q_\mathrm{crit}$ given by 
-to mimic a basic state maintained by gravito-turbulence where one
-might expect the dimensionless stress $\alpha \sim Q^{-2}$
-\citep{lin87}.   
 
 It is useful to consider several limiting cases.
 To see the effect of cooling and irradiation, we simplify the
@@ -295,7 +281,6 @@ wavenumber. For $|K|\to\infty$ we find
   \alpha_b + \gamma\beta\right)^{-1}.
 \end{align}
 
-
 For $\theta\ll1$ a rough measure of the maximum growth rate can be obtained by
 equating Eq. \ref{gammie_smallk} and \ref{gammie_bigk}\footnote{If
   $\theta$ is not small and/or $Q$  is large then one may just use Eq. \ref{gammie_smallk}
@@ -314,6 +299,20 @@ This exercise yields
 \end{align} 
 %gravito-viscous instability 
 
+
+%KMK moved fig ref. 
+To compute growth rates numerically, 
+we consider a model with $\alpha_b=0$ and
+$\alpha=\alpha(\beta)$ given by thermal equilibrium (
+Eq. \ref{alpha_beta_relation}). Furthermore, we relate 
+\begin{align}
+  Q = \frac{Q_\mathrm{crit}}{\sqrt{\alpha}},\label{Qalpha}
+\end{align}
+%with $Q_\mathrm{crit}$ given by 
+to mimic a basic state maintained by gravito-turbulence where one
+might expect the dimensionless stress $\alpha \sim Q^{-2}$
+\citep{lin87}.   
+
 %%KMK MOVED?
 %As a numerical example, we consider a model with $\alpha_b=0$ and
 %$\alpha=\alpha(\beta)$ given by thermal equilibrium (
@@ -331,12 +330,16 @@ This exercise yields
 %Fig. \ref{gammie_rate_plot} shows growth rates as a function of the
 %wavenumber $k$ obtained from the dispersion relation
 %Eq. \ref{thindisk}. 
-The limiting behavior for small/large $K$ are
+
+Fig. \ref{gammie_rate_plot} shows growth rates as a function of the
+wavenumber $k$ obtained from the dispersion relation 
+Eq. \ref{thindisk}. The limiting behavior for small/large $K$ are
 well-captured by Eq. \ref{gammie_smallk} and
-\ref{gammie_bigk}. Comparing the two panels of Fig. \ref{gammie_rate_plots} shows that increasing the
+\ref{gammie_bigk}. Comparing the two panels 
+%of Fig. \ref{gammie_rate_plot} 
+shows that increasing the
 irradiation level ($\theta$) supresses small-scale
 perturbations. %(This also occurs in the inviscid case.)
-
 
 %The case $\beta=100$ is shown for completeness but is not physically
 %consistent with gravito-turbulence, as the assumed $Q(\alpha)$
@@ -359,7 +362,6 @@ perturbations. %(This also occurs in the inviscid case.)
     \label{gammie_rate_plot}}
 \end{figure}
 
-
 Fig. \ref{gammie_maxrate_plot} shows the maximum
 growth rate (top panel) and the corresponding wavenumber (bottom
 panel) as a function of the cooling time $\beta$ for $\theta=0$.  
@@ -370,44 +372,49 @@ Eq. \ref{gammie_maxrate_simple} for $\beta \gtrsim 1$.
 %explains the mismatch there. 
 Eq. \ref{gammie_maxrate_simple} gives the
 limiting behavior for this case as   
-\begin{align*}
+\begin{align}
   S_*\propto \begin{cases}
 %    \frac{\alpha^{1/4}}{Q\beta^{3/4}} \propto \beta^{-3/2} 
     \alpha^{1/4}\beta^{-3/4}Q^{-1}\propto \beta^{-3/2} 
     &  \beta \gg \alpha, \\
 %    \frac{1}{Q\sqrt{\alpha}}  
-    \alpha^{-1/2}Q^{-1} = \mathrm{const.} & \beta \ll \alpha,    
+    \alpha^{-1/2}Q^{-1} = \mathrm{const.} & \beta \ll \alpha, \label{high_visc}   
   \end{cases}
-\end{align*}
-{\bf KMK physically what is the limit $\beta \ll \alpha$?}
+\end{align}
+%{\bf KMK physically what is the limit $\beta \ll \alpha$?}
 where we have applied Eq. \ref{alpha_beta_relation}
-and \ref{Qalpha}. The disk is formally unstable for all $\beta$, but
+and \ref{Qalpha}. %The second limit corresponds to a hypothetical
+%situation where rapid cooling is balanced by large viscous heating
+%(we discuss why this). 
+The disk is unstable for all $\beta$, but
 growth timescales are long ($>10$ orbits) for $\beta \gtrsim
 20$. %increase beta -> drop alpha -> increase Q. latter two expected
      %to stablize
 This region is marked by the vertical dashed-dotted line in
 Fig. \ref{gammie_maxrate_plot}. The optimum wavenumber decreases with
-the cooling time for $\beta\lesssim O(1)$ because larger scales are
-more resistant to the associated increase in viscous damping.   {\bf KMK this is
+the cooling time for $\beta\lesssim O(1)$ because larger scales are 
+more resistant to the associated increase in viscous damping.     
+{\bf KMK this is
 confusing b/c viscosity is in general acting on larger scales than pressure. also damping -> dissipation or 
 angular momentum transport?}
+
 
 %{\bf maybe move following to discussion}
 Numerical simulations of gravito-turbulent disks show there is a
 maximum $\alpha$ ($\sim 0.06$) that can be sustained before
-fragmentation \citep{rice11} {\bf KMK rice 05a,b, no?}. We can interpret this result in our
+fragmentation \citep{rice05}. We can interpret this result in our
 linear framework. 
-%We can use our case (\ref{gvisc}) to interpret this
 Suppose it is possible to balance rapid cooling ($\beta\lesssim1$) 
 by generating a large gravito-turbulent heating rate
-($\alpha\gtrsim 1$) through a small $Q$. Fig. \ref{gammie_maxrate_plot} 
-shows that such a system would be dynamically unstable with 
+($\alpha\gtrsim 1$) through a small $Q$ (second case in
+Eq. \ref{high_visc}). Fig. \ref{gammie_maxrate_plot}  
+shows that such a disk would be dynamically unstable with 
 growth rate $s = O(\Omega)$. This is due to the direct effect of viscous 
 stress promoting instability, rather than cooling. Thus, we do not expect rapidly-cooled, 
 and hence highly turbulent, self-gravitating disks to persist beyond
 dynamical timescales.
 %KMK
-We interpret fragmentation as the response to the instability of the
+We might interpret fragmentation as the response to the instability of the
 highly viscous state. This is consistent with previous numerical
 simulations performed by \cite{lodato05}. 
 %Case (\ref{gvisc}) is consistent with 
