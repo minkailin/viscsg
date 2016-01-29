@@ -94,13 +94,12 @@ standard cooling function, Eq. \ref{linear_beta}, we identify
   &\theta = \frac{C_2}{C_1},\label{real_theta} 
 \end{align}
 to be used in the 2D dispersion relation (Eq. \ref{thindisk}). 
-
 Eq. \ref{real_beta} still represents a physical cooling 
 time, and is consistent with previous definitions within factors of
 order unity \citep[e.g.][their Eq. 2]{kratter10}.  
 
 %KMK
-However, $\theta$ is no longer a good proxy for the irradiation level
+However, $\theta$ is no longer a direct proxy for the irradiation level
 as it was in the standard beta cooling model.
 %is now an effective irradiation level. 
 Eq. \ref{real_theta} shows that $\theta$ is related to the true
@@ -114,7 +113,7 @@ for all $\tirr <T$, and for our adopted opacity law, Eq. \ref{opacity_law},
 \end{align*}
 Thus for $T_\mathrm{irr} = 0$ we have $5/6<\theta<3/2$ by considering
 $\tau\to 0,\,\infty$. However, for $T=\tirr$ we have $\theta = 1$, as
-we expect intuitively.    
+expected intuitively.    
 %%KMK 
 %This results from the fact that PPD cooling generally depends on both
 %$P$ and $\Sigma$, but in the absence of irradiation standard beta
@@ -229,8 +228,9 @@ the transition between gravito-turbulence and fragmentation due to the
 removal of rotational support by viscous (turbulent) stresses. 
 
 On the other hand, the lower $\dot{M}$ model also attain $\tcool\lesssim
-3\Omega^{-1}$ beyond $\sim 60$AU, but $\alpha\lesssim 0.03$. Applying
-empirical conditions for fragmentation may then lead to
+3\Omega^{-1}$ beyond $\sim 60$AU, but $\alpha\lesssim 0.03$
+everywhere. 
+Applying empirical conditions for fragmentation may then lead to
 contradiction. Instead, if viscosity is the physical cause for
 fragmentation, then our result suggest the lower $\dot{M}$ disk should
 not fragment (at least much less likely than our fiducial case) 
@@ -247,20 +247,19 @@ because the instability cannot develop on orbital timescales.
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0cm
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 2cm 0cm
     0.0cm]{figures/ppd_2d_growth}\\
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
-    0.8cm]{figures/ppd_2d_maxk}
+    0.cm]{figures/ppd_2d_maxk}
   \caption{Black lines show growth timescales (top) of the most
-    unstable wavenumber (bottom) for viscous,
+    unstable wavenumber (bottom) for viscous, 
     self-gravitational modes in the 2D PPD model shown in
-    Fig. \ref{rafikov_model}. The blue line are for the same disk
-    model but with lower accretion rate. Dotted lines are obtained
-    numerically from Eq. \ref{thindisk}, while green curves  
+    Fig. \ref{rafikov_model}. Blue curves are for the same disk
+    model but with a lower accretion rate. Solid curves are obtained
+    numerically from Eq. \ref{thindisk}, and dotted curves 
     are analytic results based on Eq. \ref{gammie_smallk}. 
     \label{rafikov_growth}}
 \end{figure}
-
 
 \subsection{3D PPD with radiative diffusion}
 %appropriate for not-so-large distances where irrad can be neglected 
@@ -305,13 +304,15 @@ can be correctly calculated within the 2D framework.
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
     0.8cm]{figures/ppd_3d_maxk}
   \caption{Growth timescales (top) of the most unstable
-    wavenumber (bottom) for viscous, 
-    self-gravitating modes. The black curves are obtained
-    from the 3D eigenvalue problem with radiative diffusion,
-    applicable to optically-thick regions ($R\lesssim 60$AU); 
-    while the green curves are obtained from the 2D corresponding
-    model, which is applicable to both optically-thick and
-    optically-thin regimes.  
+    wavenumber (bottom) for viscous GI in a 3D PPD with radiative
+    diffusion  (black lines). Asterisks are corresponding results
+    obtained from the corresponding 2D problem with softened gravity.   
+    % The black curves are obtained
+  %  from the 3D eigenvalue problem with radiative diffusion,
+   % applicable to optically-thick regions ($R\lesssim 60$AU); 
+   % while the green curves are obtained from the 2D corresponding
+   % model, which is applicable to both optically-thick and
+   % optically-thin regimes.  
     \label{rafikov_growth3d}}
 \end{figure}
 

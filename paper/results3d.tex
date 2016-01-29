@@ -24,9 +24,9 @@ about the midplane, and apply a numerical disk surface at $z=\zmax$
 such that $\rho(\zmax)=0.05\rho_0$.     
 
 %in practice eliminate density with poisson
-\subsection{Inviscid disk}
+\subsection{Inviscid 3D disk}
 
-We consider a 3D inviscid disk with $\qthree=0.71$ and $\theta=0$. 
+We consider a 3D inviscid disk with $\gamma=1.4$, $\qthree=0.71$, and $\theta=0$. 
 The 3D gravity parameter $\qthree$ is defined by 
 Eq. \ref{Q3d_def}. For such a disk, the corresponding Toomre parameter 
 $Q=2Q_\mathrm{crit}$. Recall $Q_\mathrm{crit}$, defined by
@@ -57,7 +57,7 @@ growth rates are over-estimated in 2D.
     described in Appendix \ref{3dcorr}. \label{3d_inviscid}} 
 \end{figure}
 
-\subsection{Viscous disk} %growth rates, kmax, eigenfunction
+\subsection{Viscous 3D disk} %growth rates, kmax, eigenfunction
 For the 3D viscous problem we use the same set up as that in 2D
 (\S\ref{2dvisc}), but with 
 \begin{align}
@@ -96,9 +96,9 @@ of the total horizontal speeds.
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0.cm 0.cm
     0.0cm]{figures/growth_visc3d}
   \caption{Growth rates from the viscous 3D eigenvalue problem (black solid
-    line). The other curves are obtained from the 2D dispersion
-    relation (Eq. \ref{thindisk}) but with a modified gravitational
-    constant as described in Appendix \ref{3dcorr}. \label{3d_visc}}
+    line). Asterisks and diamonds are obtained from the 2D dispersion
+    relation (Eq. \ref{thindisk}) with softened gravity as described
+    in Appendix \ref{3dcorr}. \label{3d_visc}} 
 \end{figure}
 
 

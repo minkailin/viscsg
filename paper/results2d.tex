@@ -126,9 +126,9 @@ For $|S_*|\ll1$, Eq. \ref{inviscid_max} gives the simple solution
 \end{align} 
 %Assuming the denominator is positive definite (see below for the case
 %when it vanishes),  
-Thus $S_*\to0$ as $\beta\to\infty$, but growth rates are never zero. 
-That is, the disk can be formally unstable for arbitrarily long
-cooling times.     
+Thus $S_*\to0$ as $\beta\to\infty$, but growth rates are never zero
+for any finite $\beta$. That is, the disk can be formally unstable for
+arbitrarily long cooling times.     
  
 Next, we consider two special cases: $\theta=0$, so perturbations are
 cooled towards zero temperature \citep[typically employed in
@@ -302,7 +302,7 @@ This exercise yields
 
 %KMK moved fig ref. 
 To compute growth rates numerically, 
-we consider a model with $\alpha_b=0$ and
+we consider a model with $\gamma=1.4$, $\alpha_b=0$ and 
 $\alpha=\alpha(\beta)$ given by thermal equilibrium
 (Eq. \ref{alpha_beta_relation}). Furthermore, we relate   
 \begin{align}
@@ -349,16 +349,17 @@ perturbations. %(This also occurs in the inviscid case.)
 %GI. Here, instability can occur for high $Q$. 
 
 \begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0.4cm
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 2cm 0cm
     0.0cm]{figures/viscsg_modes}\\
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0.4cm
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0.cm
     0.0cm]{figures/viscsg_modes_theta0d3}
   \caption{Growth rates for the 2D viscous problem as a function of
     the radial wavenumber $k$ for a range of cooling times
     $\beta$. The dashed and dotted lines correspond to asympototic
     behaviors for small and large $k$, respectively, computed from
     Eq. \ref{gammie_smallk} and \ref{gammie_bigk}. Top: without
-    irradiation, bottom: partially irradiated disk. 
+    a floor temperature ($\tirr = 0$); bottom: with a floor
+    temperature $\tirr$ set to $30\%$ of the equilibrium temperature.   
     \label{gammie_rate_plot}}
 \end{figure}
 
@@ -426,17 +427,19 @@ simulations performed by \cite{lodato05}.
 %    0.0cm]{figures/result2d_fixalpha}\\
 %  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0cm
 %    0.0cm]{figures/result2d_fixQ}\\
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0.cm
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 2cm 0.cm
     0.0cm]{figures/result2d_gvisc}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0.cm
     1.0cm]{figures/result2d_gvisc_kmax}
   \caption{Growth rates (top) at the optimal wavenumber (bottom) for
     viscous GI as a function of cooling time for the
-    case shown in Fig. \ref{gammie_rate_plot}. Solid lines are
-    computed from the dispersion relation (Eq. \ref{thindisk}), and the dotted line is an
-    estimate from Eq. \ref{gammie_maxrate_simple}. The vertical dashed
-    line marks the region with $\alpha > 1$, and the vertical
-    dashed-dot line marks the region with growth timescales longer
-    than dynamical. 
+    case shown in the top panel of Fig. \ref{gammie_rate_plot}. Black curves 
+    computed from the dispersion relation (Eq. \ref{thindisk}), and
+    the orange curves are estimates based on
+    Eq. \ref{gammie_smallk}---\ref{gammie_bigk}. 
+    The dashed
+    line marks the region with $\alpha > 1$, and the 
+    dashed-dot line marks the region where growth timescales exceed
+    the dynamical time.   
     \label{gammie_maxrate_plot}}
 \end{figure}
