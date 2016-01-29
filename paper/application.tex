@@ -1,7 +1,7 @@
 \section{Application to protoplanetary disks}\label{2dppd}
 We now apply our linear framework to assess the stability of  
 protoplanetary disks. We consider the gravito-turbulent disk models recently
-developed by \cite[][hereafter \citetalias{rafikov15}]{rafikov15}. 
+developed by \citet[][hereafter \citetalias{rafikov15}]{rafikov15}. 
 This 2D, Keplerian disk orbits a Solar 
 mass star and is defined by the following parameters, 
 
@@ -22,7 +22,9 @@ star. \citepalias[See][for details.]{rafikov15} These profiles give $Q(R)$,
 required for input into our linear framework. We derive other
 dimensionless parameters below. 
 
-Although our disk is global in extent, here we consider the local stability at each radius.
+Although our disk is global in extent, here we consider the local
+stability at each radius. {\bf discuss: linear prob has no vrad in
+  base state} 
 %KMK I disagree with neglect of viscous flow in that there is a global Mdot. Revised version:
 We are thus neglecting any global instabilities \citep{adams89,lodato05,kratter10} as well as any 
  evolution of the disk properties in response to GI.
@@ -108,9 +110,12 @@ A physically non-irradiated disk with $\tirr=0$ will
 have a non-zero value of the `irradiation parameter', $\theta\neq0$. More specifically $\theta = O(1)$ 
 for all $\tirr <T$, and for our adopted opacity law, Eq. \ref{opacity_law}, 
 \begin{align*}
-  \theta = \frac{4-g}{4-2g},
+  \theta = \frac{4-g}{4-2g}. 
 \end{align*}
-implying $5/6<\theta<3/2$. . %%KMK 
+Thus for $T_\mathrm{irr} = 0$ we have $5/6<\theta<3/2$ by considering
+$\tau\to 0,\,\infty$. However, for $T=\tirr$ we have $\theta = 1$, as
+we expect intuitively.    
+%%KMK 
 %This results from the fact that PPD cooling generally depends on both
 %$P$ and $\Sigma$, but in the absence of irradiation standard beta
 %cooling only depends on $P$. 
@@ -138,26 +143,32 @@ are both satisfied.
 
 PPDs become irradiation-dominated at large distances from the star,
 where $T\to\tirr$ and $\theta\to 1$ \citep{dalessio97,kratter11}.
-Then the first inequality in Eq. \ref{ppd_invisc_cond} relaxes to
-$\gamma > 1$ in the outer disk, which is always satisfied.  
-On the other hand, numerical simulations of gravito-turbulence
-show that $1\lesssim Q \lesssim 2$ \citep{gammie01,rice11}, and 
-the second inequality is generally satisfied. 
+Then Eq. \ref{ppd_invisc_cond} relaxes to 
+$\gamma,\, Q > 1$ in the outer disk. The condition on $\gamma$
+is then guarenteed. On the other hand, numerical 
+simulations of gravito-turbulence show that $1\lesssim Q \lesssim 2$
+\citep{gammie01,rice11}, and the second inequality is generally
+satisfied.   
 %KMK
-Taken together, this means that in the outer regions of a realistic PPD, cooling itself
-is not responsible for a secondary instability of a gravito-turbulent disk,
-which might lead to fragmentation. This leaves viscous GI as the only possible
-culprit, as we illustrate below.
+Taken together, this suggests that in the outer regions of a realistic
+PPD, cooling %by itself may not be not responsible 
+may not be the primary cause for a secondary 
+instability of a gravito-turbulent disk, which might have lead to
+fragmentation. This leaves viscous GI as the only possible culprit
+within our framework, as we illustrate below.  
 
 \subsection{Example 2D calculation}\label{pp2d_example}
-We relax the inviscid assumption and consider a disk  model with $\dot{M} = 10^{-6}M_\sun\,\yr^{-1}$, $Q_0=1.5$, 
+We relax the inviscid assumption and consider a fiducial disk  model with
+$\dot{M} = 10^{-6}M_\sun\,\yr^{-1}$, $Q_0=1.5$,  
 $\tirr=10\mathrm{K}$, and $\alpha_m=10^{-3}$. 
 %KMK
 Such a high accretion rate is consistent with those expected for 
 young protostellar disks \citep{shu77,enoch09}. Similarly,
-$10\mathrm{K}$ is a conservatively low background irradiation l
-evel consistent with cloud temperatures in star forming regions \citep{plume97,johnstone01}.
-Stellar irradiation will typically elevate $\tirr$ in addition to adding a radial dependence \citep{kratter08}
+$10\mathrm{K}$ is a conservatively low background irradiation level
+consistent with cloud temperatures in star forming regions
+\citep{plume97,johnstone01}. 
+Stellar irradiation will typically elevate $\tirr$ in addition to
+adding a radial dependence \citep{kratter08} 
 We adopt the opacity scale $\kappa_{d0} =
 5\times10^{-4}\mathrm{cm}^2\,\mathrm{g}^{-1}\,\mathrm{K}^{-2}$  as in
 \citetalias{rafikov15}. We use $\gamma=1.6$, approximately applicable
@@ -171,13 +182,15 @@ This choice of $\gamma$ satisfies the global inviscid stability condition
 Fig. \ref{rafikov_model} shows the equilibrium 
 disk profile in terms of $Q$, $\alpha$, $\beta$, and $\theta$.  
 These profiles serve as input to the 2D dispersion relation
-(Eq. \ref{thindisk}).    
+(Eq. \ref{thindisk}, Eq. \ref{bigA}---\ref{bigF}). 
 
 Fig. \ref{rafikov_growth} shows growth timescales and
-optimum wavenumbers for viscous GI in this disk model.  
-We also plot analytic estimates based on Eq. \ref{gammie_smallk} (instead of
-Eq. \ref{gammie_maxrate_simple} since here $\theta\sim 1$) 
-which gives the optimum wavenumber and growth rates as
+optimum wavenumbers for viscous GI in this fiducial model. For
+comparison we also plot a case with lower accretion rate, 
+$\dot{M}=10^{-7}M_\sun\,\yr^{-1}$; and analytic estimates based on
+Eq. \ref{gammie_smallk} (instead of Eq. \ref{gammie_maxrate_simple}
+since here $\theta\sim 1$) which gives the optimum wavenumber and
+growth rates as 
 \begin{align}
   |K| = \frac{3}{2\theta Q}, \quad
 %\end{align}
@@ -192,27 +205,36 @@ takes $\theta=1$. %showing that irradiation makes the disk behave like
  
 The most unstable wavelength is a few times the disk thickness. 
 %KMK
-So long as $H<<R$, this result is consistent with our use of the local approximation. For
-our example disk $H/R \approx ??$ at $R=?$. The
-increase in $|K|$ from $\sim 10\mathrm{AU}$ to $\sim 20\mathrm{AU}$ is
-due to the decrease in $Q$, while that from $\sim 60\mathrm{AU}$ to
-$\sim 100\mathrm{AU}$ occurs as the disk transitions from the
+So long as $H\ll R$, this result is consistent with our use of the
+local approximation. For our fiducial disk, $H/R \sim 0.07$ around 
+$R\sim 100$AU, and $H/R <0.25$ througout the disk. 
+The increase in $|K|$ from 
+$\sim 10\mathrm{AU}$ to $\sim 20\mathrm{AU}$ is due to the decrease in
+$Q$, while that from $\sim 
+60\mathrm{AU}$ to $\sim 100\mathrm{AU}$ occurs as the disk transitions
+from the 
 optically-thick to optically-thin regime. The mismatch between the
 numerical and analytic solutions at large
 distances is expected since the above expressions assume $|K|\ll
 1$. Nevertheless the analytic estimates reproduce qualitatively correct
 behavior. 
 
-The disk is subject to viscous GI on dynamical timescales ($\lesssim
-10$ orbits) for $R\gtrsim60$AU. Coincidentally, beyond this radius
-$\alpha\gtrsim 0.1$ and $\beta\lesssim 3$, which is often quoted as 
-criteria for disk fragmentation \citep[e.g.][]{rafikov15}. 
-Thus viscous GI may be responsible for the transition between gravito-turbulence
-and fragmentation due to the removal of rotational support by viscous (turbulent) stresses.
-%KMK
-%This suggests that fragmentation in the outer parts of a realistic PPD
-%occurs is physically due to large turbulent stresses. 
+The fiducial disk is subject to viscous GI on dynamical timescales
+($\lesssim 10$ orbits) for $R\gtrsim60$AU. We note this transition
+radius is also implied by Eq. 16 in \cite{kratter10}. Coincidentally,
+beyond this radius $\alpha\gtrsim 0.1$ and $\beta\lesssim 3$, which is
+often quoted as criteria for disk fragmentation  
+\citepalias[e.g.][]{rafikov15}. Thus viscous GI may be responsible for 
+the transition between gravito-turbulence and fragmentation due to the
+removal of rotational support by viscous (turbulent) stresses. 
 
+On the other hand, the lower $\dot{M}$ model also attain $\tcool\lesssim
+3\Omega^{-1}$ beyond $\sim 60$AU, but $\alpha\lesssim 0.03$. Applying
+empirical conditions for fragmentation may then lead to
+contradiction. Instead, if viscosity is the physical cause for
+fragmentation, then our result suggest the lower $\dot{M}$ disk should
+not fragment (at least much less likely than our fiducial case) 
+because the instability cannot develop on orbital timescales. 
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
@@ -229,12 +251,12 @@ and fragmentation due to the removal of rotational support by viscous (turbulent
     0.0cm]{figures/ppd_2d_growth}\\
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
     0.8cm]{figures/ppd_2d_maxk}
-  \caption{Growth timescales (top) of the most unstable
-    wavenumber (bottom) for viscous,
+  \caption{Black lines show growth timescales (top) of the most
+    unstable wavenumber (bottom) for viscous,
     self-gravitational modes in the 2D PPD model shown in
-    Fig. \ref{rafikov_model}. 
-    The black curve is obtained numerically
-    from the 2D dispersion Eq. \ref{thindisk}, while green curves 
+    Fig. \ref{rafikov_model}. The blue line are for the same disk
+    model but with lower accretion rate. Dotted lines are obtained
+    numerically from Eq. \ref{thindisk}, while green curves  
     are analytic results based on Eq. \ref{gammie_smallk}. 
     \label{rafikov_growth}}
 \end{figure}
@@ -249,17 +271,19 @@ from the 2D model above, at each radius $R$ we obtain the vertical
 structure from Eq. \ref{vert_eq1}---\ref{thermal_eq}, with 
 Eq. \ref{rad_cool1}---\ref{rad_cool2} for the radiative flux.
 We then solve the 3D eigenvalue problem as in \S\ref{3ddisk}, with the
-additional boundary condition {\bf KMK: that the disk surface temperature is fixed},
- $\delta T^\prime(0) = \delta T(\zmax) = 0$.    
-We use the same disk model as in \S\ref{pp2d_example} but 
-with $T_\mathrm{irr}=0$, since our simple radiative diffusion model
-does not include irradiation (\S\ref{rad_cool}). 
+additional boundary condition that the disk surface temperature is
+fixed, $\delta T(\zmax) = 0$. 
+We use the fiducial disk model as in \S\ref{pp2d_example} but 
+with $T_\mathrm{irr}=0$, since our simple radiative diffusion
+treatment does not include irradiation (\S\ref{rad_cool}). %This also
+                                %limits us 
+%to smaller radii than before.  
 %physically, irrad is negligible for opt thick regions, and we are
 %restricted to such regions if applying rad diff
 We use a slightly smaller vertical
 domain with $\rho(\zmax)=0.1\rho_0$.  %to avoid very low density 
 
-Fig. \ref{rafikov_growth3d} shows the growth rates and most unstable
+Fig. \ref{rafikov_growth3d} shows the growth rates and most unstable 
 wavenumber for $R\in[10,100]$AU; along with the corresponding 2D 
 results matched with softened self-gravity. There is good agreeement for
 $R\lesssim60$AU where the disk is optically thick ($\tau\gtrsim
@@ -267,15 +291,16 @@ $R\lesssim60$AU where the disk is optically thick ($\tau\gtrsim
 becomes optically-thin, radiative diffusion (the 3D curve) is not
 valid and under-estimates the growth rates. %; while the $f(\tau)$
 %function approximately captures opticall-thin cooling in the 2D case.  
-Nevertheless, the transition radius
-$R_t\sim60$AU can be correctly calculated within the 2D framework.  
+Nevertheless, the transition radius of  
+$\sim60$AU, beyond which growth timescales become dynamical,    
+can be correctly calculated within the 2D framework.  
 %notice the small softenings used 
 %This is not surprising since the
 %instability is fundamentally driven by viscous and self-gravity forces in the
 %momentum equations, not the energy equation. 
 
 \begin{figure}
-  \includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0cm
+  \includegraphics[width=\linewidth,clip=true,trim=0cm 2cm 0cm
     0.0cm]{figures/ppd_3d_rates}\\
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm
     0.8cm]{figures/ppd_3d_maxk}

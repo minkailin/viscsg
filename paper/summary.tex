@@ -1,11 +1,11 @@
 \section{Summary and discussion}\label{summary}
-In this paper, we develop the linear theory of cooling, irradiated,
-and viscous accretion disks in order to understand gravitational
+In this paper, we develop the linear theory of cooling, irradiated, 
+and viscous accretion disks in order to understand gravitational 
 instability (GI) in realistic protoplanetary disks (PPDs). 
 We use a Navier-Stokes viscosity to mimic the effects of
-turbulent angular momentum transport.
+turbulent angular momentum transport. 
 %KMK
-. %which may be of any origin, though we specialize to
+%which may be of any origin, though we specialize to
             %gravito-turb 
 This viscosity provides a background heating to balance the imposed cooling,  
 and may also act on linear perturbations. %thermo and dynamic 
@@ -13,13 +13,18 @@ We suggest that disk fragmentation, observed in numerical simulations,
 can be understood as the eventual outcome of secondary
 instabilities of a gravito-turbulent base state, driven by cooling
 and/or viscosity. 
+%frag in sim and frag in real disk may or may not have the same
+%physical origin
+
 
 %KMK
 Previous work has focused on the impact of viscosity and 
-cooling on the equilibrium temperature of the disk, but merely used this 
-to measure the classic Toomre Q and thereby assess stability. We demonstrate
-through a more rigorous inclusion of these effects into the dispersion relation that
-they can drive secondary instabilities.
+cooling on the equilibrium temperature and surface density of an 
+accretion disk, but merely used this to  the classic Toomre $Q$,
+thereby assess stability. %Disk fragmentation is assessed similarly,
+%but is usually based on empirically-derived conditions (see below). 
+We demonstrate by explicitly including these effects into the
+dispersion relation that they can drive secondary instabilities.
 While viscosity and cooling can be related through thermal
 balance, they independently enhance growth rates: cooling reduces
 thermal stabilization; and viscous forces compromise rotational
@@ -35,9 +40,9 @@ these models may lend support to the varied behavior observed in numerical simul
 %cooling function includes irradiation 
 
 The effect of cooling and irradiation on GI is quantified by the 
-dispersion relation 
-Eq. \ref{inviscid}. We find a sufficient condition for stability which  
-depends on the irradiation level (Eq. \ref{stable_condition}) but is
+dispersion relation Eq. \ref{inviscid}. 
+We find sufficient conditions for stability which  
+depends on the irradiation level (Eq. \ref{stable_condition}) but is 
 \emph{independent} of the cooling time. 
 This means that long cooling times can still  
 formally lead to instability. However, growth timescales may be 
@@ -74,18 +79,34 @@ stabilizes small-scale perturbations. %also true for inviscid case
 We apply our linear framework to protoplanetary disks with 
 realistic models for cooling and gravito-turbulence. 
 We show that with a physically motivated cooling model for PPDs, 
-cooling alone does not lead to gravitational instabilities. This is due
-to stabilization by an effective `irradiation' associated with the PPD
-cooling function, which is present even if 
-there is no physical irradiation. Physically, this  term
-represents the fact that disks do not cool towards zero temperature because
-radiative cooling is a strong (quartic) function of temperature  %%KMK?
+cooling alone does not lead to gravitational instabilities. This is
+due to stabilization by an effective `irradiation' associated with the
+PPD cooling function, which is present even if there is no physical
+irradiation. 
+This effective irradiation arises because, for the stability problem,
+%cf eqm disk 
+a non-zero floor temperature is generally required in the cooling
+prescription (Eq. \ref{beta_cool}) in order to map it to PPD cooling,
+regardless of the actual irradiation temperature.     
 
+%it's associated with density-dependence 
+
+%is because PPD cooling depends on both pressure and
+%temperature. Mapping this 
+%to the standard beta cooling function requires a non-zero floor
+%temperature, otherwise standard beta c    
+
+%This can only be mapped to the
+%standard beta cooling 
+%Physically, this  term
+%represents the fact that disks do not cool towards zero temperature because
+%radiative cooling is a strong (quartic) function of temperature  %%KMK?
 %due to matching functional forms of
                                 %cooling 
-Instead, viscous GI occurs on  
-dynamical timescales for $R\gtrsim 60$AU because 
-$\alpha\gtrsim0.1$ there. This corresponds to a Toomre $Q\simeq 1.5$ and 
+
+Instead, viscous GI occur on dynamical timescales in a PPD for
+$R\gtrsim 60$AU because $\alpha\gtrsim0.1$ there. 
+This corresponds to a Toomre $Q\simeq 1.5$ and 
 a cooling time $\tcool\lesssim 3\Omega^{-1}$. These are coincident with 
 \emph{empirical} conditions cited in the literature to determine disk
 fragmentation 
@@ -101,25 +122,36 @@ destabilize the disk against self-gravity.
 %details of thermo doesn't matter if it's viscosity that leads to
 %fragmentation 
 
-
 \subsection{Relation to numerical simulations}\label{prev_works}
 %frag in sims because of : cooling, viscosity, or high den
 %flucuations? don't know 
-Our results may shed light on some numerical simulations 
+Our results may help understand some numerical simulations 
 concerning disk fragmentation. Table 
 \ref{bstar_compare} shows a close match between the characteristic
 cooling time for cooling-driven GI (Eq. \ref{betastar}) 
 and that for disk fragmentation observed in simulations 
 \citep{gammie01,rice05,rice11}. This suggests that, at least for those
 simulations, fragmentation is physically due to the removal of
-pressure stabilization by cooling on a radial scale of the disk scale
-height.
+thermal stabilization by cooling on radial lengthscales of the disk 
+thickness.   
+%i.e. there is no effective heating mechanism on the scale of
+        %H 
+%{\bf This would imply over-densities on this scale 
+%do not experience heating during its growth. This is not unreasonable
+%because in reality, gravito-turbulent heating only occurs when a 
+%spiral shock passes through said over-density \citep{young16}. Thus
+%there there is a time interval during which only cooling acts, whence
+%our inviscid theory can be applied. --- too much?}
+
 %%KMK
-%Note that unlike our physical cooling function (Eq. \ref{real_cool}), the standard beta function in these
-%numerical simulations cools towards zero temperature, rather than a temperature floor or irradiation temperature 
+%Note that unlike our physical cooling function (Eq. \ref{real_cool}),
+%the standard beta function in these 
+%numerical simulations cools towards zero temperature, rather than a
+%temperature floor or irradiation temperature  
 %%KMK some comment like that here, or too redundant with comment below??
- %i.e. cool-driven g 
-{\bf don't know if we want to dwell on this table}
+ %i.e. cool-driven g  
+
+%{\bf don't know if we want to dwell on this table}
 %negligible effect from viscous heating
 %makes sense? sims show clumps are not turbulent internally
 %then visc plays no role in clumping -> only a cooling effect 
@@ -169,7 +201,7 @@ increasing resolution. %simple beta cooling will not give a
                        %well-imposed problem 
 
 We suggest having a floor temperature in the standard beta
-cooling prescription is a necessary condition for  
+cooling prescription is a necessary for  
 numerical convergence. This limits the
 relevant scales to a finite range.  %for cool gi 
 %physically irradiation 
@@ -204,7 +236,7 @@ In light of our results on viscous GI,
 we suggest another possible contribution to non-convergence: %in addition to num visc (meru lodato)
 high resolution enables small-scale turbulent angular momentum transport 
 % physical, cf numerical  
-to aid clump formation via the removal of rotational support. (see also \S\ref{MHD} below). 
+to aid clump formation via the removal of rotational support. (See also \S\ref{MHD} below.) 
 If clumps are only marginally resolved, simulations may not have sufficient dynamic range for turbulent eddies
 to cascade down to these scales.
 %This mechanism is unavailable at low resolutions, for which one must
@@ -219,7 +251,7 @@ necessarily imply small-scale dynamics/thermodynamics are unimportant
 as is evident from the non-converging simulations described above.   
 %KMK
 Even at very high resolution one might worry that the artificial dissipation scale
-imposed by the grid / smoothing length is too similar to scale of fragmentation.
+imposed by the grid/smoothing length is too similar to scale of fragmentation.
 %it is true that most unstable wavelength is H is this is always
 %resolved
 %but that doesn't mean small-scale structures are unimportant 
@@ -235,9 +267,9 @@ imposed by the grid / smoothing length is too similar to scale of fragmentation.
 \subsection{MHD turbulence}\label{MHD}%turbulence and viscosity 
 We emphasize the linear framework we have developed does not assume  
 a particular origin for the turbulence that is represented by the imposed
-viscosity. For example, the 2D dispersion relation given by Eq. \ref{thindisk}
-with Eq. \ref{bigA}---\ref{bigF}, treats $\alpha$ as an independent
-input parameter. 
+viscosity. For example, our 2D dispersion 
+relation, Eq. \ref{thindisk} with Eq. \ref{bigA}---\ref{bigF}, treats 
+$\alpha$ as an independent input parameter. 
 
 %We only considered gravito-turbulence as an application.  
 %In
@@ -282,7 +314,8 @@ the use of a viscosity to represent turbulence.
 %the link between the linear GI's discussed in this paper 
 %and frag 
 True disk fragmentation is a non-linear process characterized by
-clumps reaching densities that are orders of magnitude above the ambient value. They must also survive
+clumps reaching densities that are orders of magnitude above the
+ambient value. They must also survive 
 disruption by tidal shear and shocks \citep{shlosman87,young16}.  
 Clearly, our linear models cannot address fragmentation
 directly. Technically, we have only demonstrated that a 
@@ -309,12 +342,13 @@ There is insufficient evidence that gravito-turbulence adequately samples
 the density power spectrum as assumed by \cite{hopkins13}.
 %cooling affects survival rate 
 Nevertheless, one might consider this form of fragmentation as a secondary instability
-triggered by lowering the local
+triggered by lowering the local 
 Toomre parameter through a (random) increase in density 
-(Eq. \ref{toomreQ_criterion}). By contrast, the viscosity/cooling
-destabilizing mechanisms discussed in this paper lowers $Q$ by
-reducing pressure and Coriolis forces. 
-{\bf KMK: this last sentence sounds like it's just about changing classic Q}.
+(Eq. \ref{toomreQ_criterion}).
+% By contrast, the viscosity/cooling
+%destabilizing mechanisms discussed in this paper lowers $Q$ by
+%reducing pressure and Coriolis forces. 
+%{\bf KMK: this last sentence sounds like it's just about changing classic Q}.
 %we have a physical way of lowering pressure/rotation 
 
 %stochasitc frag -> it just happens by chance. no physics 
@@ -327,7 +361,7 @@ turbulence in reducing rotational support (in the sense that it
 provides small-scale angular momentum transport). 
 %to enhance clumping 
 %this visc law is used in prev studies (by much smarter people)
-How to quantitatively model gravito- or MHD turbulence 
+How to quantitatively model the effect of gravito- or MHD turbulence  
 as a viscosity, especially on dynamical timescales, should be 
 clarified with direct numerical simulations. The present viscosity
 models should then be modified accordingly. 
