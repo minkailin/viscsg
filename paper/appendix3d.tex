@@ -28,18 +28,19 @@ We obtain the dispersion relation for viscous GI described by
 previous authors \citep{lynden-bell74,willerding92,gammie96} as 
 follows. We set $\mu=-1, \lambda=0$ in Eq. \ref{visc_law} to obtain the same viscosity
 models. Next we consider $|\beta S|\to \infty$, i.e. no explicit
-cooling on the perturbations. Then the condition $AD = BC$ imply 
+cooling on the perturbations. Then the condition $AD = BC$ implies 
 \begin{align}
   S^3 + \left(\frac{7}{3}\alpha + \alpha_b\right)K^2S^2 + \left[2(2-q) -
     \frac{2|K|}{Q} + \gamma K^2 + \alpha K^4 \left(\frac{4}{3}\alpha +
     \alpha_b\right)\right]S + \alpha K^2 \left[\gamma K^2 -
     \frac{2|K|}{Q} - 2q(2-q)(\gamma-1)\right]=0,
 \end{align}
-which agrees with \citet[Eq. 11]{willerding92} in the isothermal
-limit ($\gamma=1$). The non-isothermal term $\propto (\gamma-1)$
-originates from viscous dissipation which was excluded in the
+which agrees with the above studies in the isothermal
+limit \citep[$\gamma=1$; see also][their Eq. 28]{schmit95}.  
+The non-isothermal term $\propto (\gamma-1)$
+originates from viscous dissipation, which was excluded in the
 aforementioned works. Its effect is to increase the maximum wavenumber 
-for viscous GI. %it acts to stabilize 
+for viscous GI. 
 
 An approximate solution for the growth rate may be obtained for small
 $|K|$ by balancing the last two terms,
@@ -98,7 +99,7 @@ We regard $H_\mathrm{sg}$ as a free parameter of the problem.
 \section{Numerical method for the 3D eigenvalue problem}\label{3d_method}
 We use a pseudo-spectral method to solve the set of ordinary
 differential equations, Eq. \ref{lin_mass}---\ref{lin_gravity}, on 
-the domain $ z\in[0,\zmax]$ with a parity condition at the midplane.
+the domain $ z\in[0,\zmax]$ with a parity condition at the mid-plane.
 We expand $\bm{U}=[\delta P,\delta\rho,\delta\Phi,
   \delta v_x, \delta 
   v_y]$ in even Chebyshev polynomials,
@@ -111,7 +112,7 @@ and the vertical velocity in odd Chebyshev polynomials,
 \end{align}
 where $\bm{a}_j$ and $b_j$ are the spectral coefficients. 
 The basis functions are chosen to satisfy a reflecting boundary
-condition at the midplane, %GI has even symmetry across midplane 
+condition at the mid-plane, %GI has even symmetry across midplane 
 \begin{align}
   \bm{U}^\prime(0) = \bm{0}, \quad \delta v_z(0) = 0.
 \end{align}

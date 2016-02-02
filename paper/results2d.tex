@@ -1,13 +1,13 @@
 \section{Two-dimensional disks with beta cooling}\label{result_2d}
 We begin in the 2D limit with standard beta cooling  to facilitate comparison 
 with previous studies. The disk
-material is assumed to be confined to the midplane, and $\delta v_z=0$. 
+material is assumed to be confined to the mid-plane, and $\delta v_z=0$. 
 We make the replacement  
 $\rho \to \Sigma$, re-interpret $P$ as the vertically-integrated
 pressure, and set $\Gamma=1$. % without loss of generality. 
 %big gamma only controls vertical structure
 %can absorb big gamma into def of cs
-The gravitational potential perturbation remains 3D and its midplane
+The gravitational potential perturbation remains 3D and its mid-plane
 value is given by    
 \begin{align}
   \delta \Phi(z=0) = -\frac{2 \pi G}{|k|}\delta\Sigma
@@ -33,20 +33,23 @@ in \S\ref{2dvisc}.
 
 \subsection{Inviscid limit}\label{2d_inviscid}
 We first simplify the problem by setting $\alpha = \alpha_b = 0$. This
-eliminates viscous heating and forces, allowing us to quantify the 
-\emph{sole} effect of cooling on the 
+eliminates viscous heating and forces in the linearized problem, 
+allowing us to quantify the \emph{sole} effect of cooling on the 
 perturbations. %KMK
 We emphasize that destabilization is independent of the effect of decreasing temperature on the instantaneous
 value of the classic-$Q$. A time-independent heat source should be
 invoked to balance the imposed cooling to allow an equilibrium to be
-defined ($\mathcal{H}_\mathrm{ext}\neq 0$). Alternatively, we are
-assuming viscosity only provides a background heating and does not
-play an active role in the perturbed state. %may or may not be true in a real
+defined ($\mathcal{H}_\mathrm{ext}\neq 0$). For example, we could assume
+that the viscosity only provides a background heating and does not
+play an active role in the perturbed state. 
+
+ %may or may not be true in a real
                                 %disk because we are using viscosity
                                 %as proxy for turbulence
                                 %maybe turb heating actually behaves
                                 %like background heat source only 
 	%KMK interesting points. discuss later?
+
 Eq. \ref{thindisk} becomes 
 \begin{align}\label{inviscid}
 %  &\beta S^3 + S^2 - \beta \left\{ \frac{2|K|}{\qtwo} - \left[2(2-q) +
@@ -130,11 +133,11 @@ Thus $S_*\to0$ as $\beta\to\infty$, but growth rates are never zero
 for any finite $\beta$. That is, the disk can be formally unstable for
 arbitrarily long cooling times.     
  
-Fig. \ref{invisc_theta} show growth rates in a $Q=1.7$ disk  
+Fig. \ref{invisc_theta} shows growth rates in a $Q=1.7$ disk  
 as a function of the cooling time $\beta$ for two irradiation levels
-$\theta=0.1,\,0.33$. The vertical lines mark characterisic cooling
+$\theta=0.1,\,0.33$. The vertical lines mark characteristic cooling
 times beyond which the growth timescale is long compared to the
-dynamical time. Increasing irradiation stablizes the
+dynamical time. Increasing irradiation stabilizes the
 disk, and faster cooling is required to achieve the same growth 
 rate as in a disk with weaker irradiation.  
 
@@ -164,7 +167,7 @@ equilibrium disk temperature equals the irradiation temperature.
 
 \subsubsection{$\theta = 0$}\label{theta0}
 For $\beta$-cooling with $\theta=0$, the disk is unconditionally
-unstable for finite $Q$, although instability occur on smaller scales
+unstable for finite $Q$, although instability occurs on smaller scales
 as $Q$ increases.  The $\beta\to0$ limit corresponds to a 
 pressureless disk (not merely isothermal).   
 
@@ -236,7 +239,7 @@ Eq. \ref{stable_condition}, the instability condition is $Q<1$. %no
 This is the same as the classic Toomre condition for an isothermal
 disk (which may be obtained from Eq. \ref{inviscid}  by taking
 $|\beta S|\to 0$). In this respect, a 
-fully irradiated disk, in that the equilibrium temperature is set
+fully irradiated disk, in which the equilibrium temperature is set
 externally, behaves isothermally regardless of the cooling time. 
 
 
@@ -361,11 +364,11 @@ might expect the dimensionless stress $\alpha \sim Q^{-2}$
 Fig. \ref{gammie_rate_plot} shows growth rates as a function of the
 wavenumber obtained from the dispersion relation 
 Eq. \ref{thindisk}. The limiting behavior for small/large $K$ are
-well-captured by Eq. \ref{gammie_smallk} and
+well-captured by Eqs. \ref{gammie_smallk} and
 \ref{gammie_bigk}. Comparing the two panels 
 %of Fig. \ref{gammie_rate_plot} 
 shows that increasing the
-irradiation level ($\theta$) supresses small-scale
+irradiation level ($\theta$) suppresses small-scale
 perturbations. %(This also occurs in the inviscid case.)
 
 %The case $\beta=100$ is shown for completeness but is not physically
@@ -381,8 +384,8 @@ perturbations. %(This also occurs in the inviscid case.)
   \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0.cm
     0.0cm]{figures/viscsg_modes_theta0d3}
   \caption{Growth rates for the 2D viscous problem as a function of
-    the radial wavenumber $k$ for a range of cooling times
-    $\beta$. The dashed and dotted lines correspond to asympototic
+    the radial wavenumber, $k$, for a range of cooling times, 
+    $\beta$. The dashed and dotted lines correspond to asymptotic
     behaviors for small and large $k$, respectively, computed from
     Eq. \ref{gammie_smallk} and \ref{gammie_bigk}. Top: without
     a floor temperature ($\tirr = 0$); bottom: with a floor

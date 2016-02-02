@@ -116,9 +116,9 @@ for unstable modes with lengthscales on the order of the disk thickness.
 %when we examine the growth 
 %of modes of order the disk scale height. 
 We apply this new linear theory to 
-global models of protoplanetary disks subject to
+models of protoplanetary disks subject to
 gravito-turbulence modeled as an effective 
-viscosity, and cooling via dust opacity. 
+viscosity, and cooling regulated by dust opacity. 
 We find that viscosity renders the disk beyond $\sim 60$AU dynamically
 unstable on radial %this is for Mdot = 1d-6  
 lengthscales a few times the local disk thickness. This is coincident 
@@ -134,12 +134,13 @@ instability of the gravito-turbulent state itself.
 \section{Introduction}\label{intro} 
 Understanding the gravitational stability of rotating disks    
 is central to many astrophysical problems. In the context of 
-gaseous protoplanetary disks (PPDs), gravitational instability (GI)
+gaseous protostellar or protoplanetary disks (PPDs), gravitational instability (GI)
 has two applications. It can provide gravitational torques to
 transport angular momentum outwards and thus enable mass accretion
 \citep{armitage10,turner14}. GI may also lead to disk fragmentation,
-which has been invoked to explain giant planet formation at large
-radii \citep{boss97,helled14} %% KMK need an original citation, not just review.
+which has been invoked to explain the formation of stellar/sub-stellar companions or 
+giant planets 
+at large radii \citep{boss97,kratter06,stam09,helled14} %% KMK need an original citation, not just review.
 Studying these non-linear phenomena requires
 direct numerical simulations. Nevertheless, physical insight can be    
 obtained through analytical modeling. 
@@ -154,7 +155,7 @@ $\kappa$ is the epicyclic frequency (which equals the rotation
 frequency $\Omega$ in a Keplerian disk), $\Sigma$ is the surface
 density and $G$ is the gravitational constant. The Toomre parameter is a
 measure of the destabilizing effect of self-gravity ($G\Sigma$) against 
-the stabilzing effect of rotation ($\kappa$) and pressure 
+the stabilizing effect of rotation ($\kappa$) and pressure 
 ($c_s$). This is evident from the dispersion relation, 
 \begin{align}\label{classic_dr}
   s^2 =  2\pi G\Sigma|k| - \kappa^2 - c_s^2k^2,   
@@ -177,7 +178,7 @@ values of $Q$
 We emphasize that the oft-used dispersion relation and corresponding
 Toomre parameter (Eqs. \ref{toomreQ_criterion} and \ref{classic_dr})
 are derived from \emph{idealized} conditions:  
-the base disk is laminar and does not experience any net thermal 
+the base disk is laminar, inviscid, and does not experience any net thermal 
 losses\footnote{Isothermal disks implicitly assume  
   heating and thermal losses are exactly balanced at all 
   times, so these do not cool in the current context.} 
@@ -285,7 +286,7 @@ self-gravity for long-wavelength disturbances
 occurs in dusty fluids where the required frictional forces are 
 provided by dust-gas drag \citep{ward00, takahashi14}. 
 In fact, this
-is a mechanism to enhance particle clumping for planetesimational
+is a mechanism to enhance particle clumping for planetesimal
 formation %frag of dust 
 \citep{youdin11}. Therefore it is not unreasonable to expect analogous
 fragmentation in gaseous disks due to viscosity.   
@@ -324,12 +325,12 @@ as an effective viscosity is a separate issue
 \citep{balbus99}. However, it is reasonable to assume that these
 mechanisms, which are observed in simulations  
 to transport angular momentum outwards (and mass inwards),
-frustate rotational support. 
+frustrate rotational support. 
 
 In this work, we use viscosity to model two possible
 physical effects of turbulence: heating via dissipation and angular momentum transport. 
 %KMK
-We emphasize that our model for GI enabled by viscosity (hearafter
+We emphasize that our model for GI enabled by viscosity (hereafter
 viscous GI) does not assume a particular origin for the viscosity. GI
 itself or other forms of magnetic or hydrodynamic turbulence are 
 allowed in this framework. We will generalize the theory of viscous GI
@@ -348,8 +349,8 @@ We will, however, apply the theory to `gravito-turbulent'
 disks in which the viscosity is associated with some underlying
 (classic) GI, as described below.  
 
-Consider an initially laminar, $Q\gg1$ disk, without an external
-heating mechanism, as it cools. The disk temperature will decline
+Consider an initially laminar, $Q\gg1$ disk, without external 
+heating, as it cools. The disk temperature will decline
 until $Q=O(1)$, whence non-axisymmetric modes grow and heat the disk
 through the dissipation of spiral shocks \citep{cossins09}. 
 %new rafikov 16  
@@ -382,7 +383,7 @@ fragmentation, which we discuss in \S\ref{summary}.
 
 However, it is generally accepted that \emph{steady, gravito-turbulent
   disks do not  
-  exist for sufficiently rapid cooling or large viscosity}.  
+  exist for sufficiently rapid cooling or large viscosity} \citep{johnson03}.   
 This is intriguing because, as highlighted in
 \S\ref{cool_gi}---\ref{visc_gi}, cooling or viscosity can reduce 
 gravitational stability independently of their influence on the exact

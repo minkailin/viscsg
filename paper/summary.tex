@@ -9,7 +9,7 @@ turbulent angular momentum transport.
             %gravito-turb 
 This viscosity provides a background heating to balance the imposed cooling,  
 and may also act on linear perturbations. %thermo and dynamic 
-We suggest that disk fragmentation, observed in numerical simulations, 
+We suggest that disk fragmentation observed in numerical simulations  
 can be understood as the eventual outcome of secondary
 instabilities of a gravito-turbulent base state, driven by cooling
 and/or viscosity. 
@@ -83,7 +83,8 @@ cooling alone does not lead to gravitational instabilities. This is
 due to stabilization by an effective `irradiation' associated with the 
 density-dependence of the PPD cooling function as it appears in the
 stability problem, which is present even if there is no physical
-irradiation.  
+irradiation. This captures the fact that density enhancements impede cooling. 
+ 
 %This effective irradiation arises because, for the stability problem,
 %cf eqm disk 
 %a non-zero floor temperature is generally required in the cooling
@@ -176,11 +177,16 @@ This $\alpha\sim0.06$ is roughly constant, consistent with \cite{rice05}.
 %then visc plays no role in clumping -> only a cooling effect 
 
 More recent simulations have raised the issue of numerical
-convergence. %KMK
+convergence. %KMK 
 \cite{meru11} found that better resolved disks fragmented at longer cooling times.
 Follow-up studies attributed at least some of this effect to decreasing numerical viscous
 heating at higher resolution, which helps fragmentation
-\citep{lodato11,meru12}.
+\citep{lodato11,meru12}. 
+We can expect this if numerical viscosity
+contributes to an effective irradiation, %then we do expect a disk can be
+%destabilized at longer cooling times with increasing resolution, 
+because then perturbations can cool to lower temperatures with
+increasing resolution, see Fig. \ref{invisc_theta}.   
 
  \cite{paardekooper12} also found that fragmentation can occur 
 for  slowly-cooled disks with $\tcool\Omega\gg O(1)$, but that this requires   
@@ -210,21 +216,17 @@ for slowly-cooled disks.
 
 Here, we highlight that most numerical experiments, including those
 above, employ the standard beta cooling function, Eq. \ref{beta_cool},
-\emph{without} a floor temperature. We show in \S\ref{2d_inviscid}
+\emph{without} a physical floor temperature. We show in \S\ref{2d_inviscid}
 (see also \S\ref{cool_gi}) that this implies cooling-driven GI can
-occur at any sufficiently small scales. Therefore as the numerical
+occur at any sufficiently small scale. Therefore as the numerical
 resolution increases, simulations can access a wider range of unstable
-scales.  %no upper bound  
+scales. Although small-scale modes have weaker growth rates, they can 
+become important over long timescales.  
+%can access smaller, unstable scales 
 In this respect, it is perhaps not surprising to find non-convergence with 
-increasing resolution. %simple beta cooling will not give a
-                       %well-imposed problem 
-
-Note that there may be a `numerical floor temperature' in 
-simulations, e.g. due to numerical viscosity, which should  
-decrease with resolution. Then we expect a disk can be
-destabilized at larger cooling times with increasing resolution
-because the effective floor temperature drops   
-\citep[cf.][see also Fig. \ref{invisc_theta}]{meru11}. 
+increasing resolution and/or integration times. 
+%simple beta cooling will not give a
+%well-imposed problem 
 
 We suggest having a physical floor temperature in the standard beta
 cooling prescription is  necessary for  
@@ -232,14 +234,16 @@ numerical convergence. This limits the
 relevant scales to a finite range.  %for cool gi 
 %physically irradiation 
 Furthermore, without a floor temperature, standard beta cooling is
-a function of the pressure/energy density field only. It is not clear
-how relevant are results obtained from this is to actual PPDs,
-where cooling depends on two thermodynamic states (e.g. pressure and
+a function of the pressure/energy density field only. 
+%It is not clear 
+%how relevant are results obtained from this is to actual PPDs,
+There may be some inconsistency in applying results obtained from 
+this to actual PPDs where cooling depends on two thermodynamic states (e.g. pressure and
 temperature). A floor temperature permits a mapping between standard beta
 cooling and PPD cooling (\S\ref{ppd_cooling}). 
 %KMK
 Moreover, the standard beta cooling does 
-not account for optical depth effects, which force the midplane 
+not account for optical depth effects, which force the mid-plane 
 and high density perturbations to cool more slowly.
 
 %ultra-small scale cooling-GI may have slow growth rates
@@ -277,7 +281,7 @@ necessarily imply small-scale dynamics/thermodynamics are unimportant
 as is evident from the non-converging simulations described above.   
 %KMK
 Even at very high resolution one might worry that the artificial dissipation scale
-imposed by the grid/smoothing length is too similar to scale of fragmentation.
+imposed by the grid/smoothing length is too similar to the scale of fragmentation.
 %it is true that most unstable wavelength is H is this is always
 %resolved
 %but that doesn't mean small-scale structures are unimportant 
@@ -291,7 +295,7 @@ imposed by the grid/smoothing length is too similar to scale of fragmentation.
 %no magic beta when non-ideal effects are included 
 
 \subsection{MHD turbulence}\label{MHD}%turbulence and viscosity 
-We emphasize the linear framework we have developed does not assume  
+We emphasize that the linear framework we have developed does not assume  
 a particular origin for the turbulence that is represented by the imposed
 viscosity. For example, our 2D dispersion 
 relation, Eq. \ref{thindisk} with Eq. \ref{bigA}---\ref{bigF}, treats 
@@ -361,9 +365,9 @@ disk fragmentation.
 
 Our deterministic approach cannot model `stochastic fragmentation'
 \citep{paardekooper12,hopkins13}. In this interpretation,  
-fragmentation is attributed to the occurence and survival 
+fragmentation is attributed to the occurrence and survival 
 of large, non-linear density enhancements, which arise from the
-gravito-turbulent flucuations simply by chance. %KMK
+gravito-turbulent fluctuations simply by chance. %KMK
 There is insufficient evidence that gravito-turbulence adequately samples
 the density power spectrum as assumed by \cite{hopkins13}.
 %cooling affects survival rate 
