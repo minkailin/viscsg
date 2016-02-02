@@ -23,11 +23,10 @@ required for input into our linear framework. We derive other
 dimensionless parameters below. 
 
 Although our disk is global in extent, here we consider the local
-stability at each radius. {\bf discuss: linear prob has no vrad in
-  base state} 
-%KMK I disagree with neglect of viscous flow in that there is a global Mdot. Revised version:
-We are thus neglecting any global instabilities \citep{adams89,lodato05,kratter10} as well as any 
- evolution of the disk properties in response to GI.
+stability at each radius. We are thus neglecting any global
+instabilities \citep{adams89,lodato05,kratter10} as well as any
+evolution of the disk properties in response to GI. 
+ 
 % We are thus neglecting the slow, background viscous radial flow; as well
 %as any global gravitational instabilities \citep{lodato05}. {\bf more refs?}
 
@@ -59,13 +58,15 @@ is our opacity model where $\kappa_d\propto T^b$ with $b=2$.
 Eq. \ref{ftau} accounts for cooling in the optically-thin ($\tau\ll
 1$) and optically-thick ($\tau\gg1$) regimes. 
 
-Note that Eq. \ref{real_cool} falls within our definition of a beta cooling prescription, because
+Note that Eq. \ref{real_cool} falls within our definition of a beta
+cooling prescription, because 
 it is an explicit function of the thermodynamic states. However, we
 formulated the linear problem with the standard beta cooling function 
-given by Eq. \ref{beta_cool}, which has a different (less realistic) dependence on disk temperature.
+given by Eq. \ref{beta_cool}, which has a different (less realistic)
+dependence on disk temperature. 
  In order to adapt the existing  framework to the above PPD cooling function, we 
 need to identify the equivalent $\beta$ and $\theta$ parameters that are required for the 
-linearized equations (Eq. \ref{linear_beta}). 
+linearized equations (see \S\ref{linear_bcool}). 
  
 %Since we are interested in the linear response of the system, the
 %corresponding cooling parameters $\beta$ and $\theta$ are found by
@@ -94,19 +95,20 @@ standard cooling function, Eq. \ref{linear_beta}, we identify
   &\theta = \frac{C_2}{C_1},\label{real_theta} 
 \end{align}
 to be used in the 2D dispersion relation (Eq. \ref{thindisk}). 
-Eq. \ref{real_beta} still represents a physical cooling 
-time, and is consistent with previous definitions within factors of
-order unity \citep[e.g.][their Eq. 2]{kratter10}.  
+Eq. \ref{real_beta} represents a physical cooling \emph{for the
+  perturbations}, and is consistent with previous definitions within
+factors of order unity \citep[e.g.][their Eq. 2]{kratter10}.  
 
 %KMK
-However, $\theta$ is no longer a direct proxy for the irradiation level
-as it was in the standard beta cooling model.
+%However, $\theta$ is no longer a direct proxy for the irradiation level
+%as it was in the standard beta cooling model.
 %is now an effective irradiation level. 
-Eq. \ref{real_theta} shows that $\theta$ is related to the true
-irradiation temperature $\tirr$ through the function $g$ given by 
+Eq. \ref{real_theta} shows that the re-defined $\theta$ is related to
+the true irradiation temperature $\tirr$ through the function $g$ given by 
 Eq. \ref{g_def}, and is therefore a only a weak function of the irradiation temperature. 
-A physically non-irradiated disk with $\tirr=0$ will
-have a non-zero value of the `irradiation parameter', $\theta\neq0$. More specifically $\theta = O(1)$ 
+%A physically non-irradiated disk with $\tirr=0$ will 
+%have a non-zero value of the `irradiation parameter', $\theta\neq0$. 
+More specifically $\theta = O(1)$ 
 for all $\tirr <T$, and for our adopted opacity law, Eq. \ref{opacity_law}, 
 \begin{align*}
   \theta = \frac{4-g}{4-2g}. 
@@ -118,7 +120,7 @@ expected intuitively.
 %This results from the fact that PPD cooling generally depends on both
 %$P$ and $\Sigma$, but in the absence of irradiation standard beta
 %cooling only depends on $P$. 
-{\bf KMK: we should discuss}
+%{\bf KMK: we should discuss}
 
 %On the
 %other hand, fully irradiated disks with  $T=T_\mathrm{irr}$ have 
@@ -131,7 +133,8 @@ expected intuitively.
 %  \theta = \frac{4-g}{4-2g},
 %\end{align*}
 %implying $5/6<\theta<3/2$. 
-With our new linearized cooling function in hand, from the discussion in \S\ref{2d_inviscid} and by applying
+With our new linearized cooling function in hand, from the discussion
+in \S\ref{2d_inviscid} and by applying 
 Eq. \ref{stable_condition},  we conclude that without viscous effects 
 the disk is stable everywhere if  
 \begin{align} 
@@ -221,8 +224,9 @@ behavior.
 The fiducial disk is subject to viscous GI on dynamical timescales
 ($\lesssim 10$ orbits) for $R\gtrsim60$AU. We note this transition
 radius is also implied by Eq. 16 in \cite{kratter10}. Coincidentally,
-beyond this radius $\alpha\gtrsim 0.1$ and $\beta\lesssim 3$, which is
-often quoted as criteria for disk fragmentation  
+beyond this radius $\alpha\gtrsim 0.1$ (and 
+$\beta\lesssim 3$), which is often quoted as a condition for disk
+fragmentation   
 \citepalias[e.g.][]{rafikov15}. Thus viscous GI may be responsible for 
 the transition between gravito-turbulence and fragmentation due to the
 removal of rotational support by viscous (turbulent) stresses. 

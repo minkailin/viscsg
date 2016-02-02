@@ -218,7 +218,14 @@ In this respect, it is perhaps not surprising to find non-convergence with
 increasing resolution. %simple beta cooling will not give a
                        %well-imposed problem 
 
-We suggest having a floor temperature in the standard beta
+Note that there may be a `numerical floor temperature' in 
+simulations, e.g. due to numerical viscosity, which is expected to 
+decrease with resolution. Then we expect a disk can be
+destabilized at larger cooling times with increasing resolution
+because the effective floor temperature drops   
+\citep[cf.][see also Fig. \ref{invisc_theta}]{meru11}. 
+
+We suggest having a physical floor temperature in the standard beta
 cooling prescription is  necessary for  
 numerical convergence. This limits the
 relevant scales to a finite range.  %for cool gi 

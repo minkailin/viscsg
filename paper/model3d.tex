@@ -146,13 +146,10 @@ the cooling timescale with $\beta$ a constant input parameter. Here,
 is a reference temperature field parameterized as a constant 
 fraction $\theta$ of the equilibrium temperature
 $T_\mathrm{eq}$. Physically, $\tirr$ is the floor temperature set by,
-for example, stellar or background irradiation. We will thus refer to
-$\theta$ as the `irradiation level'. {\bf ASK} As we discuss in
-\S\ref{2d_inviscid}, the limits $\theta \rightarrow 0, \theta
-\rightarrow 1$ do not exactly correspond to the limits of
-non-irradiated or irradiation-dominated disks as discussed in the
-literature \citep{kratter11,rice11}. 
-%stellar illum or envelope rad      
+for example, stellar or background irradiation. Note that $\theta$  
+should only be interpreted as an irradiation parameter when it is 
+defined through Eq. \ref{tirr_def} and 
+Eq. \ref{beta_cool} adopted as the cooling function. 
 
 For $\beta$-cooling given by Eq. \ref{beta_cool} we assume an 
 equilibrium polytropic relation 
@@ -185,15 +182,19 @@ $\beta$. An adiabatic disk corresponds to $\beta\to \infty$. The
 physical meaning of the limit $\beta\to0$ depends on $\theta$, as
 discussed in \S\ref{theta0}---\ref{theta1}.  
 
-Note that, although we assume standard beta cooling in formulating the
-linear problem later, any explicit 
-cooling function, say $\Lambda_1(\rho,T)$, can be mapped to
-that obtained from Eq. \ref{beta_cool} by equating their linearized
-forms, i.e. $\delta \Lambda \equiv \delta \Lambda_1$. This then 
-defines the $\beta$ and $\theta$ parameters to be used in the 
-framework we develop. We do this in \S\ref{2dppd} where we adopt a
-more realistic beta cooling function for PPDs. In that case, $\theta$
-may or may not represent a physical irradiation.     
+%We shall need to re-define $\theta$ and $\beta$  
+%when considering other cooling functions (see below).    
+
+We assume standard beta cooling in formulating the linear
+problem. However, the corresponding linear problem for  
+any other explicit cooling function, say $\Lambda_1(\rho,T)$, can be  
+obtained by equating its linearized form to 
+that of Eq. \ref{beta_cool}, i.e. setting $\delta \Lambda \equiv
+\delta \Lambda_1$. This then defines the $\beta$ and $\theta$
+parameters to be used in the framework we develop later (see also 
+\S\ref{linear_bcool}). We do this in \S\ref{2dppd} where we adopt a  
+more realistic beta cooling function for PPDs. In that case, $\theta$ 
+may or may not directly represent a physical irradiation.     
 
 \subsubsection{Radiative cooling}\label{rad_cool}
 A more realistic treatment of cooling considers energy transfer by radiative diffusion. Then
