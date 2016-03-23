@@ -21,10 +21,19 @@ where $\rho$ is the density field and $\bm{v} = (v_x, v_y, v_z)$ is
 the velocity field. 
 We assume an ideal gas so that the pressure $P$ and thermal energy
 density $E$ are related by  
-\begin{align}
+\begin{align}\label{ideal_eos}
   P = (\gamma-1)E = \mathcal{R}\rho T, 
 \end{align}
-where $\mathcal{R}$ is the gas constant and $T$ is the temperature. The gas 
+where $\mathcal{R}$ is the gas constant and $T$ is the temperature. 
+{\bf For simplicity we refer to a single adiabatic index as that
+  appears in the equation of state for both 2D and 3D disk models 
+  \citep[cf.][]{johnson03}.  %should adopt diff values in 2D and 3D
+                             %for the same 
+                             %disk in 2D 
+%johnson: specify 3D gamma, then translate into 2D gamma because disk
+%model is 2D 
+}
+The gas 
 gravitational potential $\Phi$ is given via the Poisson equation,  
 \begin{align}
  \nabla^2\Phi = 4 \pi G \rho. 
@@ -136,20 +145,33 @@ A prototypical example is
 \begin{align}\label{beta_cool}
   \Lambda(\rho, T) =
   %  \frac{P}{(\gamma-1)T}\frac{\left(T-T_\mathrm{irr}\right)}{t_c}, 
-  \frac{\mathcal{R}\rho}{(\gamma-1)}\frac{\left(T-T_\mathrm{irr}\right)}{t_c}. 
+  \frac{\mathcal{R}\rho}{(\gamma-1)}\frac{\left(T-T_\mathrm{irr}\right)}{t_c}.
 \end{align}
 Recall  $\tcool = \beta\Omega^{-1}$ is 
-the cooling timescale with $\beta$ a constant input parameter. Here, 
-\begin{align}\label{tirr_def}
-  \tirr = \theta T_\mathrm{eq}
-\end{align}
-is a reference temperature field parameterized as a constant 
-fraction $\theta$ of the equilibrium temperature
-$T_\mathrm{eq}$. Physically, $\tirr$ is the floor temperature set by,
-for example, stellar or background irradiation. Note that $\theta$  
+the cooling timescale with $\beta$ a constant input parameter. 
+{\bf Here, $T_\mathrm{irr}$}
+%Here, 
+%\begin{align}\label{tirr_def}
+%  \tirr = \theta T_\mathrm{eq}
+%\end{align}
+is a reference temperature field. 
+%parameterized as a 
+%fraction $\theta$ of the equilibrium temperature field 
+%$T_\mathrm{eq}(z)$. 
+Physically, $\tirr$ {\bf may} the floor temperature set by, 
+for example, stellar or background irradiation. {\bf 
+
+
+}
+
+{\bf
+Note that $\theta$  
 should only be interpreted as an irradiation parameter when it is 
 defined through Eq. \ref{tirr_def} and 
 Eq. \ref{beta_cool} adopted as the cooling function. 
+}
+
+
 
 For beta cooling given by Eq. \ref{beta_cool} we assume an 
 equilibrium polytropic relation 
@@ -160,7 +182,9 @@ equilibrium polytropic relation
 c_{s0}^2\rho_0\left(\frac{\rho}{\rho_0}\right)^\Gamma,
 \end{align}
 where $\Gamma$ is the constant polytropic index and $\rho_0 =
-\rho(z=0)$ is the equilibrium mid-plane density. 
+\rho(z=0)$ is the equilibrium mid-plane density. {\bf Note that
+  $\Gamma$ is only relevant 
+  to the 3D problem as it determines the disk vertical structure.} 
 The vertical structure is first obtained from 
 Eq. \ref{vert_eq1}---\ref{vert_eq2}, %given strength of self-grav, via Q3d
 then inserted into 
@@ -172,6 +196,10 @@ thermal equilibrium. If  $\mathcal{H}_\mathrm{ext}=0$,
 %  \alpha(z) = \frac{1}{\Gamma(\gamma-1)\beta
 %    q^2}\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left(1 - \theta\right). 
 \end{align}
+
+
+
+
 
 Beta cooling of the form Eq. \ref{beta_cool} is widely applied in 2D
 and 3D numerical simulations of self-gravitating disks \citep{gammie01,
