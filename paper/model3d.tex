@@ -25,7 +25,7 @@ density $E$ are related by
   P = (\gamma-1)E = \mathcal{R}\rho T, 
 \end{align}
 where $\mathcal{R}$ is the gas constant and $T$ is the temperature. 
-{\bf For simplicity we refer to a single adiabatic index as that
+{\bf For simplicity we only refer to the adiabatic index as that
   appears in the equation of state for both 2D and 3D disk models 
   \citep[cf.][]{johnson03}.  %should adopt diff values in 2D and 3D
                              %for the same 
@@ -145,32 +145,20 @@ A prototypical example is
 \begin{align}\label{beta_cool}
   \Lambda(\rho, T) =
   %  \frac{P}{(\gamma-1)T}\frac{\left(T-T_\mathrm{irr}\right)}{t_c}, 
-  \frac{\mathcal{R}\rho}{(\gamma-1)}\frac{\left(T-T_\mathrm{irr}\right)}{t_c}.
+  \frac{\mathcal{R}\rho}{(\gamma-1)}\frac{\left(T-T_\mathrm{irr}\right)}{t_c},
 \end{align}
-Recall  $\tcool = \beta\Omega^{-1}$ is 
-the cooling timescale with $\beta$ a constant input parameter. 
-{\bf Here, $T_\mathrm{irr}$}
+{\bf where $T_\mathrm{irr}$ is a reference temperature field, and
+recall}  $\tcool = \beta\Omega^{-1}$ is 
+the cooling timescale with $\beta$ a constant input parameter.
 %Here, 
 %\begin{align}\label{tirr_def}
 %  \tirr = \theta T_\mathrm{eq}
 %\end{align}
-is a reference temperature field. 
 %parameterized as a 
 %fraction $\theta$ of the equilibrium temperature field 
 %$T_\mathrm{eq}(z)$. 
 Physically, $\tirr$ {\bf may} the floor temperature set by, 
-for example, stellar or background irradiation. {\bf 
-
-
-}
-
-{\bf
-Note that $\theta$  
-should only be interpreted as an irradiation parameter when it is 
-defined through Eq. \ref{tirr_def} and 
-Eq. \ref{beta_cool} adopted as the cooling function. 
-}
-
+for example, stellar or background irradiation. 
 
 
 For beta cooling given by Eq. \ref{beta_cool} we assume an 
@@ -192,14 +180,24 @@ Eq. \ref{thermal_eq} to infer the required viscosity profile for
 thermal equilibrium. If  $\mathcal{H}_\mathrm{ext}=0$, 
 \begin{align}\label{alpha_beta_relation}
 \alpha(z) = \frac{1}{(\gamma-1)\beta
-   q^2}\frac{c_s^2(z)}{c_{s0}^2}\left(1 - \theta\right). 
+   q^2}\frac{c_s^2(z)}{c_{s0}^2}\left(1 - \theta\right),
 %  \alpha(z) = \frac{1}{\Gamma(\gamma-1)\beta
 %    q^2}\left(\frac{\rho}{\rho_0}\right)^{\Gamma-1} \left(1 - \theta\right). 
-\end{align}
-
-
-
-
+\end{align} 
+{\bf with 
+  \begin{align}\label{tirr_def}
+    \theta = \frac{\tirr}{T_\mathrm{eq}},
+  \end{align}
+   where $T_\mathrm{eq}(z)$ is the equilibrium temperature field.
+   We shall consider vertically isothermal disks with $\Gamma=1$, as
+  appropriate for the outer parts of irradiated protoplanetary disks
+   \citep{chiang97}. In this case  
+   $\alpha$, $T_\mathrm{eq}$ and $\theta$ are simply constants. 
+    Note that $\theta$  
+    should only be interpreted as an irradiation parameter when it is 
+    defined through Eq. \ref{tirr_def}, in conjunction with adopting  
+    Eq. \ref{beta_cool} as the cooling function. 
+ } 
 
 Beta cooling of the form Eq. \ref{beta_cool} is widely applied in 2D
 and 3D numerical simulations of self-gravitating disks \citep{gammie01,
