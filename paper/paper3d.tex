@@ -105,10 +105,12 @@ University of
 %We derive a general dispersion relation for linear waves in a 
 %self-gravitating, viscous, non-adiabatic disk with internal heating,
 %external irradiation, and cooling. 
-We analyze the gravitational stability of viscous, non-adiabatic
-accretion disks with internal heating, external irradiation, and cooling.  
-We consider parameterized cooling functions in 2D and 3D disks, %two and three dimensions,
-as well as 
+We analyze the {\bf axisymmetric} gravitational stability of viscous, non-adiabatic
+accretion disks with internal heating, external irradiation, and
+cooling {\bf in the shearing box approximation}.   
+We consider parameterized cooling functions in {\bf 2D} and {\bf 3D}
+disks, %two and three dimensions,  
+as well as   
 radiative diffusion in 3D. We show that 
 generally there is no critical cooling rate/viscosity below which 
 the disk is formally stable, although interesting limits appear 
@@ -133,7 +135,7 @@ instability of the gravito-turbulent state itself.
 
 \section{Introduction}\label{intro} 
 Understanding the gravitational stability of rotating disks    
-is central to many astrophysical problems. In the context of 
+is central to many astrophysical problems {\bf \citep{kratter16}}. In the context of 
 gaseous protostellar or protoplanetary disks (PPDs), gravitational instability (GI)
 has two applications. It can provide gravitational torques to
 transport angular momentum outwards and thus enable mass accretion
@@ -210,10 +212,10 @@ models.
 We first review in \S\ref{cool_gi} and \S\ref{visc_gi}, respectively,  
 how cooling or viscosity can lead to GI even when $Q>1$, by removing
 pressure or rotational support. We then 
-discuss in \S\ref{frag_intro} how these effects may relate   
-to the transition from self-regulated GI to fragmentation seen in
-numerical simulations. The rest of this paper is laid out in
-\S\ref{plan}.    
+discuss in \S\ref{frag_intro}{\bf---\S\ref{gi_of_gi}} how these
+effects may relate to the transition from self-regulated GI to
+fragmentation seen in numerical simulations. The rest of this paper is
+laid out in \S\ref{plan}.    
 
 %{\bf add sentence here more like s 1.4 laying
 %out what you are about to talk about. at the very least a transition sentence or two?}
@@ -357,10 +359,23 @@ through the dissipation of spiral shocks \citep{cossins09}.
 This setup permits a quasi-steady, turbulent state with
 $Q =O(1)$ in which cooling is balanced by shock heating to maintain
 thermal equilibrium \citep{gammie01}. 
-If one represents this turbulent heating by a viscous heating, then
-the $\alpha$ and $\beta$ parameters defined above will  
-be inversely related (see, e.g. Eq. \ref{alpha_beta_relation}).   
+%If one represents this turbulent heating and transport {\bf by a viscosity} 
+%heating by a viscous heating
 
+{\bf 
+  Global disk simulations \citep[e.g.][]{lodato04} show
+  that the transport and 
+  heating associated with this gravito-turbulence may be described as a
+  local viscous process provided that the disk-to-star mass ratio is
+  small ($\lesssim0.25$) and the disk is thin (aspect-ratio $\lesssim
+  0.1$).  
+}
+{\bf In this case} the $\alpha$ and $\beta$ parameters defined above
+will be inversely related (see, 
+e.g. Eq. \ref{alpha_beta_relation}). {\bf Recent 
+  vertically-extended shearing box simulations 
+  also confirm this relation in 3D disks \citep{shi14}.} 
+   
 Numerical experiments, however, show that if the cooling time is too
 small (or the viscosity is too large), say,   
 \begin{align}\label{frag_cond}
@@ -387,10 +402,27 @@ However, it is generally accepted that \emph{steady, gravito-turbulent
 This is intriguing because, as highlighted in
 \S\ref{cool_gi}---\ref{visc_gi}, cooling or viscosity can reduce 
 gravitational stability independently of their influence on the exact
-value of the classic $Q$. This motivates a physical      
+value of the classic $Q$. This 
+motivates a physical      
 interpretation of disk fragmentation as the inability to maintain a
 gravito-turbulent state due to 
 secondary instabilities driven by cooling and/or viscosity.
+
+{\bf 
+\subsection{Instability of the gravito-turbulent state}\label{gi_of_gi}
+  In this work, we formally regard the gravito-turbulent
+  disk described above as an equilibrium state, to which we apply    
+  standard linear stability analysis. Then by `perturbations' we mean   
+  deviations away from this gravito-turbulent 
+  basic state\footnote{This should not be confused with 
+    flucuations with respect to the 
+    laminar disk that maintain the underlying
+    gravito-turbulence.}. 
+  We assume that instabilities defined this way  
+  signifies disk fragmentation, since numerical simulations  
+  show that the non-existance of steady gravito-turbulence imply    
+  fragmentation.   
+}
 
 Indeed, we find that the region where a gravito-turbulent PPD is
 dynamically unstable agrees with the current consensus on  where, and
