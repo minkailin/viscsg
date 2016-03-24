@@ -148,11 +148,13 @@ state.
 10) In Figure 9, is there any reason to label the line of t_c\Omega=4 instead
 of t_c\Omega=3?
 
-The vertical line marks the region beyond which the alpha parameter
-exceeds 0.1. For the 3D, non-irradiated case in Fig. 9, beyond this
-radius the cooling time also drops below ~4/Omega. For the 2D, irradiated
+The vertical line marks the region beyond which the alpha>0.1.
+For the 3D, non-irradiated case in Fig. 9, beyond this
+radius the cooling time drops below 4/Omega. For the 2D, irradiated
 case with Mdot=1d-6 in Fig. 8, this radius corresponds to a cooling
-time of < 3/Omega.  
+time of < 3/Omega.
+
+This is now stated in the captions of Fig. 8 and 9. 
 
 ************************************************************************************
 
@@ -162,6 +164,31 @@ the Authors attribute the issue to resolution. However, Paardekooper, Baruteau,
 is caused by either initial conditions or the cooling algorithm using SPH. 
 Please comment on these aspects in the paper.
 
+We highlight the results from these papers in Section 7.1 in order to
+give a more complete picture of the convergence issue at present, but
+refrain from over-interpreting these simulations with our simple
+model. 
+
+The issue with initial conditions, as raised by Paardekooper et al
+(2011) applies to global simulations where internal edges may appear,
+which is where fragmentation occurs. Our local models cannot
+accommodate such global effects. 
+
+Rice et al (2012) show that the standard SPH cooling algorithm may contribute
+to non-convergence because of the mismatch in scale in the cooling and
+the SPH smoothing length, although the precise mechanism to
+non-convergence is not clear.  However, grid-based simulations also display
+non-convergence, with the most recent example being Baehr \& Klahr
+(2015). Thus the way in which cooling is implemented may not be
+entirely explain non-convergence.
+
+Based on our analysis (the dispersion relation Eq. 1), we point out
+that non-convergence observed in simulations with beta cooling
+and no floor temperature may be related to the fact that sufficiently 
+small-scales are always unstable, and these become accessible with
+increasing resolution. 
+
+************************************************************************************
 12) The Authors should consider using the following citations: 
 In section 1.2., cite secular GI, Goodman & Pindor (2000), Youdin (2005)
 In section 1.3., cite Shi & Chiang (2014) after Gammie (2001)
@@ -170,3 +197,7 @@ In section 4.1.2, cite Gammie (2001) for the isothermal analogy of the
 externally illuminated disk.
 In section 6.3, cite Chiang & Goldreich (1997) when discuss irradiation
 dominated disk.
+
+These citations are now added as suggested.
+
+************************************************************************************

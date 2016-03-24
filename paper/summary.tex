@@ -186,9 +186,17 @@ We can expect this if numerical viscosity
 contributes to an effective irradiation, %then we do expect a disk can be
 %destabilized at longer cooling times with increasing resolution, 
 because then perturbations can cool to lower temperatures with
-increasing resolution, see Fig. \ref{invisc_theta}.   
+increasing resolution, see Fig. \ref{invisc_theta}.  {\bf
+  In global simulations, non-convergence has also been attributed to initial 
+  conditions that lead to internal edges \citep{paardekooper11b}, but
+  this cannot be modeled in our local setup. 
+  \cite{rice12} point out that the standard implementation of beta-cooling in
+  SPH simulations apply cooling on scales well-below the SPH smoothing
+  lengths, and that this inconsistency may contribute to
+  non-convergence. 
+}
 
- \cite{paardekooper12} also found that fragmentation can occur 
+{\bf However,} \cite{paardekooper12} also found {\bf in local grid-based simulations} that fragmentation can occur 
 for  slowly-cooled disks with $\tcool\Omega\gg O(1)$, but that this requires   
 simulations to run for significantly longer than dynamical 
 timescales. This is consistent with our finding
