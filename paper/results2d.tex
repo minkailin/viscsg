@@ -35,13 +35,24 @@ in \S\ref{2dvisc}.
 We first simplify the problem by setting $\alpha = \alpha_b = 0$. This
 eliminates viscous heating and forces in the linearized problem, 
 allowing us to quantify the \emph{sole} effect of cooling on the 
-perturbations. %KMK
-We emphasize that destabilization is independent of the effect of decreasing temperature on the instantaneous
-value of the classic-$Q$. A time-independent heat source should be
-invoked to balance the imposed cooling to allow an equilibrium to be
-defined ($\mathcal{H}_\mathrm{ext}\neq 0$). For example, we could assume
-that the viscosity only provides a background heating and does not
-play an active role in the perturbed state. 
+perturbations. %KMK 
+We emphasize that destabilization is independent of the effect of
+decreasing temperature on the instantaneous value of the
+classic-$Q$. A time-independent heat source should be invoked to
+balance the imposed cooling to allow an equilibrium to be 
+defined ($\mathcal{H}_\mathrm{ext}\neq 0$). 
+
+{\bf
+For example, we could assume that the viscosity only provides a
+background heating and does not play an active role in the perturbed
+state. This is in fact done implicitly in the literature when
+discussing fragmentation or clump formation in cooling, 
+self-gravitating disk simulations \citep{gammie01}. 
+There, the effect of the ambient 
+gravito-turbulent viscosity on the forming-clump is neglected, as 
+one only compares adiabatic heating and the imposed cooling.  
+This comparison is encapsulated in the generalized dispersion relation
+below.}
 
  %may or may not be true in a real
                                 %disk because we are using viscosity
@@ -200,14 +211,16 @@ disk,
 \begin{align}\label{betastar}
   \beta_* = \frac{1}{\left(\sqrt{\gamma} - 1\right)^{3/2}}. 
 \end{align}
-This equation gives remarkably similar values 
+This equation gives similar values 
 of the cooling times below which 
 numerical simulations show dynamical disk fragmentation 
 \citep{gammie01,rice05,rice11}. These simulations employ the same beta  
 cooling prescription with $\theta=0$, and determine the fragmentation
 boundary, $\beta_c$, as a function of the adiabatic index $\gamma$.  
 Table \ref{bstar_compare} shows rough agreement between $\beta_*$ and 
-$\beta_c$.  
+$\beta_c$.  {\bf The match is remarkable, especially with the
+  global 3D simulations of \cite{rice05}, since Eq. \ref{betastar}
+  is derived for 2D disks in the local limit.} 
 
 \begin{deluxetable}{rrrr}
   \tablecolumns{4}
@@ -334,12 +347,13 @@ This exercise yields
 To compute growth rates numerically, 
 we consider a model with $\gamma=1.4$, $\alpha_b=0$ and 
 $\alpha=\alpha(\beta)$ given by thermal equilibrium
-(Eq. \ref{alpha_beta_relation}). Furthermore, we relate   
-\begin{align}
+(Eq. \ref{alpha_beta_relation}). Furthermore, we relate
+{\bf the strength of self-gravity and viscosity by}   
+\begin{align} 
   Q = \frac{Q_\mathrm{crit}}{\sqrt{\alpha}},\label{Qalpha}
 \end{align}
 %with $Q_\mathrm{crit}$ given by 
-to mimic a basic state maintained by gravito-turbulence where one
+{\bf to mimic a gravito-turbulent basic state,} where one
 might expect the dimensionless stress $\alpha \sim Q^{-2}$
 \citep{lin87}.   
 
@@ -448,8 +462,8 @@ stress promoting instability, rather than cooling. Thus, we do not expect rapidl
 and hence highly turbulent, self-gravitating disks to persist beyond
 dynamical timescales.
 %KMK
-We might interpret fragmentation as the response to the instability of the
-highly viscous state. This is consistent with previous numerical
+We might interpret fragmentation {\bf as a reflection of} instability
+of the highly viscous state. This is consistent with previous numerical
 simulations performed by \cite{lodato05}. 
 %Case (\ref{gvisc}) is consistent with 
 \begin{figure}
