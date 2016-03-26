@@ -3,7 +3,7 @@
 study. It should be clearly stated in the Abstract. 
 
 We now state in the abstract that the analysis is axisymmetric and
-done in the shearing box approximation. Since the models are
+done in the shearing box approximation. Since the models are 
 vertically-global, we do not use `local' here to avoid confusion. 
 
 ***********************************************************************************
@@ -32,7 +32,7 @@ in the ideal gas law for both 2D or 3D disk models.
 
 After Eq. 23 we state that \Gamma is the polytropic index that
 controls the disk vertical structure. It is not relevant to the 2D
-problem since in that case \Gamma can be absorbed into the defintion
+problem since in that case \Gamma can be absorbed into the definition
 of the soundspeed.  
 
 ***********************************************************************************
@@ -47,7 +47,7 @@ We clarify these issues in Section 2.2.1.
 After Eq. 25, we make it explicit that the equilibrium temperature
 field T_{eq} is generally a function of z. However, in numerical
 calculations we consider vertically isothermal disks with
-\Gamma=1. This is the case for protoplantary disks at large radii
+\Gamma=1. This is the case for protoplanetary disks at large radii
 where heating is dominated by irradiation, leading to a vertically
 isothermal disk.  
 
@@ -59,22 +59,22 @@ of the turbulence, do not play an active role in the perturbed state,
 especially the turbulence might be driven by gravity itself? 
 
 The perturbations that the reviewer refers to are
-the flucuations, with respect to a strictly laminar state, associated
+the fluctuations, with respect to a strictly laminar state, associated
 with maintaining gravito-turbulence. In the present
 problem, however, we are interested in perturbations away from this 
-quasi-steady, gravito-turbulent state. We thus regard the
-gravito-turbulent state as an equilibrium state to which we (further)
+quasi-steady, gravito-turbulent state (which may indicate fragmentation). 
+We thus regard the gravito-turbulent state as an equilibrium state to which we (further) 
 perturb. We clarify this in the new sub-section 1.4. in the
 introduction. 
 
 The gravito-turbulent viscous heating balances the imposed cooling so
 that a quasi-steady state may be defined (our basic state) and
-perturbed. However, it is not clear what is the role of this
+perturbed in the usual way. However, it is not clear what is the role of this
 gravito-turbulent viscosity on the perturbations away from such a
-basic  state. In the simplest case discussed in Section 4.1, we assume
+basic state. In the simplest case discussed in Section 4.1, we assume
 it has no effect.  
 
-This is in fact what is done implicitly in the literature when
+This is in fact what is done implicitly in the literature when 
 discussing fragmentation or clump formation in cooling, 
 self-gravitating disk simulations. There, the effect of the ambient
 gravito-turbulent viscosity on the forming-clump is neglected, as 
@@ -97,19 +97,22 @@ out-of-equilibrium systems? Is this consistent with the local analysis which
 has fixed equilibrium state? 
 
 
-Eq. 58 applies to the equilibrium disk. In the problem formulation
-(e.g. Appendix  A), Q and alpha are assumed to be independent
-parameters that define the basic state. In reality, 
-however, depending on the physical nature of the basic state Q and
-alpha may be related. For example, if the viscous stress is associated
-with gravito-turbulence then Q and alpha may be inversely related. So
+In our problem Eq. 58 applies to the equilibrium disk, and the 
+out-of-equilibrium evolution is determined by the linearized
+equations. 
+
+In the linear problem formulation (e.g. Appendix  A), Q and alpha are
+assumed to be independent parameters that define the basic state. In
+reality, however, depending on the physical nature of the basic state,
+Q and alpha may be related. For example, if the viscous stress is
+associated with gravito-turbulence then Q and alpha may be inversely related. So
 large values of Q should have small levels of associated stress. 
 We adopt the simple functional form of Eq. 58, following Lin \&
-Pringle 1987, in order to make analytic progress (Eq. 59). 
+Pringle 1987, in order to make analytic progress (to obtain Eq. 59). 
 
 More complicated functional forms of Q(alpha) are used in the
 literature (Rafikov 2015) but this should yield similar results as
-long as stresses increase with self-gravity. Indeed we do this in
+long as stresses increase with self-gravity. Indeed, we do this in
 Section 6 where Q and alpha are worked out for a physical disk model
 based on the 1D accretion disk equations.   
 
@@ -138,23 +141,28 @@ with recent 3D local simulations by Shi & Chiang (2014)?
 
 This comparison cannot be made because Shi \& Chiang (2014)
 investigate the properties of the quasi-steady, gravito-turbulent
-state, which has an associated \delta v_z. However, our framework regards the
+state. However, our framework regards this 
 gravito-turbulent as a basic state in vertical 
 hydrostatic equilibrium (Section 2.2). That is, vertical and radial
 velocities are neglected compared to Keplerian rotation in our basic 
 state. 
 
+We clarify the meaning of our \delta_vz at the end of Section 5.2. 
+
 ************************************************************************************
 10) In Figure 9, is there any reason to label the line of t_c\Omega=4 instead
 of t_c\Omega=3?
 
-The vertical line marks the region beyond which the alpha>0.1.
-For the 3D, non-irradiated case in Fig. 9, beyond this
-radius the cooling time drops below 4/Omega. For the 2D, irradiated
-case with Mdot=1d-6 in Fig. 8, this radius corresponds to a cooling
-time of < 3/Omega.
+The vertical line marks the region beyond which alpha>0.1.
+For the 3D, non-irradiated case in Fig. 9, it also marks the 
+radius beyond which the cooling time drops below 4/Omega. 
 
-This is now stated in the captions of Fig. 8 and 9. 
+For the 2D, irradiated case with Mdot=1d-6 in Fig. 8, the alpha=0.1
+radius corresponds to a cooling time of < 3/Omega. The Mdot=1d-7 disk 
+never attains alpha=0.1, but its cooling profile is essentially identical to
+that of Mdot=1d-6. 
+
+These are now stated in the captions of Fig. 8 and 9. 
 
 ************************************************************************************
 
@@ -175,12 +183,13 @@ which is where fragmentation occurs. Our local models cannot
 accommodate such global effects. 
 
 Rice et al (2012) show that the standard SPH cooling algorithm may contribute
-to non-convergence because of the mismatch in scale in the cooling and
-the SPH smoothing length, although the precise mechanism to
+to non-convergence because of the mismatch in scale at which cooling
+is applied, and
+the SPH smoothing length; although the precise mechanism to
 non-convergence is not clear.  However, grid-based simulations also display
 non-convergence, with the most recent example being Baehr \& Klahr
 (2015). Thus the way in which cooling is implemented may not be
-entirely explain non-convergence.
+entirely explain non-convergence. 
 
 Based on our analysis (the dispersion relation Eq. 1), we point out
 that non-convergence observed in simulations with beta cooling

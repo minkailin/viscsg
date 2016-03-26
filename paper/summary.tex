@@ -190,13 +190,14 @@ increasing resolution, see Fig. \ref{invisc_theta}.  {\bf
   In global simulations, non-convergence has also been attributed to initial 
   conditions that lead to internal edges \citep{paardekooper11b}, but
   this cannot be modeled in our local setup. 
-  \cite{rice12} point out that the standard implementation of beta-cooling in
+  \cite{rice12} point out that the standard implementation of beta cooling in
   SPH simulations apply cooling on scales well-below the SPH smoothing
   lengths, and that this inconsistency may contribute to
   non-convergence. 
 }
 
-{\bf However,} \cite{paardekooper12} also found {\bf in local grid-based simulations} that fragmentation can occur 
+{\bf However,} \cite{paardekooper12} also found {\bf in local 2D
+  grid-based simulations} that fragmentation can occur  
 for  slowly-cooled disks with $\tcool\Omega\gg O(1)$, but that this requires   
 simulations to run for significantly longer than dynamical 
 timescales. This is consistent with our finding
@@ -234,9 +235,9 @@ become important over long timescales.
 In this respect, it is perhaps not surprising to find non-convergence with 
 increasing resolution and/or integration times. 
 {\bf
-  On the other hand, small-scale modes are more stable in 3D than in
-  2D (Appendix \ref{3dcorr}), and thus the convergence issue may be
-  less serious in 3D.  
+  On the other hand, the convergence issue may be
+  less serious in 3D since small-scale modes are more stable in 3D
+  than in 2D (Appendix \ref{3dcorr}). 
 }
 %simple beta cooling will not give a
 %well-imposed problem 
@@ -273,7 +274,7 @@ and high density perturbations to cool more slowly.
 %KMK
 A temperature floor may be a necessary, but not sufficient condition
 for numerical convergence. \cite{baehr15} included a floor temperature 
-in their simulations but still find that at fixed cooling rates, disks
+in their {\bf local 2D} simulations but still find that at fixed cooling rates, disks
 eventually fragment with sufficient spatial resolution.
 In light of our results on viscous GI, 
 we suggest another possible contribution to non-convergence: %in addition to num visc (meru lodato)
