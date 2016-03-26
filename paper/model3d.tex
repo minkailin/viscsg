@@ -149,19 +149,26 @@ A prototypical example is
 \end{align}
 {\bf where $T_\mathrm{irr}$ is a reference temperature field, and
 recall}  $\tcool = \beta\Omega^{-1}$ is 
-the cooling timescale with $\beta$ a constant input parameter.
-%Here, 
-%\begin{align}\label{tirr_def}
-%  \tirr = \theta T_\mathrm{eq}
-%\end{align}
-%parameterized as a 
-%fraction $\theta$ of the equilibrium temperature field 
-%$T_\mathrm{eq}(z)$. 
+the cooling timescale with $\beta$ a constant input parameter. 
 Physically, $\tirr$ {\bf may} the floor temperature set by, 
 for example, stellar or background irradiation. 
 
+{\bf
+Beta cooling of the form Eq. \ref{beta_cool} is widely applied in 2D
+and 3D numerical simulations of self-gravitating disks \citep{gammie01,
+  rice05,rice11,paardekooper12}. In fact, for $T_\mathrm{irr}=0$
+Eq. \ref{beta_cool} the 
+cooling function $\Lambda = -E/t_\mathrm{c}$ is identical
+to that originally employed by \cite{gammie01}. 
+We will refer to Eq. \ref{beta_cool} as  
+`standard' beta cooling. It permits numerical experiments to be
+carried out in a controlled manner as a function of the cooling time
+$\beta$. An adiabatic disk corresponds to $\beta\to \infty$. The
+physical meaning of the limit $\beta\to0$ depends on $T_\mathrm{irr}$, as
+discussed in \S\ref{theta0}---\ref{theta1}.  
+}
 
-For beta cooling given by Eq. \ref{beta_cool} we assume an 
+{\bf For standard beta cooling} we assume an 
 equilibrium polytropic relation 
 \begin{align}\label{poly_vert} 
   P  =
@@ -199,14 +206,7 @@ thermal equilibrium. If  $\mathcal{H}_\mathrm{ext}=0$,
     Eq. \ref{beta_cool} as the cooling function. 
  } 
 
-Beta cooling of the form Eq. \ref{beta_cool} is widely applied in 2D
-and 3D numerical simulations of self-gravitating disks \citep{gammie01,
-  rice05,rice11}. For this reason we will refer to it as the
-`standard' beta cooling. It permits numerical experiments to be
-carried out in a controlled manner as a function of the cooling time
-$\beta$. An adiabatic disk corresponds to $\beta\to \infty$. The
-physical meaning of the limit $\beta\to0$ depends on $\theta$, as
-discussed in \S\ref{theta0}---\ref{theta1}.  
+
 
 %We shall need to re-define $\theta$ and $\beta$  
 %when considering other cooling functions (see below).    
