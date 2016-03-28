@@ -190,8 +190,8 @@ increasing resolution, see Fig. \ref{invisc_theta}.  {\bf
   In global simulations, non-convergence has also been attributed to initial 
   conditions that lead to internal edges \citep{paardekooper11b}, but
   this cannot be modeled in our local setup. 
-  \cite{rice12} point out that the standard implementation of beta cooling in
-  SPH simulations apply cooling on scales well-below the SPH smoothing
+  \cite{rice12} point out that the standard implementation of beta
+  cooling in smoothed-particle hydrodynamics (SPH) applies cooling on scales well-below the SPH smoothing
   lengths, and that this inconsistency may contribute to
   non-convergence. 
 }
@@ -206,7 +206,12 @@ cooling rate/viscosity below  which the disk is
 formally stable. Instead, growth rates smoothly decrease with
 increasing $\tcool$ (decreasing $\alpha$), implying that
 instabilities, and hence fragmentation, simply take longer to develop
-for slowly-cooled disks.         
+for slowly-cooled disks. 
+{\bf
+  However, to properly consider long timescales, it may be necessary
+  to account for
+  secular evolution in the global disk. 
+}        
 %hopkins paper 
 
 %%KMK moved up 
