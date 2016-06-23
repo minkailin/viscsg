@@ -33,8 +33,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \graphicspath{{figures/}}
  
-\title{{\huge Non-ideal gravitational instabilities in protoplanetary disks}} 
-\author{Min-Kai Lin and Kaitlin M. Kratter}
+\title{{\huge Non-ideal gravitational instabilities in protoplanetary
+    disks [2016, ApJ, 824, 94]}} 
+\author{Min-Kai Lin and Kaitlin M. Kratter}%, {\large \textcolor{blue}{\bf {\it 2016, ApJ, 824, 94}}}}
 % \institute[UA]{Steward Observatory, 933 N Cherry Avenue,
 %   Tucson, AZ, 85721, USA}
 \institute[UA]{minkailin@email.arizona.edu, kkratter@email.arizona.edu}
@@ -103,9 +104,12 @@
                 simulations,  no analytical basis
               \item Possibly dependent on numerical setup of the simulation!
               \end{itemize}
+              \vspace{-0.237cm}
               \begin{figure}
                 \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 0.6cm]{figures/disk_frag1}
               \end{figure}
+              \vspace{-1cm}
+
             (Fargo simulation, $\log \Sigma$ shown)
             \end{block}
             
@@ -153,7 +157,8 @@
             \begin{block}{\Large Beyond classic theory} 
               \justifying
               \begin{itemize}
-              \item Local, axisymmetric linear stability analysis of 2D/3D disks 
+              \item Local, axisymmetric linear stability analysis of
+                2D/3D disks, `gravito-turbulent' basic state    
               \item Include {\bf\textcolor{blue}{cooling}}/radiative
                 diff., {\bf \textcolor{red}{viscous}} forces/heating,
                 {\bf \textcolor{green}{irradiation}} 
@@ -199,30 +204,60 @@
     
             \begin{block}{{\Large Cooling-driven GI}}
                 \justifying
+                \vspace{-.1cm}
                 \begin{figure}
-                  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 0cm]{figures/2dinvisc_theta}
+                  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 1.25cm]{figures/2dinvisc_theta}
                 \end{figure}
+                \vspace{-.5cm}
+                \begin{itemize}
+                \item $Q=1.7$, $T_\mathrm{irr}=0.1T_\mathrm{steady}$,
+                  \textcolor{blue}{only consider effect of cooling} 
+                \item \textcolor{blue}{Disk is unstable at \emph{all}
+                  $t_\mathrm{cool}$}, irradiation is stabilizing
+                \end{itemize}
               \end{block}
               
             \begin{block}{{\Large Understanding (some) simulations}}
               \justifying
+              \vspace{-.5cm}
+              \begin{center}
+              Define \begin{onlinebox}{23cm} $t_\mathrm{cool,*}$:
+                  removes pressure support over
+                  radial lengthscales 
+                  $\sim H$\end{onlinebox}
+              \end{center}
+              \vspace{-.5cm}
               \begin{figure}
-                  \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 1cm]{figures/tcool}
-                \end{figure}
+                \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 1.1cm]{figures/tcool}
+              \end{figure}
+              \vspace{-1cm}
+              {\small Simulations: Gammie (`01), Rice et al. (`05,`11),
+                Paardekooper (`12)}
             \end{block}
             
             \begin{block}{{\Large Viscosity-driven GI}}
               \justifying
               \begin{figure}
-                \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 0cm]{figures/result2d_gvisc}
+                \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 1.1cm]{figures/result2d_gvisc}
               \end{figure}
+              \vspace{-.8cm}
+               \begin{itemize}
+                \item $Q=1.7$, $T_\mathrm{irr}=0.1T_\mathrm{steady}$,
+                  \textcolor{red}{$\alpha=\alpha(t_\mathrm{cool})$} from thermal eqm. 
+                \end{itemize}
             \end{block}
               
             \begin{block}{{\Large Application to protoplanetary disks}}
               \justifying
+              \vspace{-.7cm}
                \begin{figure}
-                 \includegraphics[width=\linewidth,clip=true,trim=0cm 0cm 0cm 0cm]{figures/compare_result_growth}
+                 \includegraphics[width=\linewidth,clip=true,trim=0cm
+                   0cm 0cm 0cm]{figures/compare_result_growth} 
               \end{figure}
+               \vspace{-1cm}
+                \begin{itemize}
+                \item High $\dot{M}$ disk fragments $\gtrsim 100$AU
+                \end{itemize}
             \end{block}
             
 
